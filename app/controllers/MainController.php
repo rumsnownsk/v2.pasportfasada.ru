@@ -5,9 +5,8 @@ namespace app\controllers;
 use app\core\App;
 use app\core\base\Controller;
 use app\models\Main;
-use RedBeanPHP\R;
+use app\models\Work;
 
-//use R;
 
 class MainController extends Controller
 {
@@ -15,15 +14,12 @@ class MainController extends Controller
 
     public function indexAction()
     {
-        $this->view = 'myIndexView';
+        $this->view = 'main';
 
-        dd($this->view);
-        $posts = R::findAll('posts');
-        $title = 'MAIN page';
-        $menu = R::findAll('category');
-        $this->setMeta('Main Page', 'mydesc', 'mykeywords');
-        $this->set(compact('title', 'posts', 'menu'));
-
+        $works = Work::all();
+        $title = 'заголовок';
+        $this->setMeta('Главная', 'mydesc', 'mykeywords');
+        $this->set(compact('title', 'works'));
     }
 
 

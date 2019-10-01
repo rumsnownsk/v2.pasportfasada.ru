@@ -1,0 +1,118 @@
+[2019-09-30 18:32:37]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-09-30 18:32:38]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-09-30 18:34:07]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-09-30 18:34:07]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-09-30 18:36:25]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-09-30 18:37:14]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-09-30 18:38:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-09-30 20:44:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-09-30 20:58:41]; Текст: Контроллер app\controllers\admin\TestController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 89 
+=======================
+[2019-09-30 21:19:22]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\category/create.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 11:30:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 11:54:28]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 11:55:03]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\User/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 11:55:40]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\User/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 11:59:52]; Текст: Undefined variable: title | Файл: /var/www/pf_nsk.ru/app/views/main/main.php | Строка: 5 
+=======================
+[2019-10-01 12:11:25]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 12:11:47]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 12:11:54]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 12:12:24]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:13:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:13:35]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:14:55]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:15:21]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:15:53]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:15:56]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:16:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:16:23]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:17:23]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 93 
+=======================
+[2019-10-01 12:21:34]; Текст: Undefined index: description | Файл: /var/www/pf_nsk.ru/app/views/layouts/main.php | Строка: 7 
+=======================
+[2019-10-01 12:30:08]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\User/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:32:02]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\User/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:32:47]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\User/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:32:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 12:34:22]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\User/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:41:28]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\user/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:49:37]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\user/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:51:26]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\user/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:51:29]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\user/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:52:33]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin\user/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 58 
+=======================
+[2019-10-01 12:54:24]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 12:57:32]; Текст: Контроллер app\controllers\admin\/UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-01 12:58:36]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 13:07:11]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 13:07:19]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 13:12:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 13:12:41]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 13:20:51]; Текст: Undefined variable: meta | Файл: /var/www/pf_nsk.ru/app/views/layouts/admin.php | Строка: 7 
+=======================
+[2019-10-01 13:22:14]; Текст: Undefined variable: meta | Файл: /var/www/pf_nsk.ru/app/views/layouts/admin.php | Строка: 7 
+=======================
+[2019-10-01 13:25:09]; Текст: Undefined variable: meta | Файл: /var/www/pf_nsk.ru/app/views/layouts/admin.php | Строка: 7 
+=======================
+[2019-10-01 13:28:33]; Текст: Undefined index: description | Файл: /var/www/pf_nsk.ru/app/views/layouts/main.php | Строка: 7 
+=======================
+[2019-10-01 15:46:13]; Текст: Access to undeclared static property: app\core\base\Controller::$meta | Файл: /var/www/pf_nsk.ru/app/core/base/Controller.php | Строка: 57 
+=======================
+[2019-10-01 15:46:48]; Текст: Access to undeclared static property: app\core\base\Controller::$meta | Файл: /var/www/pf_nsk.ru/app/core/base/Controller.php | Строка: 57 
+=======================
+[2019-10-01 15:46:50]; Текст: Access to undeclared static property: app\core\base\Controller::$meta | Файл: /var/www/pf_nsk.ru/app/core/base/Controller.php | Строка: 57 
+=======================
+[2019-10-01 16:04:47]; Текст: Undefined index: description | Файл: /var/www/pf_nsk.ru/app/views/layouts/main.php | Строка: 7 
+=======================
+[2019-10-01 16:22:18]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 16:23:07]; Текст: Undefined index: description | Файл: /var/www/pf_nsk.ru/app/views/layouts/main.php | Строка: 7 
+=======================
+[2019-10-01 16:33:04]; Текст: Undefined variable: title | Файл: /var/www/pf_nsk.ru/app/views/main/main.php | Строка: 5 
+=======================
+[2019-10-01 18:34:27]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-01 18:59:46]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================

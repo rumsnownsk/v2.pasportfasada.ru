@@ -14,17 +14,16 @@ define('LIBS', dirname(__DIR__).'/core/libs');
 define('CACHE', dirname(__DIR__).'/temp/cache');
 define('DEBUG', true);
 
-
-require_once "../vendor/autoload.php";
+require ROOT."/vendor/autoload.php";
 require_once "../config/config_db.php";
 
-spl_autoload_register(function ($class){
-    $file = ROOT.'/'. str_replace('\\', '/', $class).'.php';
-
-    if (is_file($file)){
-        require_once $file;
-    }
-});
+//spl_autoload_register(function ($class){
+//    $file = ROOT.'/'. str_replace('\\', '/', $class).'.php';
+//
+//    if (is_file($file)){
+//        require_once $file;
+//    }
+//});
 
 new \app\core\App();
 
@@ -32,7 +31,7 @@ Router::addRoutes('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'
 Router::addRoutes('^page/(?P<alias>[a-z-]+)$', ['controller'=> 'page', 'action' => 'view']);
 
 // defaults routes
-Router::addRoutes('^admin$', ['controller'=> 'User', 'action'=>'index', 'prefix'=> 'admin']);
+Router::addRoutes('^admin$', ['controller'=> 'user', 'action'=>'index', 'prefix'=> 'admin']);
 Router::addRoutes('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
 
 Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);

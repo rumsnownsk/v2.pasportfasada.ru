@@ -1,11 +1,13 @@
 {
+    "name":  "pf",
     "require": {
         "symfony/var-dumper": "^4.3",
-        "gabordemooij/redbean": "dev-master"
+        "gabordemooij/redbean": "dev-master",
+        "illuminate/database": "^5.8"
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "app\\": "app"
         }
     }
 }

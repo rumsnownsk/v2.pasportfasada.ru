@@ -21,7 +21,7 @@ abstract class Controller
     public $view;
 
     /**
-     * текущий шаблон
+     * базовый шаблон
      * @var string
      */
     public $layout;
@@ -32,7 +32,11 @@ abstract class Controller
      */
     public $vars = array();
 
-    public static $meta = array();
+    public $meta = [
+        'title' => '',
+        'description' => '',
+        'keywords' => ''
+    ];
 
     public $app;
 
@@ -54,13 +58,15 @@ abstract class Controller
     public function set($data)
     {
         $this->vars = $data;
-        $this->vars['meta'] = self::$meta;
+//        dd($this->meta);
+
+        $this->vars['meta'] = $this->meta;
     }
 
     public function setMeta($title='', $description='', $keywords=''){
-        self::$meta['title'] = $title;
-        self::$meta['description'] = $description;
-        self::$meta['keywords'] = $keywords;
+        $this->meta['title'] = $title;
+        $this->meta['description'] = $description;
+        $this->meta['keywords'] = $keywords;
     }
 
     public function isAjax()

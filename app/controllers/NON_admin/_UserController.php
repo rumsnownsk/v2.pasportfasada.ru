@@ -1,22 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: rum
- * Date: 27.07.19
- * Time: 15:54
- */
 
 namespace app\controllers\admin;
 
 
-class TestController
+class _UserController extends AppController
 {
     public function indexAction()
     {
-        echo __METHOD__;
+        $this->view = 'admin/index';
     }
 
     public function testAction(){
         echo __METHOD__;
     }
+
+
 }

@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="<?= $meta['description'] ?>">
+    <meta name="keywords" content="<?= $meta['keywords'] ?>">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -11,7 +13,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
 
-    <title><?= $title ?></title>
+    <title><?= $meta['title'] ?></title>
 </head>
 <body>
 <h1>Hello, world!</h1>

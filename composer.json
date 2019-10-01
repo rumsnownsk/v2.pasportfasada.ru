@@ -1,5 +1,4 @@
 {
-    "name":  "pf",
     "require": {
         "symfony/var-dumper": "^4.3",
         "gabordemooij/redbean": "dev-master",
@@ -7,7 +6,7 @@
     },
     "autoload": {
         "psr-4": {
-            "app\\": "app"
+            "app\\": "app/"
         }
     }
 }

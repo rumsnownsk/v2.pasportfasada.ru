@@ -39,17 +39,33 @@ class View
         $this->view = $view;
     }
 
+    protected function compressPage($buffer){
+//        return $buffer;
+        $search = [
+            "/(\n)+/",
+            "/\r\n+/",
+            "/\n(\t)+/",
+            "/\n(\ )+/",
+            "/\>(\n)+</",
+            "/\>\r\n</"
+        ];
+        $replace = [
+            "\n",
+            "\n",
+            "\n",
+            "\n",
+            '><',
+            '><'
+        ];
+        return preg_replace($search, $replace, $buffer);
+    }
+
     /**
      * @param $data
      * @throws \Exception
      */
     public function render($data)
     {
-//        $this->data = $data;
-
-//        $this->setMeta($data['meta']);
-
-//        dd($this->data);
         if (is_array($data)) {
             extract($data);
         }
@@ -57,23 +73,31 @@ class View
         $prefix = str_replace("\\", "/", $this->route['prefix']);
         $file_view = APP . "/views/". $prefix ."{$this->route['controller']}/{$this->view}.php";
 
+//        ob_start();
+//        ob_start([$this, 'compressPage']);
+        ob_start('ob_gzhandler');
+        {
+            header("Content-Encoding: gzip");
+            if (file_exists($file_view)) {
 
-        ob_start();
+                require $file_view;
+            } else {
+                throw new \Exception("файл ВИДА <b>$file_view</b> - not found ", 404);
+            }
 
-        if (file_exists($file_view)) {
-            require $file_view;
-        } else {
-            throw new \Exception("файл ВИДА <b>$file_view</b> - not found ", 404);
+            $content = ob_get_contents();
         }
 
-        $content = $this->getScript(ob_get_clean());
+        ob_clean();
+//        $content = ob_get_clean();
 
         if (false !== $this->layout) {
             $file_layout = APP . "/views/layouts/{$this->layout}.php";
 
             if (is_file($file_layout)) {
-//                dd($content);
-//                $scripts = [];
+                $content = $this->getScript($content);
+                $scripts = [];
+
                 if (!empty($this->scripts[0])){
                     $scripts = $this->scripts[0];
                 }
@@ -81,7 +105,6 @@ class View
 
             } else {
                 throw new \Exception("файл ШАБЛОНА <b>{$file_layout}</b> - not found ", 404);
-//                dump("файл ШАБЛОНА <b>{$file_layout}</b> - not found ");
             }
         }
     }
@@ -94,5 +117,15 @@ class View
             $content = preg_replace($pattern, '', $content);
         }
         return $content;
+    }
+
+    public function getPart($file){
+        $file = APP . "/views/{$file}.php";
+
+        if (is_file($file)) {
+            require_once $file;
+        } else {
+            throw new \Exception("подключаемый файл <b>{$file}</b> - not found ", 404);
+        }
     }
 }

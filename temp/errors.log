@@ -118,3 +118,149 @@
 =======================
 [2019-10-01 19:16:02]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
 =======================
+[2019-10-02 10:35:21]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 10:35:27]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 11:12:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 11:12:11]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 12:44:55]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 12:45:35]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 12:48:52]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 12:51:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 12:53:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 12:59:38]; Текст: Контроллер app\controllers\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-02 13:05:24]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 13:05:43]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-02 13:07:34]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-03 12:23:15]; Текст: Контроллер app\controllers\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-03 12:26:34]; Текст: Контроллер app\controllers\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-03 12:27:42]; Текст: Undefined variable: meta | Файл: /var/www/pf_nsk.ru/app/views/layouts/default.php | Строка: 7 
+=======================
+[2019-10-03 12:28:59]; Текст: Undefined variable: meta | Файл: /var/www/pf_nsk.ru/app/views/layouts/default.php | Строка: 7 
+=======================
+[2019-10-03 12:34:13]; Текст: Контроллер app\controllers\admin\LoginController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-03 12:51:34]; Текст: Метод singupAction у контроллера app\controllers\UserController - не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 84 
+=======================
+[2019-10-03 13:08:29]; Текст: Undefined index:  | Файл: /var/www/pf_nsk.ru/app/core/base/Model.php | Строка: 23 
+=======================
+[2019-10-03 13:09:17]; Текст: Undefined index:  | Файл: /var/www/pf_nsk.ru/app/core/base/Model.php | Строка: 23 
+=======================
+[2019-10-03 13:52:22]; Текст: Array to string conversion | Файл: /var/www/pf_nsk.ru/app/core/base/Model.php | Строка: 53 
+=======================
+[2019-10-03 14:07:06]; Текст: Call to undefined function app\controllers\redirect() | Файл: /var/www/pf_nsk.ru/app/controllers/UserController.php | Строка: 19 
+=======================
+[2019-10-03 14:07:43]; Текст: Call to undefined function app\controllers\redirect() | Файл: /var/www/pf_nsk.ru/app/controllers/UserController.php | Строка: 21 
+=======================
+[2019-10-03 14:10:21]; Текст: Call to undefined function app\controllers\redirect() | Файл: /var/www/pf_nsk.ru/app/controllers/UserController.php | Строка: 19 
+=======================
+[2019-10-03 14:11:10]; Текст: Call to undefined function app\controllers\redirect() | Файл: /var/www/pf_nsk.ru/app/controllers/UserController.php | Строка: 19 
+=======================
+[2019-10-03 14:26:23]; Текст: Argument 1 passed to RedBeanPHP\Util\DispenseHelper::dispense() must be an instance of RedBeanPHP\OODB, null given, called in /var/www/pf_nsk.ru/vendor/gabordemooij/redbean/RedBeanPHP/Facade.php on line 853 | Файл: /var/www/pf_nsk.ru/vendor/gabordemooij/redbean/RedBeanPHP/Util/DispenseHelper.php | Строка: 127 
+=======================
+[2019-10-03 14:31:41]; Текст: syntax error, unexpected 'if' (T_IF) | Файл: /var/www/pf_nsk.ru/app/controllers/UserController.php | Строка: 24 
+=======================
+[2019-10-03 19:58:54]; Текст: syntax error, unexpected '<', expecting end of file | Файл: /var/www/pf_nsk.ru/app/views/layouts/default.php | Строка: 45 
+=======================
+[2019-10-03 19:59:24]; Текст: Array to string conversion | Файл: /var/www/pf_nsk.ru/app/views/layouts/default.php | Строка: 43 
+=======================
+[2019-10-03 20:09:57]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/user/logout.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 66 
+=======================
+[2019-10-03 20:10:43]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/user/.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 66 
+=======================
+[2019-10-03 20:11:58]; Текст: Undefined index: user | Файл: /var/www/pf_nsk.ru/app/models/User.php | Строка: 77 
+=======================
+[2019-10-03 20:12:43]; Текст: Undefined index: user | Файл: /var/www/pf_nsk.ru/app/models/User.php | Строка: 77 
+=======================
+[2019-10-03 20:13:31]; Текст: Undefined index: user | Файл: /var/www/pf_nsk.ru/app/models/User.php | Строка: 77 
+=======================
+[2019-10-03 20:14:05]; Текст: Контроллер app\controllers\AboutController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-03 20:14:09]; Текст: Undefined index: user | Файл: /var/www/pf_nsk.ru/app/models/User.php | Строка: 77 
+=======================
+[2019-10-03 20:14:18]; Текст: Контроллер app\controllers\LoginController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-03 20:14:34]; Текст: Undefined index: user | Файл: /var/www/pf_nsk.ru/app/models/User.php | Строка: 77 
+=======================
+[2019-10-03 20:19:10]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/user/logout.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 66 
+=======================
+[2019-10-04 11:42:29]; Текст: Контроллер app\controllers\AboutController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-04 12:01:18]; Текст: Контроллер app\controllers\AboutController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-04 14:28:02]; Текст: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2' at line 1 (SQL: select * from `works` offset 2) | Файл: /var/www/pf_nsk.ru/vendor/illuminate/database/Connection.php | Строка: 664 
+=======================
+[2019-10-04 14:50:39]; Текст: Undefined variable: count | Файл: /var/www/pf_nsk.ru/app/views/main/main.php | Строка: 6 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:12]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:13]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:34:13]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:39:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:42:02]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 16:42:07]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-04 17:09:01]; Текст: подключаемый файл <b>inc/sidebar</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 128 
+=======================
+[2019-10-04 17:11:46]; Текст: подключаемый файл <b>inc/sidebar</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 128 
+=======================
+[2019-10-07 12:40:38]; Текст: Undefined variable: post | Файл: /var/www/pf_nsk.ru/app/views/main/index.php | Строка: 9 
+=======================
+[2019-10-07 12:40:53]; Текст: Undefined variable: post | Файл: /var/www/pf_nsk.ru/app/views/main/index.php | Строка: 10 
+=======================
+[2019-10-07 16:01:41]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 16:02:55]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-07 16:02:58]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-07 16:03:51]; Текст: Метод indexAction у контроллера app\controllers\admin\WorkController - не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 84 
+=======================

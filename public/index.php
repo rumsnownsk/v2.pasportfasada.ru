@@ -1,21 +1,23 @@
 <?php
 use app\core\Router;
 
-//ini_set('display_errors', 1);
-//error_reporting(E_ALL);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 $query = trim($_SERVER['REQUEST_URI'], '/');
 
 define('WWW', __DIR__);
-define('CORE', dirname(__DIR__).'/vendor/core');
+//define('CORE', dirname(__DIR__).'/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__).'/app');
 define('LIBS', dirname(__DIR__).'/core/libs');
 define('CACHE', dirname(__DIR__).'/temp/cache');
 define('DEBUG', true);
+define('LAYOUT', 'blog');
 
 require ROOT."/vendor/autoload.php";
-require_once "../config/config_db.php";
+require ROOT."/config/config_db.php";
+require ROOT.'/app/core/libs/functions.php';
 
 //spl_autoload_register(function ($class){
 //    $file = ROOT.'/'. str_replace('\\', '/', $class).'.php';
@@ -36,6 +38,5 @@ Router::addRoutes('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['pr
 
 Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);
 Router::addRoutes('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
-//dd(Router::getRoutes());
 
 Router::dispatch($query);

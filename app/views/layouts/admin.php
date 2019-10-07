@@ -15,9 +15,20 @@
     <title><?= $meta['title'] ?></title>
 </head>
 <body>
-<h1>Шаблон админки</h1>
 
-<?= $content ?>
+<div class="container">
+
+    <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+
+    <h1>Шаблон админки</h1>
+
+    <?= $content ?>
+</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

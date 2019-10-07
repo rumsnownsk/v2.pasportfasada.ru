@@ -24,7 +24,7 @@ abstract class Controller
      * базовый шаблон
      * @var string
      */
-    public $layout;
+    public $layout = LAYOUT;
 
     /**
      * данные для View
@@ -51,6 +51,7 @@ abstract class Controller
     public function getView()
     {
         $vObj = new View($this->route, $this->layout, $this->view);
+        $this->vars['meta'] = $this->meta;
 //        dd($this->vars);
         $vObj->render($this->vars);
     }
@@ -60,7 +61,6 @@ abstract class Controller
         $this->vars = $data;
 //        dd($this->meta);
 
-        $this->vars['meta'] = $this->meta;
     }
 
     public function setMeta($title='', $description='', $keywords=''){

@@ -11,7 +11,7 @@
                     </a>  July 30, 2014 / 27 Comments
                 </h4>
                 <p><?= $work->address ?></p>
-                <a href="single.html"><span></span>READ MORE</a>
+                <a href="single.html"><span></span><?php __('read_more') ?></a>
             </div>
         </div>
 

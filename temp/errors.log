@@ -264,3 +264,299 @@
 =======================
 [2019-10-07 16:03:51]; Текст: Метод indexAction у контроллера app\controllers\admin\WorkController - не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 84 
 =======================
+[2019-10-07 16:44:05]; Текст: Class 'app\core\language\Language' not found | Файл: /var/www/pf_nsk.ru/app/core/base/Controller.php | Строка: 52 
+=======================
+[2019-10-07 16:45:11]; Текст: Class 'app\core\language\Language' not found | Файл: /var/www/pf_nsk.ru/app/core/base/Controller.php | Строка: 52 
+=======================
+[2019-10-07 16:48:48]; Текст: Too few arguments to function Illuminate\Database\Eloquent\Collection::pluck(), 0 passed in /var/www/pf_nsk.ru/app/core/widgets/language/Language.php on line 24 and at least 1 expected | Файл: /var/www/pf_nsk.ru/vendor/illuminate/database/Eloquent/Collection.php | Строка: 427 
+=======================
+[2019-10-07 16:57:57]; Текст: Call to a member function orderBy() on array | Файл: /var/www/pf_nsk.ru/app/core/widgets/language/Language.php | Строка: 24 
+=======================
+[2019-10-07 16:59:25]; Текст: Method Illuminate\Database\Eloquent\Collection::orderBy does not exist. | Файл: /var/www/pf_nsk.ru/vendor/illuminate/support/Traits/Macroable.php | Строка: 104 
+=======================
+[2019-10-07 17:01:37]; Текст: Too few arguments to function Illuminate\Database\Eloquent\Collection::pluck(), 0 passed in /var/www/pf_nsk.ru/app/core/widgets/language/Language.php on line 24 and at least 1 expected | Файл: /var/www/pf_nsk.ru/vendor/illuminate/database/Eloquent/Collection.php | Строка: 427 
+=======================
+[2019-10-07 17:03:57]; Текст: Too few arguments to function Illuminate\Support\Collection::get(), 0 passed in /var/www/pf_nsk.ru/app/core/widgets/language/Language.php on line 24 and at least 1 expected | Файл: /var/www/pf_nsk.ru/vendor/illuminate/support/Collection.php | Строка: 874 
+=======================
+[2019-10-07 17:11:30]; Текст: syntax error, unexpected '}' | Файл: /var/www/pf_nsk.ru/app/core/widgets/language/Language.php | Строка: 29 
+=======================
+[2019-10-07 17:13:20]; Текст: Too few arguments to function Illuminate\Support\Collection::sortByDesc(), 0 passed in /var/www/pf_nsk.ru/app/core/widgets/language/Language.php on line 24 and at least 1 expected | Файл: /var/www/pf_nsk.ru/vendor/illuminate/support/Collection.php | Строка: 1735 
+=======================
+[2019-10-07 17:13:38]; Текст: Non-static method Illuminate\Database\Eloquent\Model::toArray() should not be called statically | Файл: /var/www/pf_nsk.ru/app/core/widgets/language/Language.php | Строка: 24 
+=======================
+[2019-10-07 17:24:58]; Текст: asort() expects parameter 2 to be integer, string given | Файл: /var/www/pf_nsk.ru/vendor/illuminate/support/Collection.php | Строка: 1716 
+=======================
+[2019-10-07 17:56:32]; Текст: Illegal offset type in unset | Файл: /var/www/pf_nsk.ru/vendor/illuminate/support/Collection.php | Строка: 2100 
+=======================
+[2019-10-07 18:03:10]; Текст: Call to undefined method app\models\Language::pull() | Файл: /var/www/pf_nsk.ru/vendor/illuminate/support/Traits/ForwardsCalls.php | Строка: 50 
+=======================
+[2019-10-07 18:32:33]; Текст: Too few arguments to function app\core\Registry::setProperty(), 1 passed in /var/www/pf_nsk.ru/app/core/base/Controller.php on line 53 and exactly 2 expected | Файл: /var/www/pf_nsk.ru/app/core/Registry.php | Строка: 11 
+=======================
+[2019-10-07 18:39:30]; Текст: Too few arguments to function app\core\widgets\language\Language::__construct(), 0 passed in /var/www/pf_nsk.ru/app/views/inc/sidebar.php on line 1 and exactly 1 expected | Файл: /var/www/pf_nsk.ru/app/core/widgets/language/Language.php | Строка: 14 
+=======================
+[2019-10-07 19:46:04]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 19:46:08]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 19:52:47]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 19:57:01]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 19:57:44]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 19:57:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:01:05]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:01:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:03:57]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:04:00]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:07:19]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:07:25]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:07:30]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:07:44]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:08:41]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:09:43]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:10:00]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:10:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:11:06]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:11:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:11:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:11:17]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:13:20]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:13:40]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:13:43]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:13:52]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:14:54]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:15:04]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:15:08]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 20:59:55]; Текст: Array to string conversion | Файл: /var/www/pf_nsk.ru/app/core/base/Lang.php | Строка: 15 
+=======================
+[2019-10-07 21:40:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 21:41:31]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-07 21:45:46]; Текст: Call to a member function where() on integer | Файл: /var/www/pf_nsk.ru/app/controllers/MainController.php | Строка: 38 
+=======================
+[2019-10-08 12:03:17]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 12:04:46]; Текст: Call to undefined method app\controllers\admin\MainController::getView() | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 81 
+=======================
+[2019-10-08 12:27:31]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:31]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:31]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:31]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:32]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:27:33]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:30:18]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 12:30:31]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:12:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:14:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:14:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:17:53]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:09]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:10]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:19:27]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:15]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:38:16]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 13:54:04]; Текст: Контроллер app\controllers\admin\UserController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 13:55:32]; Текст: Контроллер app\controllers\LogoutController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 14:03:54]; Текст: Контроллер app\controllers\admin\LogoutController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 14:04:52]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:05:12]; Текст: Контроллер app\controllers\LoginController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 14:12:50]; Текст: Контроллер app\controllers\admin\LoginController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 14:13:41]; Текст: Контроллер app\controllers\admin\LoginController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-08 14:13:45]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin/user/login.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-08 14:14:25]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/admin/user/login.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:17:14]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:48]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:49]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:49]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:49]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:50]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:51]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:51]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 14:18:51]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 16:42:54]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-08 18:21:14]; Текст: Метод indexAction у контроллера app\controllers\admin\UserController - не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 84 
+=======================
+[2019-10-08 18:31:24]; Текст: Undefined variable: works | Файл: /var/www/pf_nsk.ru/app/views/admin/user/index.php | Строка: 7 
+=======================
+[2019-10-08 18:42:46]; Текст: Undefined variable: works | Файл: /var/www/pf_nsk.ru/app/views/admin/user/index.php | Строка: 7 
+=======================

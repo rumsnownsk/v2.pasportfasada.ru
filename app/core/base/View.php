@@ -2,6 +2,8 @@
 
 namespace app\core\base;
 
+use app\core\App;
+
 class View
 {
     /**
@@ -66,6 +68,8 @@ class View
      */
     public function render($data)
     {
+        Lang::load(App::$app->getProperty('lang'), $this->route);
+
         if (is_array($data)) {
             extract($data);
         }

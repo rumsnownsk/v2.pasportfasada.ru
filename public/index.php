@@ -1,8 +1,8 @@
 <?php
 use app\core\Router;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
 
 $query = trim($_SERVER['REQUEST_URI'], '/');
 
@@ -14,6 +14,7 @@ define('LIBS', dirname(__DIR__).'/core/libs');
 define('CACHE', dirname(__DIR__).'/temp/cache');
 define('DEBUG', true);
 define('LAYOUT', 'blog');
+define('ADMIN', '/admin');
 
 require ROOT."/vendor/autoload.php";
 require ROOT."/config/config_db.php";
@@ -33,7 +34,7 @@ Router::addRoutes('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'
 Router::addRoutes('^page/(?P<alias>[a-z-]+)$', ['controller'=> 'page', 'action' => 'view']);
 
 // defaults routes
-Router::addRoutes('^admin$', ['controller'=> 'user', 'action'=>'index', 'prefix'=> 'admin']);
+Router::addRoutes('^admin$', ['controller'=> 'main', 'action'=>'index', 'prefix'=> 'admin']);
 Router::addRoutes('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
 
 Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);

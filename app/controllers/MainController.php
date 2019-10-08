@@ -34,13 +34,15 @@ class MainController extends Controller
 //        $this->view = 'index';
 
         $title = 'главная';
-        $total = Work::count();
-
+        $lang_code = App::$app->getProperty('lang')['code'];
+        $total = Work::where('lang_code', $lang_code)->count();
+ 
         $page = isset($_GET['page'])? (int)$_GET['page'] : 1;
         $perPage = 3;
         $pagination = new Pagination($page, $perPage, $total);
         $start = $pagination->getStart();
-        $works = Work::offset($start)->limit($perPage)->get();
+        $works = Work::where('lang_code', $lang_code)->offset($start)->limit($perPage)->get();
+//        dd($works);
 
         $this->set(compact('title', 'works', 'pagination', 'total'));
     }

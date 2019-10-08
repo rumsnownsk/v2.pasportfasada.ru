@@ -2,6 +2,8 @@
 
 namespace app\core\base;
 
+use app\core\App;
+use app\core\widgets\language\Language;
 use app\core\Registry;
 
 abstract class Controller
@@ -46,21 +48,23 @@ abstract class Controller
         $this->route = $route;
         $this->view = $route['action'];
         $this->app = Registry::instance();
+
+        App::$app->setProperty('langs', Language::getLanguages());
+        App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')));
+
+//        dd(App::$app->getProperties());
     }
 
     public function getView()
     {
         $vObj = new View($this->route, $this->layout, $this->view);
         $this->vars['meta'] = $this->meta;
-//        dd($this->vars);
         $vObj->render($this->vars);
     }
 
     public function set($data)
     {
         $this->vars = $data;
-//        dd($this->meta);
-
     }
 
     public function setMeta($title='', $description='', $keywords=''){

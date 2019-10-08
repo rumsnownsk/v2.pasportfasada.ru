@@ -108,6 +108,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 
+<script src="/blog/js/main.js"></script>
+
 </body>
 </html>
 

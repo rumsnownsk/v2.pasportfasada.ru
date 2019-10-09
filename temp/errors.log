@@ -560,3 +560,39 @@
 =======================
 [2019-10-08 18:42:46]; Текст: Undefined variable: works | Файл: /var/www/pf_nsk.ru/app/views/admin/user/index.php | Строка: 7 
 =======================
+[2019-10-09 12:34:30]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
+=======================
+[2019-10-09 13:22:02]; Текст: Контроллер app\controllers\AboutController не найден | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 88 
+=======================
+[2019-10-09 13:24:45]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:24:45]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:24:50]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/index.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:24:54]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:00]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:02]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:06]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:11]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:12]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:12]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:13]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:13]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:13]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:14]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:25:44]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================
+[2019-10-09 13:26:44]; Текст: файл ВИДА <b>/var/www/pf_nsk.ru/app/views/page/view.php</b> - not found  | Файл: /var/www/pf_nsk.ru/app/core/base/View.php | Строка: 89 
+=======================

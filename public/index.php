@@ -1,8 +1,8 @@
 <?php
 use app\core\Router;
 
-//ini_set('display_errors', 1);
-//error_reporting(E_ALL);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 $query = trim($_SERVER['REQUEST_URI'], '/');
 

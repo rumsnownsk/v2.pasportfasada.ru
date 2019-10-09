@@ -8,9 +8,7 @@ class Router
 {
 
     // Массив. В нем содержится массив всех возможных маршрутов
-    protected static $routes = [
-
-    ];
+    protected static $routes = [];
 
     protected static $route = [];       // Текущий маршрут, который запрашивается пользователем
 

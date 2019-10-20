@@ -71,6 +71,9 @@ class Router
             $controller = 'app\controllers\\'.self::$route['prefix'] . self::upperCamelCase(self::$route['controller']);
             if (class_exists($controller)) {
                 $cObj = new $controller(self::$route);
+
+                $cObj->layout = self::$route['controller'];
+
                 $action = self::$route['action'] . "Action";
 
                 if (method_exists($cObj, $action)) {

@@ -5,87 +5,75 @@ namespace app\controllers;
 use app\core\App;
 use app\core\base\Controller;
 use app\core\libs\Pagination;
+use app\models\Category;
 use app\models\Main;
+use app\models\Thanks;
 use app\models\Work;
 
 
 class MainController extends Controller
 {
-//    public $layout = 'main';
-
-//    public function indexAction()
-//    {
-//        $this->view = 'main';
-//
-//        $total = Work::count();
-//        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-//        $perPage = 2;
-//        $pagination = new Pagination($page, $perPage, $total);
-//        $start = $pagination->getStart();
-//        $works = Work::offset($start)->limit($perPage)->get();
-////        dd($start);
-//
-//        $title = 'заголовок';
-//        $this->setMeta('Главная', 'mydesc', 'mykeywords');
-//        $this->set(compact('title', 'works', 'pagination', 'total'));
-//    }
-
-    public function indexAction(){
-//        $this->view = 'index';
-
-        $title = 'главная';
-        $lang_code = App::$app->getProperty('lang')['code'];
-        $total = Work::where('lang_code', $lang_code)->count();
- 
-        $page = isset($_GET['page'])? (int)$_GET['page'] : 1;
-        $perPage = 3;
-        $pagination = new Pagination($page, $perPage, $total);
-        $start = $pagination->getStart();
-        $works = Work::where('lang_code', $lang_code)->offset($start)->limit($perPage)->get();
-//        dd($works);
-
-        $this->set(compact('title', 'works', 'pagination', 'total'));
+    public function __construct($route)
+    {
+//        $currentTime = time();
+//        dd(Work::all()->sortByDesc('finishDate')->slice(0, 2));
+        $this->vars['categories'] = Category::all();
+        $this->vars['recentWorks'] = Work::all()->sortByDesc('finishDate')->slice(0, 2);
+        parent::__construct($route);
     }
 
-
-    public function showAction()
+    public function indexAction()
     {
-        $post = $this->app->main->findOne('posts', 1);
-        App::$app->cache->set('post', $post);
-
-//        $post = $model->findOne('posts', 1);
-        $title = 'Показать одну запись - (showAction)';
-        $this->set(compact('title', 'post'));
+        $title = 'Главная';
+        $this->set(compact('title'));
     }
 
-    public function testSqlAction()
+    public function worksAction()
     {
-        $this->layout = false;
-        $model = new Main;
-        $sql = "SELECT * FROM {$model->table} ORDER BY id DESC";
-        $res = $model->findBySql($sql);
-        dump($res);
+//        $categories = Category::all();
+
+        if (isset($_GET['cat_id']) && array_key_exists($_GET['cat_id'], Category::all()->keyBy('id')->toArray())) {
+
+            $category = Category::find($_GET['cat_id']);
+            $title = $category->name;
+
+            $total = Work::where('category_id', $_GET['cat_id'])->count();
+
+            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            $perPage = 5;
+            $pagination = new Pagination($page, $perPage, $total);
+            $start = $pagination->getStart();
+            $works = Work::where('category_id', $_GET['cat_id'])->offset($start)->limit($perPage)->get();
+
+            Work::checkPhoto($works);
+
+            $this->set(compact('categories', 'title', 'works', 'pagination', 'total', 'category'));
+
+        } else {
+
+            $title = 'Объекты';
+            $this->set(compact('categories', 'title'));
+        };
     }
 
-    public function findLikeAction()
+    public function contactAction()
     {
-        $this->layout = false;
-        $model = new Main();
-        $res = $model->findLike('asd', 'text', 'posts');
-        dump($res);
+
     }
 
-    public function testAction()
+    public function aboutAction()
     {
-        $this->layout = 'default';
 
-        $name = 'MAX';
-        $this->set([
-            'name' => $name,
-            'car' => 'toyota'
-        ]);
+    }
 
-        echo "это экшн - <b style='color: forestgreen;'>testAction</b> у контроллера MainController";
+    public function thanksAction()
+    {
+        $thanks = Thanks::all();
+        $this->set(compact('thanks'));
+    }
+
+    public function mailAction(){
+        dd('yap');
     }
 
     public function ajaxAction()

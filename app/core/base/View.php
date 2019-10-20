@@ -72,6 +72,7 @@ class View
 
         if (is_array($data)) {
             extract($data);
+            $this->data = $data;
         }
 
         $prefix = str_replace("\\", "/", $this->route['prefix']);
@@ -85,9 +86,11 @@ class View
             if (file_exists($file_view)) {
 
                 require $file_view;
+
             } else {
                 throw new \Exception("файл ВИДА <b>$file_view</b> - not found ", 404);
             }
+//            dd(ob_get_contents());
 
             $content = ob_get_contents();
         }

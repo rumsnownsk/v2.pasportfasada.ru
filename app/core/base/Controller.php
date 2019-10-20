@@ -26,7 +26,7 @@ abstract class Controller
      * базовый шаблон
      * @var string
      */
-    public $layout = LAYOUT;
+    public $layout;
 
     /**
      * данные для View
@@ -52,25 +52,25 @@ abstract class Controller
         App::$app->setProperty('langs', Language::getLanguages());
         App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')));
 
-//        dd(App::$app->getProperties());
+        $this->vars['meta'] = $this->meta;
     }
 
     public function getView()
     {
+//        dd($this->vars);
         $vObj = new View($this->route, $this->layout, $this->view);
-        $this->vars['meta'] = $this->meta;
         $vObj->render($this->vars);
     }
 
     public function set($data)
     {
-        $this->vars = $data;
+        $this->vars = array_merge($this->vars, $data);
     }
 
     public function setMeta($title='', $description='', $keywords=''){
-        $this->meta['title'] = $title;
-        $this->meta['description'] = $description;
-        $this->meta['keywords'] = $keywords;
+        $this->vars['meta']['title'] = $title;
+        $this->vars['meta']['description'] = $description;
+        $this->vars['meta']['keywords'] = $keywords;
     }
 
     public function isAjax()

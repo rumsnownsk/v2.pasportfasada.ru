@@ -17,3 +17,11 @@ function h($str){
 function __($key){
     echo \app\core\base\Lang::get($key);
 }
+
+function dateDMY($tUnix){
+    return date("d-m-Y", $tUnix);
+}
+
+function checkPhoto($work){
+    dd($work);
+}

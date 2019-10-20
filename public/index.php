@@ -1,37 +1,38 @@
 <?php
 use app\core\Router;
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
 
 $query = trim($_SERVER['REQUEST_URI'], '/');
 
 define('WWW', __DIR__);
-//define('CORE', dirname(__DIR__).'/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__).'/app');
 define('LIBS', dirname(__DIR__).'/core/libs');
 define('CACHE', dirname(__DIR__).'/temp/cache');
 define('DEBUG', true);
-define('LAYOUT', 'blog');
 define('ADMIN', '/admin');
+define('IMAGES', dirname(__DIR__).'/public/images');
 
 require ROOT."/vendor/autoload.php";
 require ROOT."/config/config_db.php";
 require ROOT.'/app/core/libs/functions.php';
 
-//spl_autoload_register(function ($class){
-//    $file = ROOT.'/'. str_replace('\\', '/', $class).'.php';
-//
-//    if (is_file($file)){
-//        require_once $file;
-//    }
-//});
-
 new \app\core\App();
 
-Router::addRoutes('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=> 'page']);
+//Router::addRoutes('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=> 'page']);
 Router::addRoutes('^page/(?P<alias>[a-z-]+)$', ['controller'=> 'page', 'action' => 'view']);
+
+Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
+//Router::addRoutes('^works/(?<alias>[a-z-])$', ['controller'=> 'main', 'action' => 'works']);
+Router::addRoutes('^works$', ['controller'=> 'main', 'action' => 'works']);
+Router::addRoutes('^thanks$', ['controller'=> 'main', 'action' => 'thanks']);
+Router::addRoutes('^law$', ['controller'=> 'main', 'action' => 'law']);
+Router::addRoutes('^contact$', ['controller'=> 'main', 'action' => 'contact']);
+Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
+Router::addRoutes('^map$', ['controller'=> 'main', 'action' => 'map']);
+Router::addRoutes('^mail$', ['controller'=> 'main', 'action' => 'mail']);
 
 // defaults routes
 Router::addRoutes('^admin$', ['controller'=> 'main', 'action'=>'index', 'prefix'=> 'admin']);

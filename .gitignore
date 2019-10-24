@@ -1,6 +1,8 @@
+config
 vendor
 views
 temp
 z_trash
 .idea
 .git
+

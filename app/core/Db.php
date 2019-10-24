@@ -2,8 +2,7 @@
 
 namespace app\core;
 
-use PDO;
-use R;
+//use PDO;
 
 class Db
 {

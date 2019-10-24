@@ -4,11 +4,15 @@ namespace app\controllers;
 
 use app\core\App;
 use app\core\base\Controller;
+use app\core\libs\Mail;
 use app\core\libs\Pagination;
 use app\models\Category;
 use app\models\Main;
 use app\models\Thanks;
 use app\models\Work;
+use Swift_Mailer;
+use Swift_Message;
+use Swift_SmtpTransport;
 
 
 class MainController extends Controller
@@ -72,8 +76,37 @@ class MainController extends Controller
         $this->set(compact('thanks'));
     }
 
-    public function mailAction(){
-        dd('yap');
+    public function mailAction()
+    {
+        if ($this->isAjax()){
+
+            $data = [
+                'subject' => 'Прозьба перезвонить',
+//                'from' => '',
+                'to' => 'stevennsk@ngs.ru',
+                'body' => "Меня звать ".$_POST['name']
+                    .". Мой номер: ".$_POST['phone']
+                    .". Пожалуйста, перезвоните мне!",
+            ];
+
+            $mail = new Mail($data);
+            $mail->run();
+
+            exit;
+
+        }
+        echo 'not sent'; exit;
+//        $recepient = "vashapochta@gmail.com"; /* почта получателя */
+//        $sitename = "vashsaite.ru"; /* сайт с которого пришло письмо */
+//
+//        $name = trim($_POST["name"]);
+//        $phone = trim($_POST["phone"]);
+//        $date = trim($_POST["date"]);
+//
+//        $pagetitle = "Заявка с формы обратного звонка на сайте \"$sitename\"";
+//        $message = "Имя: $name \nТелефон: $phone \nДата звонка: $date";
+//        mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+//        dd('yap');
     }
 
     public function ajaxAction()
@@ -81,14 +114,14 @@ class MainController extends Controller
 //        $this->layout = false;
 
         if ($this->isAjax()) {
-            $model = new Main();
+//            $model = new Main();
 //            $data = [
 //                'answer' => 'ответ с сервера',
 //                'code' => 200
 //            ];
 //            echo json_encode($data);
-            $post = R::findOne('posts', "id = {$_POST['id']}");
-            $this->loadView('_test', compact('post'));
+//            $post = R::findOne('posts', "id = {$_POST['id']}");
+//            $this->loadView('_test', compact('post'));
             exit;
         }
         echo '404';

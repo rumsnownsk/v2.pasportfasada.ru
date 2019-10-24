@@ -49,8 +49,8 @@ abstract class Controller
         $this->view = $route['action'];
         $this->app = Registry::instance();
 
-        App::$app->setProperty('langs', Language::getLanguages());
-        App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')));
+//        App::$app->setProperty('langs', Language::getLanguages());
+//        App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')));
 
         $this->vars['meta'] = $this->meta;
     }

@@ -16,7 +16,7 @@ define('ADMIN', '/admin');
 define('IMAGES', dirname(__DIR__).'/public/images');
 
 require ROOT."/vendor/autoload.php";
-require ROOT."/config/config_db.php";
+require ROOT."/config/set_components.php";
 require ROOT.'/app/core/libs/functions.php';
 
 new \app\core\App();

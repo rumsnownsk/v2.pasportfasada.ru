@@ -68,7 +68,7 @@ class View
      */
     public function render($data)
     {
-        Lang::load(App::$app->getProperty('lang'), $this->route);
+//        Lang::load(App::$app->getProperty('lang'), $this->route);
 
         if (is_array($data)) {
             extract($data);

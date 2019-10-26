@@ -3,8 +3,8 @@
 return [
     'settings' => [],
     'mail' => [
-        'login' => '', // your login from email
-        'pass' => '', // your password from email
+        'login' => 'semenovra-es@yandex.ru', // your login from email
+        'pass' => 'mJ7-qyg-Jz9-7q7', // your password from email
         'mailServer' => 'smtp.yandex.ru',
         'port' => 465,
         'encryption' => 'SSL',

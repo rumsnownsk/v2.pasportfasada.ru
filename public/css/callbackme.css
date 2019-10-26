@@ -120,7 +120,7 @@ p.zakaz {
     display: -ms-flexbox;
     display: -ms-flexbox;
     display: flex;
-    width: 314px;
+    width: auto;
 }
 
 .success.visible p {

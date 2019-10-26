@@ -8,7 +8,7 @@ $(function () {
         overflowY: 'auto',
         closeBtnInside: true,
         midClick: true,
-        removalDelay: 500,
+        // removalDelay: 500,
         mainClass: 'my-mfp-slide-bottom'
     });
 
@@ -68,5 +68,29 @@ $(function () {
             $(this).addClass("active")
         }
     });
+
+    $(document).ready(function () {
+        $('.gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            closeOnContentClick:false,
+            mainClass:'mfp-with-zoom mfp-img-mobile',
+            image: {
+                verticalFit: false,
+                cursor: 'mfp-zoom-out-cur',
+                titleSrc: false
+            },
+            gallery: {
+                enabled: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300, // don't foget to change the duration also in CSS
+                opener: function(element) {
+                    return element.find('img');
+                }
+            }
+        })
+    })
 
 });

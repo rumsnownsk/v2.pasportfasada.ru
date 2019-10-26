@@ -85,7 +85,7 @@
 
                     <div id="mobileMenu">
                         <ul class="menu">
-                            <li class="menu__item active"><a href="/">ГЛАВНАЯ</a></li>
+                            <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>
                             <li class="menu__item"><a href="/works">ОБЪЕКТЫ</a></li>
                             <li class="menu__item"><a href="/thanks">БЛАГОДАРНОСТИ</a></li>
                             <li class="menu__item"><a href="/law">ЗАКОН</a></li>
@@ -94,7 +94,7 @@
                             <li class="menu__item"><a href="/map">КАРТА</a></li>
                         </ul>
                         <div class="recall">
-                            <a href="#callback" class="popup-callmeback">Обратный звонок</a>
+                            <a href="#callback" class="popup-callbackme">Обратный звонок</a>
                         </div>
                     </div>
 
@@ -127,7 +127,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /RECALL -->
 
                 </nav>
 

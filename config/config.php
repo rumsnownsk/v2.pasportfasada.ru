@@ -1,15 +1,10 @@
 <?php
 
 return [
-    'components' => [
-        'cache' => 'app\core\libs\Cache',
-//        'test' => 'app\core\libs\Test',
-        'main' => 'app\models\Main'
-    ],
     'settings' => [],
     'mail' => [
-        'login' => 'semenovra-es@ya.ru',
-        'pass' => 'vit@inm0tum',
+        'login' => '',
+        'pass' => '',
         'mailServer' => 'smtp.yandex.ru',
         'port' => 465,
         'encryption' => 'SSL',

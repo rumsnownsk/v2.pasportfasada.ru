@@ -1,5 +1,6 @@
 $(function () {
-    $('.popup-with-move-anim').magnificPopup({
+    // Окошко Обратный звонок
+    $('.popup-callmeback').magnificPopup({
         type: 'inline',
         preloader: false,
         fixedContentPos: false,
@@ -10,6 +11,12 @@ $(function () {
         removalDelay: 500,
         mainClass: 'my-mfp-slide-bottom'
     });
+
+    // Открыть Постановление
+    $(".popup-solution").magnificPopup({
+        type:'inline',
+        midClick:true,
+    })
 
     $(".callback").submit(function() {
         var th = $(this);
@@ -52,5 +59,16 @@ $(function () {
     });
 
     $("#phone").mask("+7 (999) 999-99-99");
+
+
+    // Подсветка пунктов меню
+    var pathname_url = window.location.pathname;
+
+    $("nav .menu__item").each(function () {
+        var link = $(this).find("a").attr("href");
+        if (pathname_url == link) {
+            $(this).addClass("active")
+        }
+    });
 
 });

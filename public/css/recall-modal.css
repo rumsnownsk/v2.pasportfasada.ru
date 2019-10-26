@@ -118,6 +118,7 @@ p.zakaz {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
+    display: -ms-flexbox;
     display: flex;
     width: 314px;
 }

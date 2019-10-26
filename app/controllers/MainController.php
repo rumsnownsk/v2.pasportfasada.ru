@@ -19,8 +19,6 @@ class MainController extends Controller
 {
     public function __construct($route)
     {
-//        $currentTime = time();
-//        dd(Work::all()->sortByDesc('finishDate')->slice(0, 2));
         $this->vars['categories'] = Category::all();
         $this->vars['recentWorks'] = Work::all()->sortByDesc('finishDate')->slice(0, 2);
         parent::__construct($route);
@@ -60,6 +58,17 @@ class MainController extends Controller
         };
     }
 
+
+    public function thanksAction()
+    {
+        $thanks = Thanks::all();
+        $this->set(compact('thanks'));
+    }
+
+    public function lawAction(){
+
+    }
+
     public function contactAction()
     {
 
@@ -70,10 +79,8 @@ class MainController extends Controller
 
     }
 
-    public function thanksAction()
-    {
-        $thanks = Thanks::all();
-        $this->set(compact('thanks'));
+    public function mapAction(){
+
     }
 
     public function mailAction()
@@ -82,7 +89,6 @@ class MainController extends Controller
 
             $data = [
                 'subject' => 'Прозьба перезвонить',
-//                'from' => '',
                 'to' => 'stevennsk@ngs.ru',
                 'body' => "Меня звать ".$_POST['name']
                     .". Мой номер: ".$_POST['phone']
@@ -91,22 +97,9 @@ class MainController extends Controller
 
             $mail = new Mail($data);
             $mail->run();
-
             exit;
-
         }
-        echo 'not sent'; exit;
-//        $recepient = "vashapochta@gmail.com"; /* почта получателя */
-//        $sitename = "vashsaite.ru"; /* сайт с которого пришло письмо */
-//
-//        $name = trim($_POST["name"]);
-//        $phone = trim($_POST["phone"]);
-//        $date = trim($_POST["date"]);
-//
-//        $pagetitle = "Заявка с формы обратного звонка на сайте \"$sitename\"";
-//        $message = "Имя: $name \nТелефон: $phone \nДата звонка: $date";
-//        mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
-//        dd('yap');
+        redirect();
     }
 
     public function ajaxAction()

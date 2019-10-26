@@ -3,8 +3,8 @@
 return [
     'settings' => [],
     'mail' => [
-        'login' => '',
-        'pass' => '',
+        'login' => '', // your login from email
+        'pass' => '', // your password from email
         'mailServer' => 'smtp.yandex.ru',
         'port' => 465,
         'encryption' => 'SSL',

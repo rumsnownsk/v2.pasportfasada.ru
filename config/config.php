@@ -8,8 +8,8 @@ return [
     ],
     'settings' => [],
     'mail' => [
-        'login' => '', // your login from email
-        'pass' => '', // your password from email
+        'login' => 'asdfds', // your login from email
+        'pass' => 'asdfasdf', // your password from email
         'mailServer' => 'smtp.yandex.ru',
         'port' => 465,
         'encryption' => 'SSL',

@@ -86,7 +86,7 @@ class MainController extends Controller
     public function mailAction()
     {
         if ($this->isAjax()){
-
+//        echo $_POST['name'];exit;
             $data = [
                 'subject' => 'Прозьба перезвонить',
                 'to' => 'stevennsk@ngs.ru',

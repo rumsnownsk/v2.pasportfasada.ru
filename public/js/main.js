@@ -1,6 +1,6 @@
 $(function () {
     // Окошко Обратный звонок
-    $('.popup-callmeback').magnificPopup({
+    $('.popup-callbackme').magnificPopup({
         type: 'inline',
         preloader: false,
         fixedContentPos: false,
@@ -16,7 +16,7 @@ $(function () {
     $(".popup-solution").magnificPopup({
         type:'inline',
         midClick:true,
-    })
+    });
 
     $(".callback").submit(function() {
         var th = $(this);
@@ -25,14 +25,12 @@ $(function () {
                 url: "/mail",
                 data: th.serialize()
             }).done(function () {
-                // console.log(th)
                 $(".success").addClass("visible");
                 setTimeout(function() {
                     th.trigger("reset");
                     $(".success").removeClass("visible");
                     $.magnificPopup.close();
                 }, 2000);
-            // dаta: {id: 2}
         });
         return false;
     });

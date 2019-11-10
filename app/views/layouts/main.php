@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link href="/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
-    <!--    <link href="/css/style.css" rel='stylesheet' type='text/css' />-->
+    <!--    <link href="/css/jquery.mCustomScrollbar.css" rel='stylesheet' type='text/css' />-->
     <link href="/css/font-awesome.min.css" rel='stylesheet' type='text/css'/>
     <link href="/css/magnific-popup.css" rel='stylesheet' type='text/css'/>
     <link href="/css/callbackme.css" rel='stylesheet' type='text/css'/>
@@ -14,27 +14,26 @@
     <title><?= $meta['title'] ?></title>
 
     <!----webfonts---->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet'
+    <link href='https://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet'
           type='text/css'>
     <!----//webfonts---->
 
 
 </head>
 <body>
-
 <!---header---->
 <header id="header" class="header">
     <div class="container">
         <div class="row">
             <div class="col-lg-2">
-                <img src="/images/logo.jpg" class="logo" title="Паспорт фасада новосибирск"/>
+                <img src="/images/logo.png" class="logo" title="Паспорт фасада новосибирск"/>
             </div>
 
             <div class="col-lg-7">
                 <div class="mainHeader">
                     <h1 class="">паспорт фасадов</h1>
-                    <p>Разработка. Согласование. Получение документов </p>
+                    <p>Разработка. Согласование. Получение&nbsp;документов</p>
                 </div>
             </div>
 
@@ -58,7 +57,8 @@
                     <div id="menuShow">
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
-                    <div id="hideMenu">
+                    <!--                    <div id="hideMenu">     -->
+                    <div id="classicMenu">
                         <ul class="menu">
                             <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>
                             <li class="menu__item menu-item-has-children">
@@ -78,60 +78,29 @@
                             <li class="menu__item"><a href="/about">О&nbsp;НАС</a></li>
                             <li class="menu__item"><a href="/map">КАРТА</a></li>
                         </ul>
-                        <div class="recall">
-                            <a href="#callback" class="popup-callbackme">Обратный звонок</a>
-                        </div>
+
                     </div>
 
-                    <div id="mobileMenu">
-                        <ul class="menu">
-                            <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>
-                            <li class="menu__item"><a href="/works">ОБЪЕКТЫ</a></li>
-                            <li class="menu__item"><a href="/thanks">БЛАГОДАРНОСТИ</a></li>
-                            <li class="menu__item"><a href="/law">ЗАКОН</a></li>
-                            <li class="menu__item"><a href="/contact">КОНТАКТЫ</a></li>
-                            <li class="menu__item"><a href="/about">О НАС</a></li>
-                            <li class="menu__item"><a href="/map">КАРТА</a></li>
-                        </ul>
-                        <div class="recall">
-                            <a href="#callback" class="popup-callbackme">Обратный звонок</a>
-                        </div>
-                    </div>
+                    <!--                    <div id="mobileMenu">-->
+                    <!--                        <ul class="menu">-->
+                    <!--                            <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>-->
+                    <!--                            <li class="menu__item"><a href="/works">ОБЪЕКТЫ</a></li>-->
+                    <!--                            <li class="menu__item"><a href="/thanks">БЛАГОДАРНОСТИ</a></li>-->
+                    <!--                            <li class="menu__item"><a href="/law">ЗАКОН</a></li>-->
+                    <!--                            <li class="menu__item"><a href="/contact">КОНТАКТЫ</a></li>-->
+                    <!--                            <li class="menu__item"><a href="/about">О&nbsp;НАС</a></li>-->
+                    <!--                            <li class="menu__item"><a href="/map">КАРТА</a></li>-->
+                    <!--                        </ul>-->
+                    <!--                        <div class="recall">-->
+                    <!--                            <a href="#callback" class="popup-callbackme">Обратный звонок</a>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
-
-
-                    <div class="hidden">
-                        <div class="mfp-container mfp-inline-holder">
-                            <div class="mfp-content">
-                                <form class="popup-form callback zoom-anim-dialog" id="callback">
-                                    <div class="success"><p><span class="sencs">Спасибо за заявку!</span><br>
-                                            Наши менеджеры свяжутся с вами в ближайшее время</p>
-                                    </div>
-
-                                    <p class="zakaz">Обратный звонок</p>
-                                    <label>
-                                        <span>Ваше имя:</span>
-                                        <input type="text" name="name" placeholder="Введите ваше имя..."
-                                               required="required">
-                                    </label>
-                                    <label>
-                                        <span>Ваше телефон:</span>
-                                        <input id="phone" type="text"
-                                               name="phone" placeholder="Введите ваш телефон..."
-                                               required="required">
-                                    </label>
-                                    <div class="button-center">
-                                        <button class="button">Отправить</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
 
                 </nav>
 
+            </div>
         </div>
-    </div>
 </header>
 <!--/header-->
 <section id="content" class="content">
@@ -163,13 +132,48 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <!--                In this place must be SIDEBAR-->
-                <!--                --><?php //$this->getPart('inc') ?>
-                <?php $this->getPart('inc/sidebar') ?>
+<!--                <div id="currentTime"></div>-->
+
+                <div class="recall">
+                    <a href="#callback" class="popup-callbackme">Обратный звонок</a>
+                </div>
+
+                <div class="hidden">
+                    <div class="mfp-container mfp-inline-holder">
+                        <div class="mfp-content">
+                            <form class="popup-form callback zoom-anim-dialog" id="callback">
+                                <div class="success"><p><span class="sencs">Спасибо за заявку!</span><br>
+                                        Наши менеджеры свяжутся с вами в ближайшее время</p>
+                                </div>
+
+                                <p class="zakaz">Обратный звонок</p>
+                                <label>
+                                    <span>Ваше имя:</span>
+                                    <input type="text" name="name" placeholder="Введите ваше имя..."
+                                           required="required">
+                                </label>
+                                <label>
+                                    <span>Ваше телефон:</span>
+                                    <input id="phone" type="text"
+                                           name="phone" placeholder="Введите ваш телефон..."
+                                           required="required">
+                                </label>
+                                <div class="button-center">
+                                    <button class="button">Отправить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="include">
+                    <?php $this->getPart('inc/sidebar') ?>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 <footer id="footer" class="footer">
     <div class="container">
         <div class="row">
@@ -182,12 +186,12 @@
 <!---->
 
 <!--script-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<!--    <script type="text/javascript" src="/js/move-top.js"></script>-->
-<!--    <script type="text/javascript" src="/js/easing.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--<script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>-->
 <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="/js/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+
 <!---->
 <!--<script type="text/javascript" src="/js/jquery.maskedinput.min.js"></script>-->
 

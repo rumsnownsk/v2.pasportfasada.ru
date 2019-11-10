@@ -24,7 +24,7 @@ class View
      * текущий шаблон
      * @var string
      */
-    public $layout = 'default';
+    public $layout = 'main';
 
     public $scripts;
 

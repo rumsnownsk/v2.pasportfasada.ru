@@ -28,26 +28,68 @@
     </div>
 </div>
 <!-- Numbers -->
-<div class="ourResult">
-    <h1 class="main__title_content h1_header">Результаты работ</h1>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="ourResult__item layer">
-                <h3 class="ourResult__header">10</h3>
-                <p>Выполненных работ</p>
+<div class="statistic">
+    <h1 class="statistic__title h1_header">Результаты работ</h1>
+    <div class="d-flex result">
+        <div class="result__item">
+            <div class="result__icon">
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+<!--                <i class="fa fa-folder-o" aria-hidden="true"></i>-->
             </div>
+            <div class="result__desc">
+                <h3 class="result__header">140</h3>
+                <p>выполненных работ</p>
+            </div>
+
         </div>
-        <div class="col-md-4">
-            <div class="ourResult__item layer">
+        <div class="result__item">
+            <div class="result__icon">
+                <i class="fa fa-users" aria-hidden="true"></i>
+            </div>
+            <div class="result__desc">
                 <h3 class="ourResult__header">22</h3>
-                <p>Клиента</p>
+                <p>клиента</p>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="ourResult__item layer">
-                <h3 class="ourResult__header">33</h3>
-                <p>Благодарности</p>
+        <div class="result__item">
+            <div class="result__icon">
+                <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </div>
+            <div class="result__desc">
+                <h3 class="ourResult__header">33</h3>
+                <p>благодарности</p>
+            </div>
+
+        </div>
+        <div class="result__item">
+            <div class="result__icon">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <div class="result__desc">
+                <h3 class="ourResult__header">100%</h3>
+                <p>положительные заключения экспертизы</p>
+            </div>
+
+        </div>
+        <div class="result__item">
+            <div class="result__icon">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+            </div>
+            <div class="result__desc">
+                <h3 class="ourResult__header">12 лет</h3>
+                <p>на рынке услуг</p>
+            </div>
+
+        </div>
+        <div class="result__item">
+            <div class="result__icon">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            </div>
+            <div class="result__desc">
+                <h3 class="ourResult__header">100%</h3>
+                <p>положительные заключения экспертизы</p>
+            </div>
+
         </div>
     </div>
 </div>

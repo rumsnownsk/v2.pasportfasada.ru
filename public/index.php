@@ -22,7 +22,7 @@ require ROOT.'/app/core/libs/functions.php';
 new \app\core\App();
 
 //Router::addRoutes('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller'=> 'page']);
-Router::addRoutes('^page/(?P<alias>[a-z-]+)$', ['controller'=> 'page', 'action' => 'view']);
+//Router::addRoutes('^page/(?P<alias>[a-z-]+)$', ['controller'=> 'page', 'action' => 'view']);
 
 Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
 //Router::addRoutes('^works/(?<alias>[a-z-])$', ['controller'=> 'main', 'action' => 'works']);
@@ -35,7 +35,8 @@ Router::addRoutes('^map$', ['controller'=> 'main', 'action' => 'map']);
 Router::addRoutes('^mail$', ['controller'=> 'main', 'action' => 'mail']);
 
 // defaults routes
-Router::addRoutes('^admin$', ['controller'=> 'main', 'action'=>'index', 'prefix'=> 'admin']);
+//Router::addRoutes('^admin$', ['controller'=> 'main', 'action'=>'index', 'prefix'=> 'admin']);
+Router::addRoutes('^admin$', ['controller'=> 'work', 'action'=>'index', 'prefix'=> 'admin']);
 Router::addRoutes('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
 
 Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);

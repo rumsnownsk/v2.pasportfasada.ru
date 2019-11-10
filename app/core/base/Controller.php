@@ -3,7 +3,6 @@
 namespace app\core\base;
 
 use app\core\App;
-use app\core\widgets\language\Language;
 use app\core\Registry;
 
 abstract class Controller

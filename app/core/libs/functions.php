@@ -1,7 +1,8 @@
 <?php
 
-function redirect($http = false){
-    if ($http){
+function redirect($http = false)
+{
+    if ($http) {
         $redirect = $http;
     } else {
         $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
@@ -10,18 +11,36 @@ function redirect($http = false){
     exit;
 }
 
-function h($str){
+function h($str)
+{
     return htmlspecialchars($str, ENT_QUOTES);
 }
 
-function __($key){
-    echo \app\core\base\Lang::get($key);
-}
-
-function dateDMY($tUnix){
+function dateDMY($tUnix)
+{
     return date("d-m-Y", $tUnix);
 }
 
-function checkPhoto($work){
-    dd($work);
+function oldData($param)
+{
+    return isset($_SESSION['oldData']) ? $_SESSION['oldData'][$param] : "";
+}
+
+function oldSelect($objName, $field)
+{
+    if (isset($_SESSION['oldData'][$field]) and $_SESSION['oldData'][$field] == $objName->id) {
+        return "selected";
+    } else return "";
+}
+
+function oldChecked($field)
+{
+    if (isset($_SESSION['oldData'][$field]) and $_SESSION['oldData'][$field] == 'on') {
+        return "checked";
+    } else return "";
+}
+
+function oldDate($field)
+{
+    return isset($_SESSION['oldData'][$field]) ? $_SESSION['oldData'][$field] : date('Y-m-d');
 }

@@ -257,10 +257,6 @@ table.table {
     text-indent: 10px;
 }
 
-.crud .form-group label{
-
-}
-
 .crud .form-group__label{
     font-size: 20px;
     width: 20%;
@@ -268,9 +264,6 @@ table.table {
     line-height: 1em;
 }
 
-/*.crud .form-group__label label{*/
-    /*margin: 0;*/
-/*}*/
 
 .crud .form-group__data{
     width: 80%;
@@ -284,6 +277,31 @@ table.table {
     width: 25px
 }
 
+.crud .form-group__correct img{
+    display: block;
+    padding-bottom: 10px;
+    width: 300px;
+}
+
+.crud .form-group__correct{
+    height: auto;
+    padding-bottom: 20px;
+}
+
+/*.crud .currentImage{*/
+    /*height: 200px;*/
+/*}*/
+
+/*.crud .currentImage p{*/
+    /*font-size: 20px;*/
+    /*width: 20%;*/
+    /*min-width: 250px;*/
+    /*line-height: 1em;*/
+/*}*/
+
+/*.crud .currentImage img{*/
+    /*height: 100%;*/
+/*}*/
 /*      CONTENT :: END     */
 
 

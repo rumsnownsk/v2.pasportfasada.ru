@@ -35,7 +35,7 @@
                 <td><?= $work->getPublishInfo() ?></td>
                 <td><?= $work->getFinishDate() ?></td>
                 <td class="indexTable">
-                    <a href="#" class="btn btn-warning btn-sm">
+                    <a href="/admin/work/edit?id=<?=$work->id?>" class="btn btn-warning btn-sm">
                         <i class="fa fa-pencil"></i>
                     </a>
                 </td>

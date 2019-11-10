@@ -1,12 +1,14 @@
 <?php
 
-function redirect($http = false)
+function redirect( $http = false)
 {
     if ($http) {
         $redirect = $http;
     } else {
         $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
     }
+//    dump(phpinfo());
+//    dd($http, $redirect);
     header("Location: $redirect");
     exit;
 }
@@ -21,26 +23,36 @@ function dateDMY($tUnix)
     return date("d-m-Y", $tUnix);
 }
 
-function oldData($param)
+function oldInfo($param)
 {
+
     return isset($_SESSION['oldData']) ? $_SESSION['oldData'][$param] : "";
 }
 
-function oldSelect($objName, $field)
+function oldSelect($objName, $field, $editObject = false)
 {
+    if ($editObject && $editObject->$field == $objName->id) {
+        return "selected";
+    }
     if (isset($_SESSION['oldData'][$field]) and $_SESSION['oldData'][$field] == $objName->id) {
         return "selected";
     } else return "";
 }
 
-function oldChecked($field)
+function oldDate($field, $editObject = false)
 {
+    if ($editObject) {
+        return date('Y-m-d', $editObject->timeCreate);
+    }
+    return isset($_SESSION['oldData'][$field]) ? $_SESSION['oldData'][$field] : date('Y-m-d');
+}
+
+function oldChecked($field, $editObject = false)
+{
+    if ($editObject) {
+        return $editObject->publish == 1 ? "checked" : "";
+    }
     if (isset($_SESSION['oldData'][$field]) and $_SESSION['oldData'][$field] == 'on') {
         return "checked";
     } else return "";
-}
-
-function oldDate($field)
-{
-    return isset($_SESSION['oldData'][$field]) ? $_SESSION['oldData'][$field] : date('Y-m-d');
 }

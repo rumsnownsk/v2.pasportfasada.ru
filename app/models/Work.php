@@ -12,7 +12,7 @@ class Work extends Model
     use HelpersMethods;
 
     protected $fillable = [
-        'photo',
+        'photoName',
         'title',
         'category_id',
         'stage_id',
@@ -33,37 +33,60 @@ class Work extends Model
     protected $table = 'works';
     public $errors = [];
 
-    public static $photoName;
+    public $imageName;
 
     public function add($fields){
-        $work = new static;
-        $fields['photoName'] = $this->uploadPhoto();
+        $fields['photoName'] = $this->setImageName();
         $fields['category_id'] = (integer)$fields['category_id'];
         $fields['stage_id'] = (integer)$fields['stage_id'];
         $fields['publish'] = isset($fields['publish']) ? 1 : 0;
         $fields['timeCreate'] = (integer)strtotime($fields['timeCreate']);
 
-//        dd($work->fill($fields));
-
+        $work = new static;
         $work->fill($fields);
-        $work->save();
+        if ($work->save()){
+            $this->uploadPhoto();
+        };
     }
 
-//    public function toggle($v){
-//        $fields['publish'] == 'on' ? 1 : 0
-//        if ($v == 'on'){
-//            return 1
-//        }
-//    }
+    public function edit($fields){
+        $fields['photoName'] = $this->setImageName();
+
+        $fields['publish'] = isset($fields['publish']) ? 1 : 0;
+        $fields['category_id'] = (integer)$fields['category_id'];
+        $fields['stage_id'] = (integer)$fields['stage_id'];
+        $fields['timeCreate'] = (integer)strtotime($fields['timeCreate']);
+
+        $this->fill($fields);
+        if ($this->save()) {
+            $this->uploadPhoto();
+        };
+    }
+
+    public function setImageName(){
+//        dump()
+        if ($_FILES['photo']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['photo']['tmp_name'])){
+//            dd($_FILES['photo']);
+            $filePath  = $_FILES['photo']['tmp_name'];
+
+            $image = getimagesize($filePath);
+            $name = $this->randomString();
+            $extension = image_type_to_extension($image[2]);
+
+            $this->imageName = $name.$extension;
+        } else {
+            $this->imageName = $_POST['photoName'] ? : "no-photo.jpg";
+
+        }
+        return $this->imageName;
+    }
 
     public function validate(){
         $v = new Validator($_POST);
         $v->rules($this->rules);
 
-//        dump($v->validate());
-//        dump($this->validateImage());
-//        dd($v->validate() && $this->validateImage());
         if ($v->validate() && $this->validateImage()){
+//            dump($v->validate());
             return true;
         } else {
             $this->errors = array_merge($this->errors, $v->errors());
@@ -72,10 +95,18 @@ class Work extends Model
     }
 
     public function validateImage(){
+        if (empty($_FILES['photo']['tmp_name'])){
+            if (isset($_POST['photoName']) && !empty($_POST['photoName'])){
+//            dump("Название картинки есть");
+                return true;
+            }
+        }
+
         $filePath  = $_FILES['photo']['tmp_name'];
         $errorCode = $_FILES['photo']['error'];
 
         if ($errorCode !== UPLOAD_ERR_OK || !is_uploaded_file($filePath)) {
+//            dump($errorCode, $filePath);
             // Массив с названиями ошибок
             $errorMessages = [
                 UPLOAD_ERR_INI_SIZE   => 'Размер файла превысил значение upload_max_filesize в конфигурации PHP.',
@@ -101,24 +132,14 @@ class Work extends Model
         $fi = finfo_open(FILEINFO_MIME_TYPE);
         $mime = (string)finfo_file($fi, $filePath);
         if (strpos($mime, 'image') === false){
-            $this->errors['pic'][] = 'Выбранный файл должен быть картинкой jpeg/jpg/png';
+            $this->errors['pic'][] = 'Выбр!!!анный файл должен быть картинкой jpeg/jpg/png';
             return false;
         }
         return true;
     }
 
     public function uploadPhoto(){
-        $filePath  = $_FILES['photo']['tmp_name'];
-
-        $image = getimagesize($filePath);
-        $name = $this->randomString();
-        $extension = image_type_to_extension($image[2]);
-        if (!move_uploaded_file($filePath, IMAGES.'/works/'.$name.$extension)){
-//            $this->errors['pic'][0] = 'При записи изображения на диск произошла ошибка.';
-            return false;
-        }
-
-        return $name.$extension;
+        move_uploaded_file($_FILES['photo']['tmp_name'], IMAGES.'/works/'.$this->imageName);
     }
 
     public static function checkPhoto($works)

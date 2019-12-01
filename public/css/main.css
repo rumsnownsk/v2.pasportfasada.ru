@@ -47,7 +47,7 @@ h1.h1_header {
     margin-bottom: 25px;
 }
 
-.my-d-flex{
+.my-d-flex {
     display: flex;
 }
 
@@ -56,6 +56,30 @@ h1.h1_header {
     margin: auto;
     width: 80%;
 
+}
+
+.adminPanel {
+    display: inline-flex;
+    background-color: #3c8dbc;
+    min-height: 40px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.adminPanel p {
+    color: #fff3cd;
+}
+
+.adminPanel a {
+    padding: .375rem .75rem;
+    height: 100%;
+    text-decoration: none;
+    margin: 0 40px;
+    color: #fff3cd;
+    display: flex;
+    align-items: center;
+    background-color: cornflowerblue;
+    border-radius: 0;
 }
 
 .header {
@@ -109,9 +133,9 @@ h1.h1_header {
 
 .menu {
     display: flex;
-    /*width: 100%;*/
+    width: 100%;
     list-style: none;
-    justify-content: start;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -263,28 +287,25 @@ nav {
 }
 
 /*#mobileMenu {*/
-    /*display: none;*/
-    /*width: 100%;*/
-    /*float: right;*/
+/*display: none;*/
+/*width: 100%;*/
+/*float: right;*/
 /*}*/
 
 /*#mobileMenu {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
+/*display: flex;*/
+/*flex-direction: column;*/
 /*}*/
 
 /* END styles for LAYOUT */
-
 
 #content {
     flex: 1 0 auto;
 }
 
-
-
 /* START styles for SIDEBAR page */
 
-#currentTime{
+#currentTime {
     text-align: center;
 }
 
@@ -334,7 +355,7 @@ nav {
     padding: 0.5em 0.5em 0;
 }
 
-.recent p{
+.recent p {
     font-size: 0.8em;
     margin: auto;
 }
@@ -362,16 +383,16 @@ nav {
     text-align: justify;
 }
 
-.result{
+.result {
     flex-wrap: wrap;
 }
 
-.result__icon{
+.result__icon {
     width: 25%;
     text-align: center;
 }
 
-.result__icon i{
+.result__icon i {
     font-size: 30px;
 }
 
@@ -390,7 +411,8 @@ nav {
     padding: 0.3em;
     /*margin-bottom: 10px;*/
 }
-.result__desc{
+
+.result__desc {
     width: 75%;
 }
 
@@ -464,29 +486,27 @@ nav {
     margin: 0 5%;
 }
 
-.work__info p{
+.work__info p {
     font-size: 0.8em;
     margin: auto;
     color: #5d5d5d;
 }
 
-.works__pagination{
+.works__pagination {
     margin: 20px auto;
 }
 
-.pagination{
+.pagination {
     justify-content: center;
 }
 
-.pagination li.active{
+.pagination li.active {
     background-color: #f9c64e;
     display: block;
     padding: .5rem 1rem;
     color: #007bff;
     border-radius: 5px;
 }
-
-
 
 /* END styles for OBJECT page */
 
@@ -503,6 +523,9 @@ nav {
 }
 
 .thanks__content {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
     padding: 0.5em;
     width: 16em;
     margin-bottom: 20px;
@@ -510,14 +533,18 @@ nav {
 
 .thanks-image {
     width: 100%;
-    margin-bottom: 5px;
 }
 
 .thanks__content p {
-    font-size: 1.2em;
+    font-size: 14px;
     text-align: center;
+    margin-top: auto;
 }
 
+.thanks__content a {
+    display: block;
+    margin-bottom: 15px;
+}
 /* END styles for THANKS page */
 
 /* START styles for LAW page */
@@ -663,9 +690,7 @@ footer p {
     margin: auto;
 }
 
-
 /* @MEDIA  queries */
-
 
 @media (min-width: 785px) {
     #menuShow {
@@ -674,8 +699,14 @@ footer p {
     }
 }
 
-@media (max-width: 784px) {
-    #classicMenu{
+@media (max-width: 425px) {
+    .work{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #classicMenu {
         flex-direction: column;
     }
 
@@ -684,7 +715,7 @@ footer p {
         flex-direction: column;
     }
 
-    nav .recall{
+    nav .recall {
         flex-direction: column;
         margin: 5px auto 0;
     }
@@ -692,25 +723,32 @@ footer p {
     #menuShow {
         font-size: 1.4em;
     }
+
+    .header {
+        padding-bottom: 0;
+    }
+    .header .row {
+        padding-top: 10px;
+    }
 }
 
 @media (max-width: 996px) {
-    .logo{
+    .logo {
         width: 10%;
         display: block;
         margin: auto;
     }
 
-    .headerContact{
+    .headerContact {
         padding: 10px 0;
-           text-align: center;
-       }
+        text-align: center;
+    }
 
     ul .sub-menu {
         display: none;
     }
 
-    #main-nav > #classicMenu > ul > li.menu-item-has-children > a:after{
+    #main-nav > #classicMenu > ul > li.menu-item-has-children > a:after {
         display: none;
     }
 }

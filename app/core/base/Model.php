@@ -3,11 +3,11 @@
 namespace app\core\base;
 
 use app\core\Db;
-use RedBeanPHP\R;
 use Valitron\Validator;
 
-abstract class Model
+abstract class Model extends \Illuminate\Database\Eloquent\Model
 {
+    
     protected $pdo;
     protected $table;
     protected $primaryKey = 'id';
@@ -15,13 +15,10 @@ abstract class Model
     public $errors = [];
     public $rules = [];
 
-    public function __construct()
-    {
-        $this->pdo = DB::instance();
-    }
 
     public function load($data)
     {
+
         foreach ($this->attributes as $key => $value) {
             if (isset($data[$key])) {
                 $this->attributes[$key] = $data[$key];

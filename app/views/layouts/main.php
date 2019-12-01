@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link href="/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
     <!--    <link href="/css/jquery.mCustomScrollbar.css" rel='stylesheet' type='text/css' />-->
     <link href="/css/font-awesome.min.css" rel='stylesheet' type='text/css'/>
     <link href="/css/magnific-popup.css" rel='stylesheet' type='text/css'/>
     <link href="/css/callbackme.css" rel='stylesheet' type='text/css'/>
     <link href="/css/main.css" rel='stylesheet' type='text/css'/>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
     <meta name="description" content="<?= $meta['description'] ?>">
     <meta name="keywords" content="<?= $meta['keywords'] ?>">
     <title><?= $meta['title'] ?></title>
@@ -22,6 +25,7 @@
 
 </head>
 <body>
+<?php if (isset($auth)) $this->getPart('inc/adminButton')?>
 <!---header---->
 <header id="header" class="header">
     <div class="container">
@@ -57,7 +61,6 @@
                     <div id="menuShow">
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
-                    <!--                    <div id="hideMenu">     -->
                     <div id="classicMenu">
                         <ul class="menu">
                             <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>
@@ -66,7 +69,7 @@
                                 <ul class="sub-menu">
                                     <?php foreach ($categories as $category) : ?>
 
-                                        <li><a href="/works?cat_id=<?= $category->id ?>"><?= $category->name ?></a></li>
+                                        <li><a href="/works?cat_id=<?= $category->id ?>"><?= $category->title ?></a></li>
 
                                     <?php endforeach; ?>
                                 </ul>
@@ -76,27 +79,9 @@
                             <li class="menu__item"><a href="/law">ЗАКОН</a></li>
                             <li class="menu__item"><a href="/contact">КОНТАКТЫ</a></li>
                             <li class="menu__item"><a href="/about">О&nbsp;НАС</a></li>
-                            <li class="menu__item"><a href="/map">КАРТА</a></li>
+<!--                            <li class="menu__item"><a href="/map">КАРТА</a></li>-->
                         </ul>
-
                     </div>
-
-                    <!--                    <div id="mobileMenu">-->
-                    <!--                        <ul class="menu">-->
-                    <!--                            <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>-->
-                    <!--                            <li class="menu__item"><a href="/works">ОБЪЕКТЫ</a></li>-->
-                    <!--                            <li class="menu__item"><a href="/thanks">БЛАГОДАРНОСТИ</a></li>-->
-                    <!--                            <li class="menu__item"><a href="/law">ЗАКОН</a></li>-->
-                    <!--                            <li class="menu__item"><a href="/contact">КОНТАКТЫ</a></li>-->
-                    <!--                            <li class="menu__item"><a href="/about">О&nbsp;НАС</a></li>-->
-                    <!--                            <li class="menu__item"><a href="/map">КАРТА</a></li>-->
-                    <!--                        </ul>-->
-                    <!--                        <div class="recall">-->
-                    <!--                            <a href="#callback" class="popup-callbackme">Обратный звонок</a>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-
-
                 </nav>
 
             </div>
@@ -125,17 +110,15 @@
                         <?php endif; ?>
                     </div>
 
-                    <!--                    --><?php //dump($recentWorks) ?>
-
                     <?= $content ?>
 
                 </div>
             </div>
             <div class="col-lg-3">
-<!--                <div id="currentTime"></div>-->
+                <!--                <div id="currentTime"></div>-->
 
                 <div class="recall">
-                    <a href="#callback" class="popup-callbackme">Обратный звонок</a>
+                    <a href="#callback" class="popup-callbackme callbackme">Обратный звонок</a>
                 </div>
 
                 <div class="hidden">
@@ -148,15 +131,22 @@
 
                                 <p class="zakaz">Обратный звонок</p>
                                 <label>
-                                    <span>Ваше имя:</span>
+<!--                                    <span>Ваше имя:</span>-->
                                     <input type="text" name="name" placeholder="Введите ваше имя..."
                                            required="required">
                                 </label>
                                 <label>
-                                    <span>Ваше телефон:</span>
+<!--                                    <span>Ваше телефон:</span>-->
                                     <input id="phone" type="text"
                                            name="phone" placeholder="Введите ваш телефон..."
                                            required="required">
+                                </label>
+                                <label class="label_code">
+<!--                                    <span>Код:</span>-->
+                                    <input id="code" type="text"
+                                           name="code" placeholder="Код с картинки..."
+                                           required="required">
+                                    <img src="" alt="">
                                 </label>
                                 <div class="button-center">
                                     <button class="button">Отправить</button>
@@ -186,8 +176,10 @@
 <!---->
 
 <!--script-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<!--<script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"-->
+<!--        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"-->
+<!--        crossorigin="anonymous"></script>-->
+<script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="/js/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>

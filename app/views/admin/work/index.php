@@ -3,7 +3,6 @@
     <div class="listWorks__header">
         <h2 class="box-title">Все выполненые работы</h2>
         <a href="/admin/work/create" class="btn btn-success btn-sm">Добавить</a>
-
     </div>
 
     <table id="example1" class="table table-bordered table-striped">
@@ -24,8 +23,15 @@
         <?php foreach ($works as $work) : ?>
             <tr class="admin-work_item">
                 <td><?= $work->id ?></td>
-                <td>
-                    <img src="<?= $work->getImage() ?>" alt="">
+                <td class="td__photo">
+                    <div class="myHover" >
+                        <img src="<?= $work->getImage() ?>" alt="">
+                        <div class="getLarge">
+                            <img src="<?= $work->getImage() ?>"
+                                 class="getLarge__img" alt="">
+                        </div>
+                    </div>
+
                 </td>
                 <td>
                     <a href="#"><?= $work->title ?></a>
@@ -38,26 +44,14 @@
                     <a href="/admin/work/edit?id=<?=$work->id?>" class="btn btn-warning btn-sm">
                         <i class="fa fa-pencil"></i>
                     </a>
+                    <a onclick="return confirm('Вы уверены?');" href="/admin/work/destroy?id=<?=$work->id?>" class="btn btn-danger btn-sm">
+                        <i class="fa fa-close"></i>
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
 
         </tbody>
-
-<!--        <tfoot>-->
-<!--        <tr>-->
-<!--            <th></th>-->
-<!--            <th>Изображение</th>-->
-<!--            <th>Название</th>-->
-<!--            <th>Категория</th>-->
-<!--            <th>Этап</th>-->
-<!--            <th>Публикация</th>-->
-<!---->
-<!--            <th>Завершено:</th>-->
-<!---->
-<!--            <th>Действия</th>-->
-<!--        </tr>-->
-<!--        </tfoot>-->
 
     </table>
 </div>

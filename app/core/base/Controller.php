@@ -4,6 +4,7 @@ namespace app\core\base;
 
 use app\core\App;
 use app\core\Registry;
+use app\models\User;
 
 abstract class Controller
 {
@@ -32,6 +33,7 @@ abstract class Controller
      * @var array
      */
     public $vars = array();
+    public $errors = array();
 
     public $meta = [
         'title' => '',
@@ -40,6 +42,7 @@ abstract class Controller
     ];
 
     public $app;
+    public $auth;
 
 
     public function __construct($route)
@@ -48,22 +51,26 @@ abstract class Controller
         $this->view = $route['action'];
         $this->app = Registry::instance();
 
-//        App::$app->setProperty('langs', Language::getLanguages());
-//        App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')));
-
         $this->vars['meta'] = $this->meta;
+        $this->vars['errors'] = $this->errors;
+
+        if (isset($_SESSION['auth'])) {
+            $this->auth = (new User())->setRawAttributes($_SESSION['auth']);
+            $this->vars['auth'] = $this->auth;
+        };
     }
 
     public function getView()
     {
-//        dd($this->vars);
         $vObj = new View($this->route, $this->layout, $this->view);
         $vObj->render($this->vars);
     }
 
     public function set($data)
     {
+//        dump($this->vars);
         $this->vars = array_merge($this->vars, $data);
+//        dd($this->vars);
     }
 
     public function setMeta($title='', $description='', $keywords=''){

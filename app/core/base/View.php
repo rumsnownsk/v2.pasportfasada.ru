@@ -79,10 +79,10 @@ class View
         $file_view = APP . "/views/". $prefix ."{$this->route['controller']}/{$this->view}.php";
 
 //        ob_start();
-//        ob_start([$this, 'compressPage']);
-        ob_start('ob_gzhandler');
+        ob_start([$this, 'compressPage']);
+//        ob_start('ob_gzhandler');
         {
-            header("Content-Encoding: gzip");
+            header("Content-Encoding: UTF8");
             if (file_exists($file_view)) {
 
                 require $file_view;
@@ -92,11 +92,11 @@ class View
             }
 //            dd(ob_get_contents());
 
-            $content = ob_get_contents();
+//            $content = ob_get_contents();
         }
 
-        ob_clean();
-//        $content = ob_get_clean();
+//        ob_clean();
+        $content = ob_get_clean();
 
         if (false !== $this->layout) {
             $file_layout = APP . "/views/layouts/{$this->layout}.php";
@@ -127,6 +127,8 @@ class View
     }
 
     public function getPart($file){
+        extract($this->data);
+
         $file = APP . "/views/{$file}.php";
 
         if (is_file($file)) {

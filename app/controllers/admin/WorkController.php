@@ -10,6 +10,8 @@ class WorkController extends AdminController
 {
     public function indexAction()
     {
+//        dd($this->auth);
+//        $auth = $this->auth;
         $works = Work::all();
         $this->set(compact('works'));
     }
@@ -22,41 +24,57 @@ class WorkController extends AdminController
         if (!empty($_POST)) {
             $work = new Work();
 
-            if (!$work->validate()) {
+            if ($work->validate()) {
+                $work = Work::add($_POST);
+                $work-> setStage();
+                $work-> setTimeCreate();
+                $work-> setPublish();
+                $work-> setDescription();
+                $work-> uploadImage('photo');
+                redirect();
+
+            } else {
                 $work->getErrors();
                 unset($_SESSION['oldData']);
                 $_SESSION['oldData'] = $_POST;
                 redirect();
             }
-
-            $work->add($_POST);
         }
 
         $this->set(compact('categories', 'stages'));
     }
+
 
     public function editAction()
     {
         $categories = Category::all();
         $stages = Stage::all();
 
-        if (isset($_GET['id']) && (int)$_GET['id'] > 0 && $work = Work::find($_GET['id'])) {
+        if (!empty($_GET) && isset($_GET['id']) && (int)$_GET['id'] > 0) {
 
+            $work = Work::find($_GET['id']);
             $this->set(compact('work', 'categories', 'stages'));
 
         } elseif (!empty($_POST)) {
 
-            $work = new Work();
+            $work = Work::find($_POST['id']);
 
-            if (!$work->validate()){
+            if ($work->validate()){
 
+//                dd($work);
+                $work->edit($_POST);
+                $work->setStage();
+                $work->setTimeCreate();
+                $work->setPublish();
+                $work->setDescription();
+                $work->uploadImage('photo');
+                redirect();
+
+            } else {
                 $work->getErrors();
                 $_SESSION['oldData'] = $_POST;
-                $_GET['id'] = 1;
+                $_GET['id'] = $_POST['id'];
                 redirect();
-            } else {
-                $work = Work::find($_POST['id']);
-                $work->edit($_POST);
             };
 
             $this->set(compact('work','categories', 'stages'));
@@ -66,10 +84,29 @@ class WorkController extends AdminController
         }
     }
 
-    public function updateAction()
-    {
-
+    public function destroyAction(){
+        Work::find($_GET['id'])->remove();
+        redirect();
     }
+
+//    public function clearimagesAction(){
+//        $works = Work::all()->map(function ($item, $key){
+//            return $item->photoName;
+//        })->toArray();
+//
+//        $files = scandir(IMAGES.'/thanks');
+//        foreach ($files as $file) {
+//            if ($file == "." || $file==".."){
+//                continue;
+//            }
+//            if(in_array($file, $works)){
+//                continue;
+//            } else {
+//                unlink(IMAGES.'/thanks/'.$file);
+//            };
+//
+//        }
+//    }
 
 
 }

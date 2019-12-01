@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\core\libs\HelpersMethods;
+use app\core\libs\ImageManager;
 use Illuminate\Database\Eloquent\Model;
 use Intervention\Image\Image;
 use Valitron\Validator;
@@ -11,14 +12,18 @@ class Work extends Model
 {
     use HelpersMethods;
 
+    protected $casts = [
+        'category_id' => 'integer'
+    ];
+
     protected $fillable = [
-        'photoName',
+//        'photoName',
         'title',
         'category_id',
-        'stage_id',
-        'timeCreate',
-        'publish',
-        'description'
+//        'stage_id',
+//        'timeCreate',
+//        'publish',
+//        'description'
     ];
 
     public $rules = [
@@ -33,60 +38,90 @@ class Work extends Model
     protected $table = 'works';
     public $errors = [];
 
-    public $imageName;
+    public $image;
 
-    public function add($fields){
-        $fields['photoName'] = $this->setImageName();
-        $fields['category_id'] = (integer)$fields['category_id'];
-        $fields['stage_id'] = (integer)$fields['stage_id'];
-        $fields['publish'] = isset($fields['publish']) ? 1 : 0;
-        $fields['timeCreate'] = (integer)strtotime($fields['timeCreate']);
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->image = new ImageManager();
+    }
 
+    public static function add($fields)
+    {
         $work = new static;
         $work->fill($fields);
-        if ($work->save()){
-            $this->uploadPhoto();
-        };
+        $work->save();
+        return $work;
     }
 
-    public function edit($fields){
-        $fields['photoName'] = $this->setImageName();
-
-        $fields['publish'] = isset($fields['publish']) ? 1 : 0;
-        $fields['category_id'] = (integer)$fields['category_id'];
-        $fields['stage_id'] = (integer)$fields['stage_id'];
-        $fields['timeCreate'] = (integer)strtotime($fields['timeCreate']);
-
+    public function edit($fields)
+    {
         $this->fill($fields);
-        if ($this->save()) {
-            $this->uploadPhoto();
-        };
+        return $this->save();
     }
 
-    public function setImageName(){
-//        dump()
-        if ($_FILES['photo']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['photo']['tmp_name'])){
-//            dd($_FILES['photo']);
-            $filePath  = $_FILES['photo']['tmp_name'];
-
-            $image = getimagesize($filePath);
-            $name = $this->randomString();
-            $extension = image_type_to_extension($image[2]);
-
-            $this->imageName = $name.$extension;
-        } else {
-            $this->imageName = $_POST['photoName'] ? : "no-photo.jpg";
-
+    public function setStage()
+    {
+        if (isset($_POST['stage_id'])) {
+            $this->stage_id = (integer)$_POST['stage_id'];
+            $this->save();
         }
-        return $this->imageName;
     }
 
-    public function validate(){
+    public function setTimeCreate()
+    {
+        if (isset($_POST['timeCreate'])) {
+            $this->timeCreate = strtotime($_POST['timeCreate']);
+//            dd($this->timecreate);
+            $this->save();
+        }
+    }
+
+    public function setPublish()
+    {
+        if (isset($_POST['publish'])) {
+            $this->publish = 1;
+        } else {
+            $this->publish = 0;
+        }
+        $this->save();
+    }
+
+    public function setDescription()
+    {
+        if (isset($_POST['description'])) {
+            $this->description = $_POST['description'];
+            $this->save();
+        }
+    }
+
+//
+//
+//    public function setImageName()
+//    {
+////        dump()
+//        if ($_FILES['photo']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['photo']['tmp_name'])) {
+////            dd($_FILES['photo']);
+//            $filePath = $_FILES['photo']['tmp_name'];
+//
+//            $image = getimagesize($filePath);
+//            $name = $this->randomString();
+//            $extension = image_type_to_extension($image[2]);
+//
+//            $this->imageName = $name . $extension;
+//        } else {
+//            $this->imageName = $_POST['photoName'] ?: "no-photo.jpg";
+//
+//        }
+//        return $this->imageName;
+//    }
+
+    public function validate()
+    {
         $v = new Validator($_POST);
         $v->rules($this->rules);
 
-        if ($v->validate() && $this->validateImage()){
-//            dump($v->validate());
+        if ($v->validate()) {
             return true;
         } else {
             $this->errors = array_merge($this->errors, $v->errors());
@@ -94,53 +129,17 @@ class Work extends Model
         }
     }
 
-    public function validateImage(){
-        if (empty($_FILES['photo']['tmp_name'])){
-            if (isset($_POST['photoName']) && !empty($_POST['photoName'])){
-//            dump("Название картинки есть");
-                return true;
-            }
+    public function uploadImage($fieldForm)
+    {
+        if ($this->image->validateImage($fieldForm)) {
+
+            $this->image->delete('works', $this->photoName);
+            $this->image->downloadImage($fieldForm, 'works');
+            $this->photoName = $this->image->imageName;
+            $this->save();
         }
-
-        $filePath  = $_FILES['photo']['tmp_name'];
-        $errorCode = $_FILES['photo']['error'];
-
-        if ($errorCode !== UPLOAD_ERR_OK || !is_uploaded_file($filePath)) {
-//            dump($errorCode, $filePath);
-            // Массив с названиями ошибок
-            $errorMessages = [
-                UPLOAD_ERR_INI_SIZE   => 'Размер файла превысил значение upload_max_filesize в конфигурации PHP.',
-                UPLOAD_ERR_FORM_SIZE  => 'Размер загружаемого файла превысил значение MAX_FILE_SIZE в HTML-форме.',
-                UPLOAD_ERR_PARTIAL    => 'Загружаемый файл был получен только частично.',
-                UPLOAD_ERR_NO_FILE    => 'Файл не был загружен.',
-                UPLOAD_ERR_NO_TMP_DIR => 'Отсутствует временная папка.',
-                UPLOAD_ERR_CANT_WRITE => 'Не удалось записать файл на диск.',
-                UPLOAD_ERR_EXTENSION  => 'PHP-расширение остановило загрузку файла.',
-            ];
-            // Зададим неизвестную ошибку
-            $unknownMessage = 'При загрузке файла произошла неизвестная ошибка.';
-
-            // Если в массиве нет кода ошибки, скажем, что ошибка неизвестна
-            $outputMessage = isset($errorMessages[$errorCode]) ? $errorMessages[$errorCode] : $unknownMessage;
-
-            // Выведем название ошибки
-            $this->errors['pic'][] = $outputMessage;
-
-            return false;
-        }
-
-        $fi = finfo_open(FILEINFO_MIME_TYPE);
-        $mime = (string)finfo_file($fi, $filePath);
-        if (strpos($mime, 'image') === false){
-            $this->errors['pic'][] = 'Выбр!!!анный файл должен быть картинкой jpeg/jpg/png';
-            return false;
-        }
-        return true;
     }
 
-    public function uploadPhoto(){
-        move_uploaded_file($_FILES['photo']['tmp_name'], IMAGES.'/works/'.$this->imageName);
-    }
 
     public static function checkPhoto($works)
     {
@@ -154,14 +153,14 @@ class Work extends Model
     public function getImage()
     {
         if (!file_exists(IMAGES . '/works/' . $this->photoName) || empty($this->photoName)) {
-            $this->photoName = 'no-photo.jpg';
+            return '/images/no_photo.jpg';
         }
         return '/images/works/' . $this->photoName;
     }
 
     public function getCategoryTitle()
     {
-        return Category::where("id", $this->category_id)->firstOrFail()->name;
+        return Category::where("id", $this->category_id)->firstOrFail()->title;
     }
 
     public function getStageTitle()
@@ -232,7 +231,9 @@ class Work extends Model
         return "$d $m<br>$y";
     }
 
-    public function getErrors(){
+    public function getErrors()
+    {
+//        dd($this->errors);
         $errors = '<ul>';
         foreach ($this->errors as $error) {
             foreach ($error as $item) {
@@ -241,5 +242,12 @@ class Work extends Model
         }
         $errors .= '</ul>';
         $_SESSION['error'] = $errors;
+    }
+
+    public function remove()
+    {
+        $this->image->delete('works', $this->photoName);
+
+        $this->delete();
     }
 }

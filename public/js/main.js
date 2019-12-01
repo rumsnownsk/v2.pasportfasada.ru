@@ -9,7 +9,24 @@ $(function () {
         closeBtnInside: true,
         midClick: true,
         // removalDelay: 500,
-        mainClass: 'my-mfp-slide-bottom'
+        mainClass: 'my-mfp-slide-bottom',
+    });
+
+    $('.callbackme').on('click', function () {
+
+        $('div.alert').remove();
+
+        $.ajax({
+            url: '/captcha',
+            method: 'get',
+            dataType: 'json',
+            success: function (response) {
+
+                if (response.code == 200){
+                    $('.label_code img').attr('src', response.image)
+                }
+            }
+        })
     });
 
     // Открыть Постановление
@@ -20,27 +37,33 @@ $(function () {
 
     $(".callback").submit(function () {
         var th = $(this);
+        // console.log(this);
         $.ajax({
+            url: "/recall",
             type: "post",
-            url: "/mail",
-            data: th.serialize()
-        }).done(function () {
-            $(".success").addClass("visible");
-            setTimeout(function () {
-                th.trigger("reset");
-                $(".success").removeClass("visible");
-                $.magnificPopup.close();
-            }, 2000);
+            dataType: 'json',
+            data: th.serialize(),
+            success: function (response) {
+                if (response.code == 200){
+                    $(".success").addClass("visible");
+                    setTimeout(function () {
+                        th.trigger("reset");
+                        $(".success").removeClass("visible");
+                        $.magnificPopup.close();
+                    }, 2000);
+                } else if(response.code == 400 ) {
+                    $('.label_code').after("<div class='alert alert-danger'>Да ты шалунишка! =)</div>")
+                }
+
+            }
         });
         return false;
     });
 
     $("#menuShow").click(function () {
         if ($("#classicMenu").is(':visible')) {
-            console.log(true)
             $('#classicMenu').hide();
         } else {
-            console.log(false)
             $('#classicMenu').show()
             $('#classicMenu').addClass('my-d-flex flex-column');
         }
@@ -54,21 +77,21 @@ $(function () {
         }
     }
 
-    $(document).scroll(function () {
-        console.log('test')
-        if ($(document).width() > 785) {
-
-            console.log('scrollTop : ' + $(document).scrollTop())
-            console.log('header + height + 10px : ' + $('#header').height())
-            console.log($(document).scrollTop() > $('#header').height())
-
-            if ($(document).scrollTop() > $('#header').height()) {
-                $('nav').addClass('fixed-menu')
-            } else {
-                $('nav').removeClass('fixed-menu')
-            }
-        }
-    });
+    // $(document).scroll(function () {
+    //     console.log('test')
+    //     if ($(document).width() > 785) {
+    //
+    //         console.log('scrollTop : ' + $(document).scrollTop())
+    //         console.log('header + height + 10px : ' + $('#header').height())
+    //         console.log($(document).scrollTop() > $('#header').height())
+    //
+    //         if ($(document).scrollTop() > $('#header').height()) {
+    //             $('nav').addClass('fixed-menu')
+    //         } else {
+    //             $('nav').removeClass('fixed-menu')
+    //         }
+    //     }
+    // });
 
     $("#phone").mask("+7 (999) 999-99-99");
 
@@ -107,26 +130,26 @@ $(function () {
         })
     })
 
-    setTimeout(function () {
-        var d = new Date(),
-            day = d.getDate(),
-            hrs = d.getHours(),
-            min = d.getMinutes(),
-            sec = d.getSeconds(),
-            dw = new Array("понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"),
-
-            mnt = new Array("января", "февраля", "марта", "апреля", "мая",
-                "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
-
-        if (hrs <= 9) hrs="0" + hrs;
-        if (min <= 9 ) min="0" + min;
-
-        $("#currentTime").html("Сегодня: </br>"
-            + hrs + " : " + min + "</br>"
-            + dw[d.getDay()] + ",</br> "
-            + day + " " + mnt[d.getMonth()] + " " + d.getFullYear())
-
-    }, 1000)
+    // setTimeout(function () {
+    //     var d = new Date(),
+    //         day = d.getDate(),
+    //         hrs = d.getHours(),
+    //         min = d.getMinutes(),
+    //         sec = d.getSeconds(),
+    //         dw = new Array("понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"),
+    //
+    //         mnt = new Array("января", "февраля", "марта", "апреля", "мая",
+    //             "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+    //
+    //     if (hrs <= 9) hrs="0" + hrs;
+    //     if (min <= 9 ) min="0" + min;
+    //
+    //     $("#currentTime").html("Сегодня: </br>"
+    //         + hrs + " : " + min + "</br>"
+    //         + dw[d.getDay()] + ",</br> "
+    //         + day + " " + mnt[d.getMonth()] + " " + d.getFullYear())
+    //
+    // }, 1000)
 
 
 });

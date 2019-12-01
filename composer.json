@@ -6,7 +6,8 @@
         "vlucas/valitron": "^1.4",
         "swiftmailer/swiftmailer": "^6.0",
         "intervention/image": "^2.5",
-        "respect/validation": "^1.1"
+        "respect/validation": "^1.1",
+        "gregwar/captcha": "^1.1"
     },
     "autoload": {
         "psr-4": {

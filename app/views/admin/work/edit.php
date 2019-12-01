@@ -11,43 +11,40 @@
     <form action="/admin/work/edit" method="post" enctype="multipart/form-data">
 
         <input type="hidden" name="id" value="<?= $work->id?>">
-        <input type="hidden" name="photoName" value="<?= $work->photoName ?>">
         <div class="form-group form-group__correct">
             <div class="form-group__label">
-                <label for="exampleInputFile">Фотография объекта</label>
+                <label for="inputFileWork">Фотография объекта</label>
                 <p class="help-block">(только одна картинка!!!)</p>
             </div>
             <div class="form-group__data">
                 <img src="/images/works/<?= $work->photoName ?>" alt="" style="width: 300px;">
 
-                <input name="photo" type="file" >
-                <p class="help-block redMarker">обязательное поле. при выборе другого изображения текущая фотография будет утрачена</p>
+                <input name="photo" id="inputFileWork" type="file" >
+                <p class="help-block redMarker">При выборе другого изображения текущая фотография будет утрачена</p>
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-group__label">
-                <label for="exampleInputEmail1">Название объекта</label>
+                <label for="inputTitleWork">Название объекта</label>
                 <p class="help-block">(улица, номер дома)</p>
             </div>
             <div class="form-group__data">
-                <input name="title" type="text" class="form-control" value="<?= $work->title ?>" title="" >
+                <input name="title" id="inputTitleWork" type="text" class="form-control" value="<?= $work->title ?>" title="" >
                 <p class="help-block redMarker">обязательное поле</p>
             </div>
         </div>
 
 
-
-
         <div class="form-group">
             <div class="form-group__label">
-                <label for="exampleInputEmail1">Категория</label>
+                <label for="selectCategoryIdWork">Категория</label>
             </div>
             <div class="form-group__data">
-                <select name="category_id" id="" title="">
+                <select name="category_id" id="selectCategoryIdWork" title="">
                     <?php foreach ($categories as $category) : ?>
                         <option value="<?= $category->id ?>" <?= oldSelect($category, "category_id", $work) ?> >
-                            <?= $category->name ?>
+                            <?= $category->title ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -60,10 +57,10 @@
 
         <div class="form-group">
             <div class="form-group__label">
-                <label for="exampleInputEmail1">Этап работы:</label>
+                <label for="selectStageIdWork">Этап работы:</label>
             </div>
             <div class="form-group__data">
-                <select name="stage_id" id="" title="">
+                <select name="stage_id" id="selectStageIdWork" title="">
                     <?php foreach ($stages as $stage) : ?>
                         <option value="<?= $stage->id ?>" <?= oldSelect($stage, "stage_id", $work) ?> >
                             <?= $stage->name ?>
@@ -76,11 +73,11 @@
 
         <div class="form-group">
             <div class="form-group__label">
-                <label for="exampleInputEmail1">Дата создания:</label>
+                <label for="inputDateWork">Дата создания:</label>
             </div>
             <div class="form-group__data" style="width: 300px;">
 
-                <input name="timeCreate" type="date" class="form-control" value="<?= oldDate("timeCreate", $work) ?>"
+                <input name="timeCreate" id="inputDateWork" type="date" class="form-control" value="<?= oldDate("timeCreate", $work) ?>"
                        title="">
                 <p class="help-block redMarker">обязательное поле</p>
             </div>
@@ -88,19 +85,19 @@
 
         <div class="form-group">
             <div class="form-group__label">
-                <label for="exampleInputEmail1">Разместить на сайте?</label>
+                <label for="inputPublishWork">Разместить на сайте?</label>
             </div>
             <div class="form-group__data">
-                <input name="publish" type="checkbox" <?= oldChecked("publish", $work) ?> class="form-control" title="">
+                <input name="publish" id="inputPublishWork" type="checkbox" <?= oldChecked("publish", $work) ?> class="form-control" title="">
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-group__label">
-                <label for="exampleInputEmail1">Краткое описание</label>
+                <label for="taDescWork">Краткое описание</label>
             </div>
             <div class="form-group__data">
-                <textarea name="description" class="form-control" title="" placeholder="<?= oldInfo('description')?>"><?= $work->description ?></textarea>
+                <textarea name="description" id="taDescWork" class="form-control" title="" placeholder="<?= oldInfo('description')?>"><?= $work->description ?></textarea>
             </div>
 
         </div>

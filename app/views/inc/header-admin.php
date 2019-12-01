@@ -1,6 +1,6 @@
 <!-- Logo -->
 <div class="header__logo">
-    ALT AdminLTE
+    Админка
 
 </div>
 

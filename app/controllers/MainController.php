@@ -8,8 +8,10 @@ use app\core\libs\Mail;
 use app\core\libs\Pagination;
 use app\models\Category;
 use app\models\Main;
-use app\models\Thanks;
+use app\models\Thank;
 use app\models\Work;
+use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\PhraseBuilder;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
@@ -61,7 +63,7 @@ class MainController extends Controller
 
     public function thanksAction()
     {
-        $thanks = Thanks::all();
+        $thanks = Thank::all();
         $this->set(compact('thanks'));
     }
 
@@ -83,10 +85,37 @@ class MainController extends Controller
 
     }
 
-    public function mailAction()
+    public function captchaAction(){
+        if ($this->isAjax()) {
+            $captchaBuild = new PhraseBuilder(3, '0123456789');
+
+            $captcha = new CaptchaBuilder(null, $captchaBuild);
+            $captcha->setDistortion(false);
+            $captcha->build(40, 40);
+
+            $_SESSION['captcha'] = $captcha->getPhrase();
+
+            $data = [
+                'code' => 200,
+                'image' => $captcha->inline()
+            ];
+            echo json_encode($data);
+            exit;
+        }
+
+    }
+
+    public function recallAction()
     {
         if ($this->isAjax()){
-//        echo $_POST['name'];exit;
+            if ($_SESSION['captcha'] !== $_POST['code']){
+                echo json_encode([
+                    'code' => 400  ,
+                    'verify' => false
+                ]);
+                exit;
+            }
+
             $data = [
                 'subject' => 'Прозьба перезвонить',
                 'to' => 'stevennsk@ngs.ru',
@@ -97,10 +126,17 @@ class MainController extends Controller
 
             $mail = new Mail($data);
             $mail->run();
+            echo json_encode([
+                'code' => 200,
+                'verify' => true
+            ]);
             exit;
+
         }
         redirect();
     }
+
+
 
     public function ajaxAction()
     {

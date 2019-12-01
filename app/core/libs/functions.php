@@ -23,14 +23,24 @@ function dateDMY($tUnix)
     return date("d-m-Y", $tUnix);
 }
 
-function oldInfo($param)
+function oldInfo($field, $obj = false)
 {
-
-    return isset($_SESSION['oldData']) ? $_SESSION['oldData'][$param] : "";
+    if ($obj){
+        return $obj->$field;
+    }
+    return isset($_SESSION['oldData']) ? $_SESSION['oldData'][$field] : "";
 }
+
+function roleSelect($field, $value, $obj){
+    if ($obj->$field == $value){
+        return 'selected';
+    } else return '';
+}
+
 
 function oldSelect($objName, $field, $editObject = false)
 {
+//    dd($objName, $field);
     if ($editObject && $editObject->$field == $objName->id) {
         return "selected";
     }

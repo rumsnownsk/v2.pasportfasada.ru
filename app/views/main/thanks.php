@@ -3,10 +3,10 @@
 
     <?php foreach ($thanks as $thank) : ?>
         <div class="thanks__content layer">
-            <a href="/images/thanks/<?= $thank->image ?>">
-                <img src="/images/thanks/<?= $thank->image ?>" class="thanks-image" title="<?= $thank->name ?>" alt="">
+            <a href="/images/thanks/<?= $thank->imageName ?>">
+                <img src="/images/thanks/<?= $thank->imageName ?>" class="thanks-image" title="<?= $thank->title ?>" alt="">
             </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            <p><?= $thank->title ?></p>
         </div>
     <?php endforeach; ?>
 

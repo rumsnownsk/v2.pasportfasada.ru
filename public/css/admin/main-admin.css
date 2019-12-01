@@ -22,11 +22,12 @@ a, a:hover {
     color: #ff6163;
 }
 
+
 /*      HEADER :: BEGIN     */
 
 .header {
     display: flex;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .header__logo {
@@ -189,23 +190,36 @@ ul.sidebar__nav > li.active > a {
     background-color: #ecf0f5;
 }
 
-.listWorks__header{
+.listWorks__header,
+.listCategories__header,
+.listUsers__header{
     display: flex;
     margin: 0 auto;
     width: 100%;
     padding-bottom: 20px;
 }
 
-.listWorks__header h2{
+.listWorks__header h2,
+.listCategories__header h2,
+.listUsers__header h2{
     flex-grow: 1;
     text-align: center;
 }
 
-.listWorks__header a{
+.listWorks__header a,
+.listCategories__header a,
+.listUsers__header a{
     display: block;
     height: 30px;
     align-self: center;
 }
+
+.listThanks, .listCategories{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
 
 table.table {
     text-align: center;
@@ -228,6 +242,53 @@ table.table {
 .admin-work_item i.fa_size{
     font-size: 1.5em;
 }
+
+
+
+
+.admin-work_item td.td__photo .getLarge {
+    opacity: 0;
+    /*display: none;*/
+    visibility: hidden;
+    position: absolute;
+    transition: all 1s ease;
+    width: 0;
+    height: 0;
+    top: -50px;
+    left: 150px;
+
+    /*visibility: hidden;*/
+}
+
+.admin-work_item td.td__photo .myHover{
+    position: relative;
+    transition: 1s ;
+
+}
+
+.admin-work_item td.td__photo .myHover:hover  .getLarge{
+    opacity: 1;
+    /*display: block;*/
+    visibility: visible;
+    width: 350px;
+    height: auto;
+    top: -50px;
+    left: 150px;
+    /*transition: all 1s ease;*/
+
+}
+
+.admin-work_item td.td__photo .myHover:hover .getLarge__img{
+    display: block;
+}
+
+.admin-work_item .getLarge__img{
+    width: 350px;
+    height: auto;
+    display: none;
+}
+
+
 
 .crud{
     width: 90%;

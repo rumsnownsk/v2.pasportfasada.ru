@@ -74,6 +74,7 @@ class Router
                 $cObj = new $controller(self::$route);
                 $action = self::$route['action'] . "Action";
 
+//                dd('soy');
                 if (method_exists($cObj, $action)) {
 
                     $cObj->$action();

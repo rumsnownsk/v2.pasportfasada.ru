@@ -1,5 +1,5 @@
 <div class="recent">
-    <h3 class="recent__header">Последние готовые <br> паспорта фасадов:</h3>
+    <h3 class="recent__header">Последние завершённые <br> работы:</h3>
     <?php foreach ($this->data['recentWorks'] as $recentWork) : ?>
 
         <div class="recent__item layer">

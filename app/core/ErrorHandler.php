@@ -62,7 +62,7 @@ class ErrorHandler
 
     protected function myDisplayError($errno, $errstr, $errfile, $errline, $response = 500)
     {
-//        var_dump($response);die;
+//        dd($response);
         http_response_code($response);
 
         if ($response == 404 && !DEBUG){

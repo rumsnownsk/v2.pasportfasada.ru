@@ -10,7 +10,6 @@ $mail = $settings['mail'];
 // Соедитение с Базой Данных
 
 $capsule = new Capsule;
-
 $capsule->addConnection([
     'driver' => $db['driver'],
     'host' => $db['host'],
@@ -21,13 +20,12 @@ $capsule->addConnection([
     'collation' => $db['collation'],
     'prefix' => $db['prefix']
 ]);
-
 // Make this Capsule instance available globally via static methods... (optional)
 $capsule->setAsGlobal();
 
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
-
+//dd($capsule);
 
 // Настройки отправки почты
 

@@ -26,7 +26,7 @@
 </head>
 <body>
 <?php if (isset($auth)) $this->getPart('inc/adminButton')?>
-<h1>какие то изменения</h1>
+<h1>какие то изменения 2 fgsdfadfasdf</h1>
 <!---header---->
 <header id="header" class="header">
     <div class="container">

@@ -32,6 +32,9 @@
         <div class="row">
             <div class="col-lg-2">
                 <img src="/images/logo.png" class="logo" title="Паспорт фасада новосибирск"/>
+                <div id="menuShow">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
             </div>
 
             <div class="col-lg-7">
@@ -58,9 +61,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <nav id="main-nav" class="main-nav">
-                    <div id="menuShow">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </div>
+
                     <div id="classicMenu">
                         <ul class="menu">
                             <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>

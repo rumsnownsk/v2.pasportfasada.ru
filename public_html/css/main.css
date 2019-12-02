@@ -14,6 +14,7 @@ body a {
     -moz-transition: 0.5s all ease;
     -o-transition: 0.5s all ease;
     -ms-transition: 0.5s all ease;
+    color: #fda729;
 }
 
 body {
@@ -116,7 +117,7 @@ h1.h1_header {
 
 .headerContact a:hover {
     text-decoration: none;
-    color: #007bff;
+    color: #ff6600;
 }
 
 .headerContact i.fa-mobile {
@@ -147,14 +148,14 @@ h1.h1_header {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-    transition: 0.5s all;
+    transition: 0.2s ease-in-out;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
 }
 
 .menu__item a:hover, .menu__item.active a {
-    color: #f78221;
+    color: #ff6600;
 }
 
 .menu__item a.list_categories {
@@ -276,7 +277,7 @@ nav {
     opacity: 0.97;
     display: flex;
     width: 1110px;
-    background-color: #e6e6e6;
+    background-color: #f7fafb;
     height: 50px;
     z-index: 1;
 }
@@ -345,7 +346,7 @@ nav {
 }
 
 .recent__item {
-    width: 100%;
+    width: 98%;
     text-align: center;
     margin-bottom: 25px;
 }
@@ -653,7 +654,7 @@ nav {
 }
 
 .layer {
-    background: #fffce5;
+    background: #f7f4f3;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -692,7 +693,7 @@ footer p {
 
 /* @MEDIA  queries */
 
-@media (min-width: 785px) {
+@media (min-width: 769px) {
     #menuShow {
         display: none;
         visibility: hidden;
@@ -721,7 +722,10 @@ footer p {
     }
 
     #menuShow {
-        font-size: 1.4em;
+        position: absolute;
+        right: 20px;
+        font-size: 40px;
+        top: 10px;
     }
 
     .header {

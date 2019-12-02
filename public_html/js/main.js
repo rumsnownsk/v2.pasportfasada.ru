@@ -69,29 +69,30 @@ $(function () {
         }
     });
 
-    if ($(document).width() < 995) {
+    if ($(document).width() < 769) {
         $('#classicMenu').hide();
         $('#include').hide();
         window.onresize = function (ev) {
-            $('#classicMenu').hide()
+            $('#classicMenu').hide();
+            $('#include').hide();
         }
     }
 
-    // $(document).scroll(function () {
-    //     console.log('test')
-    //     if ($(document).width() > 785) {
-    //
-    //         console.log('scrollTop : ' + $(document).scrollTop())
-    //         console.log('header + height + 10px : ' + $('#header').height())
-    //         console.log($(document).scrollTop() > $('#header').height())
-    //
-    //         if ($(document).scrollTop() > $('#header').height()) {
-    //             $('nav').addClass('fixed-menu')
-    //         } else {
-    //             $('nav').removeClass('fixed-menu')
-    //         }
-    //     }
-    // });
+    $(document).scroll(function () {
+        // console.log('test')
+        if ($(document).width() > 785) {
+
+            // console.log('scrollTop : ' + $(document).scrollTop())
+            // console.log('header + height + 10px : ' + $('#header').height())
+            // console.log($(document).scrollTop() > $('#header').height())
+
+            if ($(document).scrollTop() > $('#header').height()) {
+                $('nav').addClass('fixed-menu')
+            } else {
+                $('nav').removeClass('fixed-menu')
+            }
+        }
+    });
 
     $("#phone").mask("+7 (999) 999-99-99");
 

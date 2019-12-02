@@ -22,12 +22,6 @@
     box-shadow: 0 0 0 red;
 }
 
-body {
-    margin: 0 auto;
-    padding: 0;
-    background: #ddd;
-}
-
 .hidden {
     display: none;
 }

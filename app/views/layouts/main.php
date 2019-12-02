@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="RU-ru">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -11,7 +11,7 @@
     <link href="/css/main.css" rel='stylesheet' type='text/css'/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
+    <!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
     <meta name="description" content="<?= $meta['description'] ?>">
     <meta name="keywords" content="<?= $meta['keywords'] ?>">
     <title><?= $meta['title'] ?></title>
@@ -25,13 +25,19 @@
 
 </head>
 <body>
-<?php if (isset($auth)) $this->getPart('inc/adminButton')?>
+
+<?php if (isset($auth)) $this->getPart('inc/adminButton') ?>
 <!---header---->
 <header id="header" class="header">
     <div class="container">
-        <div class="row">
+        <div class="row bgColor pt25">
             <div class="col-lg-2">
-                <img src="/images/logo.png" class="logo" title="Паспорт фасада новосибирск"/>
+                <a href="/">
+                    <img src="/images/logo.png" class="logo" title="Паспорт фасада новосибирск"/>
+                </a>
+                <div id="menuShow">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
             </div>
 
             <div class="col-lg-7">
@@ -55,12 +61,10 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row bgColor pt25">
             <div class="col-lg-12">
                 <nav id="main-nav" class="main-nav">
-                    <div id="menuShow">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </div>
+
                     <div id="classicMenu">
                         <ul class="menu">
                             <li class="menu__item"><a href="/">ГЛАВНАЯ</a></li>
@@ -69,7 +73,8 @@
                                 <ul class="sub-menu">
                                     <?php foreach ($categories as $category) : ?>
 
-                                        <li><a href="/works?cat_id=<?= $category->id ?>"><?= $category->title ?></a></li>
+                                        <li><a href="/works?cat_id=<?= $category->id ?>"><?= $category->title ?></a>
+                                        </li>
 
                                     <?php endforeach; ?>
                                 </ul>
@@ -79,18 +84,17 @@
                             <li class="menu__item"><a href="/law">ЗАКОН</a></li>
                             <li class="menu__item"><a href="/contact">КОНТАКТЫ</a></li>
                             <li class="menu__item"><a href="/about">О&nbsp;НАС</a></li>
-<!--                            <li class="menu__item"><a href="/map">КАРТА</a></li>-->
+                            <!--                            <li class="menu__item"><a href="/map">КАРТА</a></li>-->
                         </ul>
                     </div>
                 </nav>
-
             </div>
         </div>
 </header>
 <!--/header-->
 <section id="content" class="content">
-    <div class="container">
-        <div class="row">
+    <div class="container h100">
+        <div class="row bgColor ptContent">
             <div class="col-lg-9">
                 <div class="content__block">
 
@@ -131,18 +135,18 @@
 
                                 <p class="zakaz">Обратный звонок</p>
                                 <label>
-<!--                                    <span>Ваше имя:</span>-->
+                                    <!--                                    <span>Ваше имя:</span>-->
                                     <input type="text" name="name" placeholder="Введите ваше имя..."
                                            required="required">
                                 </label>
                                 <label>
-<!--                                    <span>Ваше телефон:</span>-->
+                                    <!--                                    <span>Ваше телефон:</span>-->
                                     <input id="phone" type="text"
                                            name="phone" placeholder="Введите ваш телефон..."
                                            required="required">
                                 </label>
                                 <label class="label_code">
-<!--                                    <span>Код:</span>-->
+                                    <!--                                    <span>Код:</span>-->
                                     <input id="code" type="text"
                                            name="code" placeholder="Код с картинки..."
                                            required="required">
@@ -164,13 +168,18 @@
     </div>
 </section>
 
-<footer id="footer" class="footer">
+<section class="footer">
     <div class="container">
-        <div class="row">
-            <p>Главный по тарелочкам с 2008 года | Громов Г.Ю.</p>
+        <div class="row bgColor">
+
+            <div class="col-lg-12">
+                <p class="footer-content">Главный по тарелочкам с 2008 года | Громов Г.Ю.</p>
+            </div>
+
+
         </div>
     </div>
-</footer>
+</section>
 
 
 <!---->

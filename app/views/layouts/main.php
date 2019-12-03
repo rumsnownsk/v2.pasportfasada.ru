@@ -28,8 +28,24 @@
 
 <?php if (isset($auth)) $this->getPart('inc/adminButton') ?>
 <!---header---->
+
 <header id="header" class="header">
     <div class="container">
+        <div class="row">
+            <div class="top">
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Новосибирск</span>
+                    Красный проспект 14 офис 601
+                </p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i><span>223-77-49</span></p>
+                <p><i class="fa fa-mobile" aria-hidden="true"></i><span>8-913-944-88-50</span></p>
+                <p><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <span>
+            <a href="mailto:pfnsk@list.ru?subject=У_меня_вопрос">pfnsk@list.ru</a>
+        </span>
+                </p>
+            </div>
+        </div>
         <div class="row bgColor pt25">
             <div class="col-lg-2">
                 <a href="/">

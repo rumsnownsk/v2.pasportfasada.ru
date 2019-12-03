@@ -64,7 +64,21 @@ h1.h1_header {
     text-align: center;
     margin-bottom: 25px;
 }
+.top{
+    width: 100%;
+    display: inline-flex;
+    background-color: blanchedalmond;
+    justify-content: space-between;
+    padding: 5px auto;
+}
 
+.top p, .top a{
+    color: #819e89;
+}
+
+.top i{
+    margin-right: 5px;
+}
 .my-d-flex {
     display: flex;
 }

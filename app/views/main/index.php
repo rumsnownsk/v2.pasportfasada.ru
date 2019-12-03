@@ -1,5 +1,5 @@
 <div class="ourService">
-    <h1 class="main__title_content h1_header">Предоставляемые услуги</h1>
+    <h2 class="main__title_content">Предоставляемые услуги</h2>
     <div class="row">
         <div class="col-md-6">
             <div class="ourService_content">
@@ -16,7 +16,7 @@
 
 
 <div class="ourCompany">
-    <h1 class="main__title_content h1_header">О нашей компании</h1>
+    <h2 class="main__title_content">О нашей компании</h2>
     <div class="main__ourCompany_content">
         <p>Организация ООО &laquo;Паспорт фасадов&raquo; создана исключительно для разработки, согласования и получения
             паспортов
@@ -29,7 +29,7 @@
 </div>
 <!-- Numbers -->
 <div class="statistic">
-    <h1 class="statistic__title h1_header">Результаты работ</h1>
+    <h2 class="statistic__title">Результаты работ</h2>
     <div class="d-flex result">
         <div class="result__item">
             <div class="result__icon">
@@ -96,7 +96,7 @@
 <!-- End Numbers -->
 
 <div class="whatIsIt">
-    <h1 class="main__title_content h1_header">Что такое Паспорт Фасада здания?</h1>
+    <h2 class="main__title_content">Что такое Паспорт Фасада здания?</h2>
     <div class="main__whatIsIt_content">
         <p>В целях формирования архитектурного облика города Новосибирска, в соответствии с
             <a href="http://www.consultant.ru/document/cons_doc_LAW_44571/" target="_blank">ФЗ от 06.10.2003 №

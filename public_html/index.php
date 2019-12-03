@@ -23,15 +23,15 @@ require ROOT.'/app/core/libs/functions.php';
 new \app\core\App();
 
 
-Router::addRoutes('^$', ['controller'=> 'main', 'action' => 'plug']);
-//Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);
-//Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
-//Router::addRoutes('^works$', ['controller'=> 'main', 'action' => 'works']);
-//Router::addRoutes('^thanks$', ['controller'=> 'main', 'action' => 'thanks']);
-//Router::addRoutes('^law$', ['controller'=> 'main', 'action' => 'law']);
-//Router::addRoutes('^contact$', ['controller'=> 'main', 'action' => 'contact']);
-//Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
-//Router::addRoutes('^map$', ['controller'=> 'main', 'action' => 'map']);
+//Router::addRoutes('^$', ['controller'=> 'main', 'action' => 'plug']);
+Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);
+Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
+Router::addRoutes('^works$', ['controller'=> 'main', 'action' => 'works']);
+Router::addRoutes('^thanks$', ['controller'=> 'main', 'action' => 'thanks']);
+Router::addRoutes('^law$', ['controller'=> 'main', 'action' => 'law']);
+Router::addRoutes('^contact$', ['controller'=> 'main', 'action' => 'contact']);
+Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
+Router::addRoutes('^map$', ['controller'=> 'main', 'action' => 'map']);
 
 Router::addRoutes('^auth$', ['controller'=> 'auth', 'action' => 'login']);
 

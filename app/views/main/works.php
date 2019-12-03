@@ -1,6 +1,6 @@
 <?php if (!empty($works)) : ?>
     <div class="works">
-        <h1 class="h1_header"><?= $category->title ?></h1>
+        <h2><?= $category->title ?></h2>
         <div class="works__content">
             <?php foreach ($works as $work): ?>
 

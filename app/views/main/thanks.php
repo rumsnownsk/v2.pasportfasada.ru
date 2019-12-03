@@ -1,4 +1,4 @@
-<h1 class="h1_header">Слова благодарности наших клиентов</h1>
+<h2>Слова благодарности наших клиентов</h2>
 <div class="thanks gallery">
 
     <?php foreach ($thanks as $thank) : ?>

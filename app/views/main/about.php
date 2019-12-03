@@ -1,4 +1,4 @@
-<h1 class="h1_header">Рабочий класс:</h1>
+<h2>Рабочий класс:</h2>
 <div class="about">
 
     <div class="user layer">

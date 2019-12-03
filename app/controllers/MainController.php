@@ -21,9 +21,19 @@ class MainController extends Controller
 {
     public function __construct($route)
     {
+//        dd('tttt');
+//        redirect('/plug');
         $this->vars['categories'] = Category::all();
         $this->vars['recentWorks'] = Work::all()->sortByDesc('finishDate')->slice(0, 2);
         parent::__construct($route);
+    }
+
+    public function plugAction()
+    {
+//        dd('test');
+        $this->layout = false;
+        $title = 'заглушка';
+        $this->set(compact('title'));
     }
 
     public function indexAction()
@@ -67,7 +77,8 @@ class MainController extends Controller
         $this->set(compact('thanks'));
     }
 
-    public function lawAction(){
+    public function lawAction()
+    {
 
     }
 
@@ -81,11 +92,13 @@ class MainController extends Controller
 
     }
 
-    public function mapAction(){
+    public function mapAction()
+    {
 
     }
 
-    public function captchaAction(){
+    public function captchaAction()
+    {
         if ($this->isAjax()) {
             $captchaBuild = new PhraseBuilder(3, '0123456789');
 
@@ -107,10 +120,10 @@ class MainController extends Controller
 
     public function recallAction()
     {
-        if ($this->isAjax()){
-            if ($_SESSION['captcha'] !== $_POST['code']){
+        if ($this->isAjax()) {
+            if ($_SESSION['captcha'] !== $_POST['code']) {
                 echo json_encode([
-                    'code' => 400  ,
+                    'code' => 400,
                     'verify' => false
                 ]);
                 exit;
@@ -119,9 +132,9 @@ class MainController extends Controller
             $data = [
                 'subject' => 'Прозьба перезвонить',
                 'to' => 'stevennsk@ngs.ru',
-                'body' => "Меня звать ".$_POST['name']
-                    .". Мой номер: ".$_POST['phone']
-                    .". Пожалуйста, перезвоните мне!",
+                'body' => "Меня звать " . $_POST['name']
+                    . ". Мой номер: " . $_POST['phone']
+                    . ". Пожалуйста, перезвоните мне!",
             ];
 
             $mail = new Mail($data);
@@ -135,7 +148,6 @@ class MainController extends Controller
         }
         redirect();
     }
-
 
 
     public function ajaxAction()

@@ -41,7 +41,8 @@ class View
         $this->view = $view;
     }
 
-    protected function compressPage($buffer){
+    protected function compressPage($buffer)
+    {
 //        return $buffer;
         $search = [
             "/(\n)+/",
@@ -76,57 +77,64 @@ class View
         }
 
         $prefix = str_replace("\\", "/", $this->route['prefix']);
-        $file_view = APP . "/views/". $prefix ."{$this->route['controller']}/{$this->view}.php";
+        $file_view = APP . "/views/" . $prefix . "{$this->route['controller']}/{$this->view}.php";
 
-//        ob_start();
-        ob_start([$this, 'compressPage']);
-//        ob_start('ob_gzhandler');
+        header("Content-Encoding: UTF8");
+
         {
-            header("Content-Encoding: UTF8");
             if (file_exists($file_view)) {
 
+                if ($this->layout == false) {
+                    require $file_view;
+                    exit;
+                }
+//                ob_start();
+//                ob_start('ob_gzhandler');
+                ob_start([$this, 'compressPage']);
+
                 require $file_view;
+
+                $content = ob_get_clean();
+//                $content = ob_get_contents();
+//                ob_clean();
+
 
             } else {
                 throw new \Exception("файл ВИДА <b>$file_view</b> - not found ", 404);
             }
-//            dd(ob_get_contents());
 
-//            $content = ob_get_contents();
         }
 
-//        ob_clean();
-        $content = ob_get_clean();
 
-        if (false !== $this->layout) {
-            $file_layout = APP . "/views/layouts/{$this->layout}.php";
+        $file_layout = APP . "/views/layouts/{$this->layout}.php";
 
-            if (is_file($file_layout)) {
-                $content = $this->getScript($content);
-                $scripts = [];
+        if (file_exists($file_layout)) {
+            $content = $this->getScript($content);
+            $scripts = [];
 
-                if (!empty($this->scripts[0])){
-                    $scripts = $this->scripts[0];
-                }
-                include $file_layout;
-
-            } else {
-                throw new \Exception("файл ШАБЛОНА <b>{$file_layout}</b> - not found ", 404);
+            if (!empty($this->scripts[0])) {
+                $scripts = $this->scripts[0];
             }
+            include $file_layout;
+
+        } else {
+            throw new \Exception("файл ШАБЛОНА <b>{$file_layout}</b> - not found ", 404);
         }
     }
 
-    protected function getScript($content){
+    protected function getScript($content)
+    {
         $pattern = "#<script.*?>.*?</script>#si";
         preg_match_all($pattern, $content, $this->scripts);
 //        dd(!empty($this->scripts));
-        if(!empty($this->scripts)){
+        if (!empty($this->scripts)) {
             $content = preg_replace($pattern, '', $content);
         }
         return $content;
     }
 
-    public function getPart($file){
+    public function getPart($file)
+    {
         extract($this->data);
 
         $file = APP . "/views/{$file}.php";

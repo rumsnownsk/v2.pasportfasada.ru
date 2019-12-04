@@ -1,46 +1,8 @@
 <?php
-use app\core\Router;
+define('ROOT', dirname(__DIR__));   //  /var/www/v2.pasportfasada.ru
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+require ROOT.'/vendor/autoload.php';
 
-$query = trim($_SERVER['REQUEST_URI'], '/');
-
-define('WWW', __DIR__);
-define('ROOT', dirname(__DIR__));
-define('APP', dirname(__DIR__).'/app');
-define('LIBS', dirname(__DIR__).'/core/libs');
-define('CACHE', dirname(__DIR__).'/temp/cache');
-define('DEBUG', true);
-define('ADMIN', '/admin');
-
-define('IMAGES', getcwd().'/images');
-
-require ROOT."/vendor/autoload.php";
-require ROOT."/config/set_components.php";
-require ROOT.'/app/core/libs/functions.php';
-
-new \app\core\App();
-
-Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
-Router::addRoutes('^works$', ['controller'=> 'main', 'action' => 'works']);
-Router::addRoutes('^thanks$', ['controller'=> 'main', 'action' => 'thanks']);
-Router::addRoutes('^law$', ['controller'=> 'main', 'action' => 'law']);
-Router::addRoutes('^contact$', ['controller'=> 'main', 'action' => 'contact']);
-Router::addRoutes('^about$', ['controller'=> 'main', 'action' => 'about']);
-Router::addRoutes('^map$', ['controller'=> 'main', 'action' => 'map']);
-Router::addRoutes('^recall$', ['controller'=> 'main', 'action' => 'recall']);
-Router::addRoutes('^captcha', ['controller'=> 'main', 'action' => 'captcha']);
-
-Router::addRoutes('^auth$', ['controller'=> 'auth', 'action' => 'login']);
-
-// defaults routes
-//Router::addRoutes('^admin$', ['controller'=> 'main', 'action'=>'index', 'prefix'=> 'admin']);
-Router::addRoutes('^admin$', ['controller'=> 'work', 'action'=>'index', 'prefix'=> 'admin']);
-Router::addRoutes('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
-//Router::addRoutes('^auth/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'auth']);
-
-Router::addRoutes('^$', ['controller'=> 'main', 'action'=>'index']);
-Router::addRoutes('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
-
-Router::dispatch($query);
+require ROOT.'/settings/helpers.php';
+require ROOT.'/settings/db.php';
+require ROOT.'/settings/routers.php';

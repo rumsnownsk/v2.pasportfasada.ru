@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager;
 
 // Соедитение с Базой Данных
-$capsule = new Capsule;
-$capsule->addConnection([
+$m = new Manager;
+$m->addConnection([
     'driver' => config('database.driver'),
     'host' => config('database.host'),
     'database' => config('database.dbname'),
@@ -15,7 +15,8 @@ $capsule->addConnection([
     'prefix' => config('database.prefix')
 ]);
 // Make this Capsule instance available globally via static methods... (optional)
-$capsule->setAsGlobal();
-
+$m->setAsGlobal();
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
-$capsule->bootEloquent();
+$m->bootEloquent();
+//dd($capsule);
+

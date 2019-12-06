@@ -518,19 +518,20 @@ nav {
 
 .works__pagination {
     margin: 20px auto;
+    text-align: center;
 }
 
 .pagination {
     justify-content: center;
 }
 
-.pagination li.active {
-    background-color: #f9c64e;
-    display: block;
-    padding: .5rem 1rem;
-    color: #007bff;
-    border-radius: 5px;
-}
+/*.pagination li.active {*/
+    /*background-color: #f9c64e;*/
+    /*display: block;*/
+    /*padding: .5rem 1rem;*/
+    /*color: #007bff;*/
+    /*border-radius: 5px;*/
+/*}*/
 
 /* END styles for OBJECT page */
 

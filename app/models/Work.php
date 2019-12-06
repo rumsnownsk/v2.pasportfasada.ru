@@ -13,7 +13,8 @@ class Work extends Model
     use HelpersMethods;
 
     protected $casts = [
-        'category_id' => 'integer'
+//        'category_id' => 'integer',
+//        'timeCreate' => 'string'
     ];
 
     protected $fillable = [
@@ -140,16 +141,6 @@ class Work extends Model
         }
     }
 
-
-    public static function checkPhoto($works)
-    {
-        return collect($works)->each(function ($item) {
-            if (!file_exists(IMAGES . '/works/' . $item->photoName) || empty($item->photoName)) {
-                $item->photoName = 'no-photo.jpg';
-            }
-        });
-    }
-
     public function getImage()
     {
         if (!file_exists(IMAGES . '/works/' . $this->photoName) || empty($this->photoName)) {
@@ -180,55 +171,6 @@ class Work extends Model
             default:
                 return null;
         }
-    }
-
-    public function getFinishDate()
-    {
-        $d = date("d", $this->finishDate);
-        $m = date("m", $this->finishDate);
-        switch ($m) {
-            case 1:
-                $m = "января";
-                break;
-            case 2:
-                $m = "февраля";
-                break;
-            case 3:
-                $m = "марта";
-                break;
-            case 4:
-                $m = "апреля";
-                break;
-            case 5:
-                $m = "мая";
-                break;
-            case 6:
-                $m = "июня";
-                break;
-            case 7:
-                $m = "июля";
-                break;
-            case 8:
-                $m = "августа";
-                break;
-            case 9:
-                $m = "сентября";
-                break;
-            case 10:
-                $m = "октября";
-                break;
-            case 11:
-                $m = "ноября";
-                break;
-            case 12:
-                $m = "декабря";
-                break;
-            default:
-                $m = "none";
-                break;
-        }
-        $y = date("Y", $this->finishDate);
-        return "$d $m<br>$y";
     }
 
     public function getErrors()

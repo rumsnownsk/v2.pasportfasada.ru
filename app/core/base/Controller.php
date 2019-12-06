@@ -2,54 +2,42 @@
 
 namespace app\core\base;
 
-use app\core\App;
-use app\core\Registry;
+use app\core\libs\HelpersMethods;
 use app\models\User;
+use League\Plates\Engine;
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+use Twig\Extension\CoreExtension;
+use Twig\Loader\FilesystemLoader;
 
 abstract class Controller
 {
-    public $pathToView = [];
-
-    /**
-     * текущий маршрут и параметры (controller, action, params)
-     * @var array
-     */
-    public $route = [];
-
-    /**
-     * вид
-     * @var string
-     */
-    public $view;
-
-    /**
-     * базовый шаблон
-     * @var string
-     */
-    public $layout;
-
-    /**
-     * данные для View
-     * @var array
-     */
     public $vars = array();
     public $errors = array();
 
     public $meta = [
-        'title' => '',
+        'titlePage' => '',
         'description' => '',
         'keywords' => ''
     ];
 
-    public $app;
     public $auth;
 
+    public $loader;
+    public $view;
 
-    public function __construct($route)
+
+    use HelpersMethods;
+
+    public function __construct(Engine $view)
     {
-        $this->route = $route;
-        $this->view = $route['action'];
-        $this->app = Registry::instance();
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $this->view = $view;
 
         $this->vars['meta'] = $this->meta;
         $this->vars['errors'] = $this->errors;
@@ -60,23 +48,17 @@ abstract class Controller
         };
     }
 
-    public function getView()
+    public function render($pathToView, array $data = array())
     {
-        $vObj = new View($this->route, $this->layout, $this->view);
-        $vObj->render($this->vars);
+        $data = array_merge($this->vars, $data);
+
+        echo $this->view->render($pathToView, $data);
     }
 
-    public function set($data)
-    {
-//        dump($this->vars);
-        $this->vars = array_merge($this->vars, $data);
-//        dd($this->vars);
-    }
-
-    public function setMeta($title='', $description='', $keywords=''){
-        $this->vars['meta']['title'] = $title;
-        $this->vars['meta']['description'] = $description;
-        $this->vars['meta']['keywords'] = $keywords;
+    public function setMeta(array $meta = array()){
+        foreach ($meta as $k => $v){
+            $this->vars['meta'][$k] = $v;
+        }
     }
 
     public function isAjax()
@@ -84,10 +66,5 @@ abstract class Controller
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
             !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
             strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
-    }
-
-    public function loadView($view, $vars = []){
-        extract($vars);
-        require APP."/views/{$this->route['controller']}/{$view}.php";
     }
 }

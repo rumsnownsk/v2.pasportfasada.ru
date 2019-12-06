@@ -5,6 +5,10 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
     <!--    <link href="/css/jquery.mCustomScrollbar.css" rel='stylesheet' type='text/css' />-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
     <link href="/css/font-awesome.min.css" rel='stylesheet' type='text/css'/>
     <link href="/css/magnific-popup.css" rel='stylesheet' type='text/css'/>
     <link href="/css/callbackme.css" rel='stylesheet' type='text/css'/>
@@ -12,9 +16,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
-    <meta name="description" content="<?= $meta['description'] ?>">
-    <meta name="keywords" content="<?= $meta['keywords'] ?>">
-    <title><?= $meta['title'] ?></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title><?= $this->e($title) ?></title>
 
     <!----webfonts---->
     <link href='https://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
@@ -26,11 +30,17 @@
 </head>
 <body>
 
-<?php if (isset($auth)) $this->getPart('inc/adminButton') ?>
+
 <!---header---->
 <header id="header" class="header">
+
     <div class="container">
+        <div class="row">
+
+            <?php if (isset($auth)) $this->getPart('inc/adminButton') ?>
+        </div>
         <div class="row bgColor pt25">
+
             <div class="col-lg-2">
                 <a href="/">
                     <img src="/images/logo.png" class="logo" title="Паспорт фасада новосибирск"/>
@@ -71,20 +81,18 @@
                             <li class="menu__item menu-item-has-children">
                                 <a href="/works" class="list_categories">ОБЪЕКТЫ</a>
                                 <ul class="sub-menu">
+
                                     <?php foreach ($categories as $category) : ?>
-
-                                        <li><a href="/works?cat_id=<?= $category->id ?>"><?= $category->title ?></a>
-                                        </li>
-
+                                        <li><a href="/works/<?= $category->id ?>"><?= $category->title ?></a></li>
                                     <?php endforeach; ?>
-                                </ul>
 
+                                </ul>
                             </li>
                             <li class="menu__item"><a href="/thanks">БЛАГОДАРНОСТИ</a></li>
                             <li class="menu__item"><a href="/law">ЗАКОН</a></li>
                             <li class="menu__item"><a href="/contact">КОНТАКТЫ</a></li>
                             <li class="menu__item"><a href="/about">О&nbsp;НАС</a></li>
-                            <!--                            <li class="menu__item"><a href="/map">КАРТА</a></li>-->
+                            <li class="menu__item"><a href="/map">КАРТА</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -114,7 +122,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <?= $content ?>
+                    <?= $this->section('content') ?>
 
                 </div>
             </div>
@@ -161,7 +169,11 @@
                 </div>
 
                 <div id="include">
-                    <?php $this->getPart('inc/sidebar') ?>
+
+                    <?= $this->insert('inc/sidebar', [
+                        'recentWorks' => $recentWorks
+                    ]) ?>
+
                 </div>
             </div>
         </div>

@@ -2,9 +2,10 @@
 
 return [
     'const' => [
-        'DEBUG' => false,
-        'ADMIN' => '/admin',
-        'IMAGES' => dirname(__DIR__).'/images',
+        'DEBUG' => true,
+        'VIEWS' => dirname(__DIR__).'/app/views',
+        'APP' => dirname(__DIR__).'/app',
+        'IMAGES' => getcwd().'/images',
     ],
     'settings' => [],
     'mail' => [
@@ -16,10 +17,10 @@ return [
     ],
     'database' => [
         'driver' => 'mysql',
-        'host' => '',
-        'dbname' => '',
-        'username' => '',
-        'password' => '',
+        'host' => 'localhost',
+        'dbname' => 'pf_nsk',
+        'username' => 'root',
+        'password' => 'root',
         'charset'=>'utf8',
         'collation'=>'utf8_unicode_ci',
         'prefix'    => ''

@@ -1,13 +1,15 @@
+<?= $this->layout('layouts/main', compact('title', 'recentWorks', 'categories')) ?>
+
 <?php if (!empty($works)) : ?>
     <div class="works">
-        <h2><?= $category->title ?></h2>
+        <h2><?= $categoryName ?></h2>
         <div class="works__content">
             <?php foreach ($works as $work): ?>
 
                 <div class="work layer">
                     <img src="<?= $work->getImage() ?>" alt=""/>
                     <div class="work__info">
-                        <p><?= $work->title ?></p>
+                        <p><?= $work->id ?></p>
                         <p>Выполнено: <?= $work->finishDate ?></p>
                     </div>
                 </div>
@@ -15,11 +17,9 @@
             <?php endforeach; ?>
         </div>
 
-
-
-        <?php if ($pagination->countPages > 1) : ?>
+        <?php if ($paginator->getNumPages() > 1) : ?>
             <div class="works__pagination">
-                <?= $pagination; ?>
+                <?php getPagination($paginator) ?>
             </div>
         <?php endif; ?>
     </div>
@@ -29,7 +29,7 @@
     <div class="categories_list">
         <?php foreach ($categories as $category) : ?>
 
-            <a href="/works?cat_id=<?= $category->id ?>"><?= $category->title ?></a>
+            <a href="/works/<?= $category->id ?>"><?= $category->title ?></a>
 
         <?php endforeach; ?>
     </div>

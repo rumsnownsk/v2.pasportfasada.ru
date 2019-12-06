@@ -8426,3 +8426,123 @@
 =======================
 [2019-12-03 19:07:25]; Текст: Страница не найдена | Файл: /var/www/pf_nsk.ru/app/core/Router.php | Строка: 92 
 =======================
+[2019-12-05 22:41:27]; Текст: Cannot call indexAction on app\controllers\MaginController because it is not a class nor a valid container entry | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/CallableResolver.php | Строка: 104 
+=======================
+[2019-12-05 22:43:41]; Текст: Class 'app\controllers\Categorhy' not found | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 31 
+=======================
+[2019-12-05 23:01:57]; Текст: Argument 1 passed to Twig\Environment::__construct() must implement interface Twig\Loader\LoaderInterface, null given, called in /var/www/v2.pasportfasada.ru/app/core/base/Controller.php on line 86 | Файл: /var/www/v2.pasportfasada.ru/vendor/twig/twig/src/Environment.php | Строка: 98 
+=======================
+[2019-12-05 23:02:10]; Текст: Argument 1 passed to Twig\Environment::__construct() must implement interface Twig\Loader\LoaderInterface, null given, called in /var/www/v2.pasportfasada.ru/app/core/base/Controller.php on line 86 | Файл: /var/www/v2.pasportfasada.ru/vendor/twig/twig/src/Environment.php | Строка: 98 
+=======================
+[2019-12-05 23:02:29]; Текст: Argument 1 passed to Twig\Environment::__construct() must implement interface Twig\Loader\LoaderInterface, null given, called in /var/www/v2.pasportfasada.ru/app/core/base/Controller.php on line 86 | Файл: /var/www/v2.pasportfasada.ru/vendor/twig/twig/src/Environment.php | Строка: 98 
+=======================
+[2019-12-05 23:02:53]; Текст: Argument 1 passed to Twig\Environment::__construct() must implement interface Twig\Loader\LoaderInterface, null given, called in /var/www/v2.pasportfasada.ru/app/core/base/Controller.php on line 86 | Файл: /var/www/v2.pasportfasada.ru/vendor/twig/twig/src/Environment.php | Строка: 98 
+=======================
+[2019-12-05 23:03:14]; Текст: Argument 1 passed to Twig\Environment::__construct() must implement interface Twig\Loader\LoaderInterface, null given, called in /var/www/v2.pasportfasada.ru/app/core/base/Controller.php on line 86 | Файл: /var/www/v2.pasportfasada.ru/vendor/twig/twig/src/Environment.php | Строка: 98 
+=======================
+[2019-12-06 14:16:21]; Текст: The template "layouts/main.php" could not be found at "/var/www/v2.pasportfasada.ru/app/views/layouts/main.php.php". | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Template.php | Строка: 144 
+=======================
+[2019-12-06 14:16:37]; Текст: Undefined variable: meta | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 15 
+=======================
+[2019-12-06 14:41:45]; Текст: Too few arguments to function League\Plates\Template\Template::e(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/layouts/main.php on line 1 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Template.php | Строка: 342 
+=======================
+[2019-12-06 14:42:30]; Текст: htmlspecialchars() expects parameter 1 to be string, array given | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Template.php | Строка: 333 
+=======================
+[2019-12-06 14:45:00]; Текст: Undefined variable: meta | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 1 
+=======================
+[2019-12-06 14:45:40]; Текст: Undefined property: League\Plates\Template\Template::$title | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 1 
+=======================
+[2019-12-06 14:54:23]; Текст: The template "layout/main" could not be found at "/var/www/v2.pasportfasada.ru/app/views/layout/main.php". | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Template.php | Строка: 144 
+=======================
+[2019-12-06 14:54:54]; Текст: Undefined variable: meta | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 14:55:35]; Текст: Undefined variable: titlePage | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 14:56:09]; Текст: Undefined variable: title | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 14:56:24]; Текст: Undefined variable: title | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 14:56:48]; Текст: Undefined variable: title | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 14:56:57]; Текст: Undefined variable: title | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 14:57:37]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 81 
+=======================
+[2019-12-06 14:59:39]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 81 
+=======================
+[2019-12-06 15:07:19]; Текст: Undefined variable: recentWorks | Файл: /var/www/v2.pasportfasada.ru/app/views/inc/sidebar.php | Строка: 4 
+=======================
+[2019-12-06 15:08:34]; Текст: Undefined variable: recentWorks | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 170 
+=======================
+[2019-12-06 15:10:04]; Текст: Undefined variable: recentWorks | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 170 
+=======================
+[2019-12-06 15:12:14]; Текст: Invalid argument supplied for foreach() | Файл: /var/www/v2.pasportfasada.ru/app/views/inc/sidebar.php | Строка: 4 
+=======================
+[2019-12-06 15:12:57]; Текст: Invalid argument supplied for foreach() | Файл: /var/www/v2.pasportfasada.ru/app/views/inc/sidebar.php | Строка: 4 
+=======================
+[2019-12-06 17:18:06]; Текст: The template "main/index.php" could not be found at "/var/www/v2.pasportfasada.ru/app/views/main/index.php.php". | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Template.php | Строка: 144 
+=======================
+[2019-12-06 18:11:11]; Текст: Undefined variable: title | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/main.php | Строка: 17 
+=======================
+[2019-12-06 18:14:14]; Текст: Undefined variable: thanks | Файл: /var/www/v2.pasportfasada.ru/app/views/main/thanks.php | Строка: 6 
+=======================
+[2019-12-06 18:25:48]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:27:05]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:27:11]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:28:19]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:28:32]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:31:42]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:42:51]; Текст: Undefined variable: id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 49 
+=======================
+[2019-12-06 18:43:17]; Текст: Unable to invoke the callable because no value was given for parameter 1 ($id) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/invoker/src/Invoker.php | Строка: 75 
+=======================
+[2019-12-06 18:46:03]; Текст: Undefined index: cat_id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 51 
+=======================
+[2019-12-06 18:50:28]; Текст: Call to undefined method app\controllers\MainController::set() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 65 
+=======================
+[2019-12-06 18:50:41]; Текст: Call to undefined method app\controllers\MainController::set() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 65 
+=======================
+[2019-12-06 18:57:34]; Текст: Undefined variable: category | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 5 
+=======================
+[2019-12-06 19:02:46]; Текст: Undefined variable: category | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 5 
+=======================
+[2019-12-06 20:57:03]; Текст: Undefined variable: total | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 67 
+=======================
+[2019-12-06 20:57:17]; Текст: Undefined variable: works | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 75 
+=======================
+[2019-12-06 20:58:49]; Текст: Undefined variable: total | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 77 
+=======================
+[2019-12-06 20:59:17]; Текст: Undefined variable: categoryTitle | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 5 
+=======================
+[2019-12-06 20:59:46]; Текст: Undefined variable: categoryTitle | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 5 
+=======================
+[2019-12-06 21:00:00]; Текст: Undefined variable: pagination | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 23 
+=======================
+[2019-12-06 21:15:26]; Текст: Undefined variable: start | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 62 
+=======================
+[2019-12-06 21:23:48]; Текст: Undefined index: page | Файл: /var/www/v2.pasportfasada.ru/app/controllers/MainController.php | Строка: 62 
+=======================
+[2019-12-06 21:36:40]; Текст: Method Illuminate\Database\Eloquent\Collection::offset does not exist. | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/support/Traits/Macroable.php | Строка: 104 
+=======================
+[2019-12-06 21:36:57]; Текст: Method Illuminate\Database\Eloquent\Collection::offset does not exist. | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/support/Traits/Macroable.php | Строка: 104 
+=======================
+[2019-12-06 21:56:48]; Текст: Undefined variable: pagination | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 23 
+=======================
+[2019-12-06 21:57:45]; Текст: Undefined variable: paginatorWorks | Файл: /var/www/v2.pasportfasada.ru/app/views/main/works.php | Строка: 20 
+=======================
+[2019-12-06 22:10:10]; Текст: Undefined variable: work | Файл: /var/www/v2.pasportfasada.ru/app/views/inc/sidebar.php | Строка: 6 
+=======================
+[2019-12-06 22:21:50]; Текст: Argument 1 passed to app\core\base\Controller::__construct() must be an instance of League\Plates\Engine, instance of Twig\Loader\FilesystemLoader given, called in /var/www/v2.pasportfasada.ru/app/controllers/MainController.php on line 32 | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 34 
+=======================
+[2019-12-06 22:23:13]; Текст: Call to a member function render() on null | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 64 
+=======================
+[2019-12-06 22:30:37]; Текст: session_start(): Cannot start session when headers already sent | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 37 
+=======================
+[2019-12-06 22:30:50]; Текст: session_start(): Cannot start session when headers already sent | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 37 
+=======================

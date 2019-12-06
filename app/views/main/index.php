@@ -1,3 +1,5 @@
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+
 <div class="ourService">
     <h2 class="main__title_content">Предоставляемые услуги</h2>
     <div class="row">

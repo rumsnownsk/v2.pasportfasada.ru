@@ -1,3 +1,5 @@
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+
 <div class="contact layer">
     <h1 class="contact__name h1_header">Проектно-экспертная организация<br> ООО «Паспорт фасадов»</h1>
     <p class="contact__address">Красный проспект 14 офис 601</p>

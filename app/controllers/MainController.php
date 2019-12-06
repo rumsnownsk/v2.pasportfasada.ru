@@ -2,99 +2,127 @@
 
 namespace app\controllers;
 
-use app\core\App;
 use app\core\base\Controller;
 use app\core\libs\Mail;
-use app\core\libs\Pagination;
 use app\models\Category;
-use app\models\Main;
 use app\models\Thank;
 use app\models\Work;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
+use JasonGrimes\Paginator;
+use League\Plates\Engine;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
+use Twig\Loader\FilesystemLoader;
 
 
 class MainController extends Controller
 {
-    public function __construct($route)
+    public function __construct(Engine $view)
     {
-//        dd('tttt');
-//        redirect('/plug');
         $this->vars['categories'] = Category::all();
-        $this->vars['recentWorks'] = Work::all()->sortByDesc('finishDate')->slice(0, 2);
-        parent::__construct($route);
-    }
 
-    public function plugAction()
-    {
-//        dd('test');
-        $this->layout = false;
-        $title = 'заглушка';
-        $this->set(compact('title'));
+        $recentWorks = Work::all()->sortByDesc('finishDate')->slice(0, 2);
+
+        $this->vars['recentWorks'] = $recentWorks->each(function ($r) {
+            $r->timeCreate = $this->changeFormatDate($r->timeCreate);
+            return $r;
+        });
+
+        parent::__construct($view);
     }
 
     public function indexAction()
     {
         $title = 'Главная';
-        $this->set(compact('title'));
+
+        $this->render('main/index', [
+            'title' => $title,
+        ]);
     }
 
-    public function worksAction()
+    public function worksAction($cat_id = null)
     {
-//        $categories = Category::all();
+        if ($cat_id && array_key_exists($cat_id, Category::all()->keyBy('id')->toArray())) {
 
-        if (isset($_GET['cat_id']) && array_key_exists($_GET['cat_id'], Category::all()->keyBy('id')->toArray())) {
+            $categoryName = Category::find($cat_id)->title;
 
-            $category = Category::find($_GET['cat_id']);
-            $title = $category->name;
+            $works = Work::where('category_id', $cat_id)->get();
 
-            $total = Work::where('category_id', $_GET['cat_id'])->count();
+            $totalItems = $works->count();
+            $itemsPerPage = 4;
+            $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+            $urlPattern = '/works/'.$cat_id.'?page=(:num)';
 
-            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-            $perPage = 5;
-            $pagination = new Pagination($page, $perPage, $total);
-            $start = $pagination->getStart();
-            $works = Work::where('category_id', $_GET['cat_id'])->offset($start)->limit($perPage)->get();
+            $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
 
-            Work::checkPhoto($works);
+            $start = ($currentPage-1) * $itemsPerPage ;
 
-            $this->set(compact('categories', 'title', 'works', 'pagination', 'total', 'category'));
+            $works = $works->slice($start, $itemsPerPage);
+
+            $this->render('main/works', [
+                'title' => 'Объекты',
+                'works' => $works,
+                'paginator' => $paginator,
+                'total' => $totalItems,
+                'categoryName' => $categoryName
+            ]);
 
         } else {
 
             $title = 'Объекты';
-            $this->set(compact('categories', 'title'));
+            $this->render('main/works', [
+                'title' => $title,
+            ]);
         };
     }
 
 
     public function thanksAction()
     {
+        $title = 'Благодарности';
         $thanks = Thank::all();
-        $this->set(compact('thanks'));
+
+        $this->render('main/thanks', [
+            'title' => $title,
+            'thanks' => $thanks
+        ]);
     }
 
     public function lawAction()
     {
-
+        $title = 'Закон';
+        $this->render('main/law',[
+        'title' => $title
+        ]);
     }
 
     public function contactAction()
     {
+        $title = 'Закон';
 
+        $this->render('main/contact', [
+            'title' => $title,
+        ]);
     }
 
     public function aboutAction()
     {
+        $title = 'О нас';
 
+        $this->render('main/about', [
+            'title' => $title,
+        ]);
     }
 
     public function mapAction()
     {
+        $title = 'Карта';
 
+        $this->render('main/map', [
+            'title' => $title,
+        ]);
     }
 
     public function captchaAction()

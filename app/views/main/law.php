@@ -1,3 +1,5 @@
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+
 <div class="law">
     <h2>ПОСТАНОВЛЕНИЕ От 16.08.2013 № 7762</h2>
     <h3>&laquo;Об утверждении Порядка выдачи паспортов фасадов зданий (строений, сооружений)

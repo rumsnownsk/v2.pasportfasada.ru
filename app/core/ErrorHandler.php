@@ -7,6 +7,7 @@ class ErrorHandler
     public function __construct()
     {
         if (DEBUG) {
+            ini_set('display_errors', 1);
             error_reporting(-1);
         } else {
             error_reporting(0);
@@ -62,7 +63,7 @@ class ErrorHandler
 
     protected function myDisplayError($errno, $errstr, $errfile, $errline, $response = 500)
     {
-//        dd($response);
+//        dd(DEBUG);
         http_response_code($response);
 
         if ($response == 404 && !DEBUG){

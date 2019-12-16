@@ -2,11 +2,14 @@
 
 namespace app\models;
 
+use app\core\libs\HelpersMethods;
 use Illuminate\Database\Eloquent\Model;
 use Valitron\Validator;
 
 class Category extends Model
 {
+    use HelpersMethods;
+
     protected $table = 'categories';
     public $timestamps = false;
 
@@ -26,6 +29,9 @@ class Category extends Model
         $v = new Validator($_POST);
         $v->rules($this->rules);
         if ($v->validate()){
+            if (isset($_SESSION['oldData'])) {
+                unset($_SESSION['oldData']);
+            };
             return true;
         } else {
             $this->errors = $v->errors();
@@ -42,16 +48,5 @@ class Category extends Model
     public function edit($fields){
         $this->fill($fields);
         $this->save();
-    }
-
-    public function getErrors(){
-        $errors = '<ul>';
-        foreach ($this->errors as $error) {
-            foreach ($error as $item) {
-                $errors .= "<li> $item </li>";
-            }
-        }
-        $errors .= '</ul>';
-        $_SESSION['error'] = $errors;
     }
 }

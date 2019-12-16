@@ -6,57 +6,61 @@ use app\models\Category;
 class CategoryController extends AdminController
 {
     public function indexAction(){
-        $cats = Category::all();
-        $this->set(compact('cats'));
+        $categories = Category::all();
+        $this->render('admin/category/index', compact('categories'));
     }
 
     public function createAction(){
+        $title = "Добавление категории";
         if (!empty($_POST)) {
             $category = new Category();
 
             if ($category->validate()) {
                 Category::add($_POST);
+                $this->msg->success('Добавлена новая категория');
+
                 redirect('/admin/category');
 
             } else {
-                $category->getErrors();
-                unset($_SESSION['oldData']);
+                $this->msg->error($category->getErrors());
                 $_SESSION['oldData'] = $_POST;
                 redirect();
             }
         }
+
+        $this->render('admin/category/create', compact('title'));
     }
 
-    public function editAction(){
-        if (!empty($_GET) && isset($_GET['id']) && (int)$_GET['id'] > 0) {
+    public function editAction($id){
+        $title = "Редактирование категории";
 
-            $category = Category::find($_GET['id']);
-            $this->set(compact('category'));
+        if (empty($_POST) && $category = Category::find($id)) {
+
+            $this->render("admin/category/edit", compact('category', 'title'));
 
         } elseif (!empty($_POST)) {
 
-            $category = Category::find($_POST['id']);
+            $category = Category::find($id);
 
             if ($category->validate()){
                 $category->edit($_POST);
+                $this->msg->success('Категория успешно отредактирована');
+
                 redirect('/admin/category');
 
             } else {
-                $category->getErrors();
+                $this->msg->error($category->getErrors());
                 $_SESSION['oldData'] = $_POST;
-                $_GET['id'] = $_POST['id'];
-                redirect();
+                redirect('/admin/category');
             };
 
         } else {
-
             redirect('/admin');
-
         }
     }
 
-    public function destroyAction(){
-        Category::find($_GET['id'])->delete();
+    public function destroyAction($id){
+        Category::find($id)->delete();
         redirect();
     }
 

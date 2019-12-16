@@ -1,13 +1,9 @@
-<?php dump($_SESSION) ?>
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="crud">
     <h2>Добавить благодарность</h2>
 
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
     <form action="/admin/thank/create" method="post" enctype="multipart/form-data">
 
@@ -39,7 +35,6 @@
         </div>
 
     </form>
-    <?php unset($_SESSION['oldData']); ?>
 </div>
 
 

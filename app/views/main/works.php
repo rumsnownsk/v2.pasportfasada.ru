@@ -1,4 +1,4 @@
-<?= $this->layout('layouts/main', compact('title', 'recentWorks', 'categories')) ?>
+<?= $this->layout('layouts/main', compact('title', 'recentWorks', 'categories', 'auth')) ?>
 
 <?php if (!empty($works)) : ?>
     <div class="works">

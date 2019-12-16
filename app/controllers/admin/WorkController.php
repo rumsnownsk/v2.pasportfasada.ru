@@ -10,10 +10,8 @@ class WorkController extends AdminController
 {
     public function indexAction()
     {
-//        dd($this->auth);
-//        $auth = $this->auth;
         $works = Work::all();
-        $this->set(compact('works'));
+        $this->render('admin/work/index', compact('works'));
     }
 
     public function createAction()
@@ -31,61 +29,60 @@ class WorkController extends AdminController
                 $work-> setPublish();
                 $work-> setDescription();
                 $work-> uploadImage('photo');
-                redirect();
 
+                $this->msg->success('Объект '.$work->title. ' успешно добавлен!');
+
+                redirect('/admin');
             } else {
-                $work->getErrors();
-                unset($_SESSION['oldData']);
+                $this->msg->error($work->getErrors());
                 $_SESSION['oldData'] = $_POST;
                 redirect();
             }
         }
 
-        $this->set(compact('categories', 'stages'));
+        $this->render('admin/work/create', compact('categories', 'stages'));
     }
 
 
-    public function editAction()
+    public function editAction($id)
     {
         $categories = Category::all();
         $stages = Stage::all();
 
-        if (!empty($_GET) && isset($_GET['id']) && (int)$_GET['id'] > 0) {
+        if (empty($_POST) && $work = Work::find($id)) {
 
-            $work = Work::find($_GET['id']);
-            $this->set(compact('work', 'categories', 'stages'));
+            $this->render("admin/work/edit", compact('work', 'categories', 'stages'));
 
         } elseif (!empty($_POST)) {
 
-            $work = Work::find($_POST['id']);
+            $work = Work::find($id);
 
             if ($work->validate()){
 
-//                dd($work);
                 $work->edit($_POST);
                 $work->setStage();
                 $work->setTimeCreate();
                 $work->setPublish();
                 $work->setDescription();
                 $work->uploadImage('photo');
-                redirect();
+
+                $this->msg->success('Объект: '.$work->title. 'успешно отредактирован');
+
+                redirect('/admin');
 
             } else {
-                $work->getErrors();
+                $this->msg->error($work->getErrors());
                 $_SESSION['oldData'] = $_POST;
-                $_GET['id'] = $_POST['id'];
                 redirect();
             };
-
-            $this->set(compact('work','categories', 'stages'));
 
         } else {
             redirect('/admin');
         }
     }
 
-    public function destroyAction(){
-        Work::find($_GET['id'])->remove();
+    public function destroyAction($id = null){
+        Work::find($id)->remove();
         redirect();
     }
 

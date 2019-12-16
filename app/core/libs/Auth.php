@@ -19,6 +19,7 @@ class Auth
         if ($username && $password){
 
             $user = User::where('username', $username)->first();
+//            dd($user);
 
             if(password_verify($password, $user->password)){
 

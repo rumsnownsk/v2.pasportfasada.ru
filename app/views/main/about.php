@@ -1,4 +1,4 @@
-<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories', 'auth')) ?>
 
 <h2>Рабочий класс:</h2>
 <div class="about">

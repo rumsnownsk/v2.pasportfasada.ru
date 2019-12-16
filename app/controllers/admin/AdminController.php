@@ -9,14 +9,14 @@ use app\models\User;
 class AdminController extends Controller
 {
 
-    public function __construct($route)
+    public function __construct()
     {
+//        dd($_SESSION['auth']);
         if (!isset($_SESSION['auth'])){
             redirect('/');
         }
 
-        parent::__construct($route);
-
-        $this->layout = 'admin';
+        parent::__construct();
     }
+
 }

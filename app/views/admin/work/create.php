@@ -1,12 +1,11 @@
+<?php dump($_SESSION); ?>
+
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="crud">
     <h2>Добавить новый объект</h2>
 
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
     <form action="/admin/work/create" method="post" enctype="multipart/form-data">
 
@@ -27,7 +26,7 @@
                 <p class="help-block">(улица, номер дома)</p>
             </div>
             <div class="form-group__data">
-                <input name="title" id="inputTitleWork" type="text" class="form-control" value="<?= oldInfo('title') ?>" title="">
+                <input name="title" id="inputTitleWork" type="text" class="form-control" value="<?= old('title') ?>" title="">
                 <p class="help-block redMarker">обязательное поле</p>
             </div>
         </div>
@@ -41,7 +40,7 @@
                 <select name="category_id" id="selectCategoryIdWork" title="">
                     <option selected disabled hidden>Здесь...</option>
                     <?php foreach ($categories as $category) : ?>
-                        <option value="<?= $category->id ?>" <?= oldSelect($category, "category_id") ?> >
+                        <option value="<?= $category->id ?>" <?= oldSelect($category, 'category_id') ?> >
                             <?= $category->title ?>
                         </option>
                     <?php endforeach; ?>
@@ -76,7 +75,7 @@
             </div>
             <div class="form-group__data" style="width: 300px;">
 
-                <input name="timeCreate" id="inputDateWork" type="date" class="form-control" value="<?= oldDate("timeCreate") ?>"
+                <input name="timeCreate" id="inputDateWork" type="date" class="form-control" value="<?= old("timeCreate") ?>"
                        title="">
                 <p class="help-block redMarker">обязательное поле</p>
             </div>
@@ -96,7 +95,7 @@
                 <label for="taDescWork">Краткое описание</label>
             </div>
             <div class="form-group__data">
-                <textarea name="description" id="taDescWork" class="form-control" title="" placeholder="<?= oldInfo('description')?>"></textarea>
+                <textarea name="description" id="taDescWork" class="form-control" title="" placeholder=""><?= old('description')?></textarea>
             </div>
 
         </div>
@@ -106,7 +105,6 @@
             <a href="/admin" class="btn btn-info" style="margin-left: 50px">На главную</a>
         </div>
     </form>
-    <?php unset($_SESSION['oldData']); ?>
 </div>
 
 

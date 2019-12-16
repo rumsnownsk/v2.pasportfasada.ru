@@ -1,14 +1,8 @@
-<?php //dump($_SESSION); ?>
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
 
 <div class="crud">
     <h2>Добавить нового работника</h2>
-
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
     <form action="/admin/user/create" method="post">
 
@@ -59,7 +53,6 @@
             <a href="/admin" class="btn btn-info" style="margin-left: 50px">На главную</a>
         </div>
     </form>
-    <?php unset($_SESSION['oldData']); ?>
 </div>
 
 

@@ -9,80 +9,79 @@ use app\models\Work;
 
 class UserController extends AdminController
 {
-    public function indexAction()
+    public function __construct()
     {
+        parent::__construct();
+
         if ($this->auth->role > 1) {
             redirect('/admin');
         }
+    }
 
+    public function indexAction()
+    {
+        $title = "Работнички";
         $users = User::where('username', '!=', 'admin')->get();
 
-        $this->set(compact('users'));
+        $this->render('admin/user/index', compact('users', 'title'));
     }
 
     public function createAction()
     {
-        if ($this->auth->role > 1) {
-            redirect('/admin');
-        }
-
+        $title = "Создать работника";
         if (!empty($_POST)) {
             $user = new User();
 
             if ($user->validate()) {
 
-                User::add($_POST);
-                redirect();
+                $user = User::add($_POST);
+                $this->msg->success('Создан новый работник: '.$user->username. ' !!!');
+
+                redirect('/admin/user');
 
             } else {
-                $user->getErrors();
-                unset($_SESSION['oldData']);
+                $this->msg->error($user->getErrors());
                 $_SESSION['oldData'] = $_POST;
                 redirect();
             }
         }
+        $this->render('admin/user/create', compact('title'));
     }
 
-    public function editAction()
-    {
-        if ($this->auth->id !== $_GET['id']  || $this->auth->role > 1) {
-            redirect('/admin');
-        }
-        if (!empty($_GET) && isset($_GET['id']) && (int)$_GET['id'] > 0) {
 
-            $user = User::find($_GET['id']);
-            $this->set(compact('user'));
+    public function editAction($id)
+    {
+        $title = "Редактировать работника";
+
+        if (empty($_POST) && $user = User::find($id)) {
+            $this->render('admin/user/edit', compact('title', 'user'));
 
         } elseif (!empty($_POST)) {
 
-            $user = User::find($_POST['id']);
+            $user = User::find($id);
 
-            if ($user->validate()) {
+            if ($user->validate(['password'])) {
 
-//                dd($user);
                 $user->edit($_POST);
                 $user->uploadImage('avatar');
-                redirect();
+                $this->msg->success('Работник: '.$user->username. ' отредактирован');
+
+                redirect('/admin/user');
 
             } else {
-                $user->getErrors();
+                $this->msg->error($user->getErrors());
                 $_SESSION['oldData'] = $_POST;
-                $_GET['id'] = $user->id;
                 redirect();
-
             };
 
         } else {
-            redirect('/admin/thanks');
+            redirect('/admin/user');
         }
     }
 
-    public function destroyAction()
+    public function destroyAction($id)
     {
-        if ($this->auth->role > 1) {
-            redirect('/admin');
-        }
-        User::find($_GET['id'])->remove();
+        User::find($id)->remove();
         redirect();
     }
 

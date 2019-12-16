@@ -2,6 +2,7 @@
 
 namespace app\controllers\admin;
 
+use app\core\libs\HelpersMethods;
 use app\models\Thank;
 
 class ThankController extends AdminController
@@ -9,7 +10,7 @@ class ThankController extends AdminController
     public function indexAction()
     {
         $thanks = Thank::all();
-        $this->set(compact('thanks'));
+        $this->render('admin/thank/index', compact('thanks'));
     }
 
     public function createAction()
@@ -21,40 +22,47 @@ class ThankController extends AdminController
 
                 $thank = Thank::add($_POST);
                 $thank->uploadImage('photo');
-                redirect();
+
+                $this->msg->success('Новая благодарность успешно добавлена');
+
+                redirect('/admin/thank');
 
             } else {
-                $thank->getErrors();
-                unset($_SESSION['oldData']);
+                $this->msg->error($thank->getErrors());
+
                 $_SESSION['oldData'] = $_POST;
                 redirect();
             }
         }
+        $this->render('admin/thank/create');
     }
 
-    public function editAction()
+    public function editAction($id)
     {
-        if (!empty($_GET) && isset($_GET['id']) && (int)$_GET['id'] > 0 ) {
+        if (empty($_POST) && $thank = Thank::find($id) ) {
 
-            $thank = Thank::find($_GET['id']);
-            $this->set(compact('thank'));
+            $this->render("admin/thank/edit", compact('thank'));
+
 
         } elseif (!empty($_POST)) {
 
-            $thank = Thank::find($_POST['id']);
+            $thank = Thank::find($id);
 
             if ($thank->validate()){
 
                 $thank->edit($_POST);
                 $thank->uploadImage('photo');
+
+                $this->msg->success('Благодарность успешно отредактирована');
+
                 redirect();
 
             } else {
-                $thank->getErrors();
-                $_SESSION['oldData'] = $_POST;
-                $_GET['id'] = $thank->id;
-                redirect();
+                $this->msg->error($thank->getErrors());
 
+                $_SESSION['oldData'] = $_POST;
+
+                redirect('/admin/thank');
             };
 
         } else {
@@ -62,8 +70,8 @@ class ThankController extends AdminController
         }
     }
 
-    public function destroyAction(){
-        Thank::find($_GET['id'])->remove();
+    public function destroyAction($id){
+        Thank::find($id)->remove();
         redirect();
     }
 

@@ -8546,3 +8546,349 @@
 =======================
 [2019-12-06 22:30:50]; Текст: session_start(): Cannot start session when headers already sent | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 37 
 =======================
+[2019-12-11 15:56:40]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 15:56:50]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 15:57:26]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 15:58:20]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 16:00:32]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 16:01:34]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 16:03:11]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 16:10:35]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 16:18:32]; Текст: Entry "app\controllers\admin\WorkController" cannot be resolved: Parameter $route of __construct() has no value defined or guessable
+Full definition:
+Object (
+    class = app\controllers\admin\WorkController
+    lazy = false
+    __construct(
+        $route = #UNDEFINED#
+    )
+) | Файл: /var/www/v2.pasportfasada.ru/vendor/php-di/php-di/src/Definition/Exception/InvalidDefinition.php | Строка: 18 
+=======================
+[2019-12-11 17:50:52]; Текст: The template name "main/index" is not valid. The default directory has not been defined. | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Name.php | Строка: 194 
+=======================
+[2019-12-11 17:51:12]; Текст: The template name "main/index" is not valid. The default directory has not been defined. | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Name.php | Строка: 194 
+=======================
+[2019-12-11 17:58:50]; Текст: Call to undefined function app\controllers\admin\redirect() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/AdminController.php | Строка: 15 
+=======================
+[2019-12-11 18:06:31]; Текст: The template "login/login" could not be found at "/var/www/v2.pasportfasada.ru/app/views/login/login.php". | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Template.php | Строка: 144 
+=======================
+[2019-12-11 18:29:25]; Текст: Undefined variable: _SESSION | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/AdminController.php | Строка: 14 
+=======================
+[2019-12-11 18:29:35]; Текст: Undefined variable: _SESSION | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/AdminController.php | Строка: 14 
+=======================
+[2019-12-11 18:30:20]; Текст: Undefined variable: _SESSION | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/AdminController.php | Строка: 14 
+=======================
+[2019-12-11 18:33:19]; Текст: Undefined variable: _SESSION | Файл: /var/www/v2.pasportfasada.ru/config/router.php | Строка: 39 
+=======================
+[2019-12-11 18:35:02]; Текст: Undefined variable: _SESSION | Файл: /var/www/v2.pasportfasada.ru/config/router.php | Строка: 39 
+=======================
+[2019-12-11 18:35:05]; Текст: Undefined variable: _SESSION | Файл: /var/www/v2.pasportfasada.ru/config/router.php | Строка: 39 
+=======================
+[2019-12-11 18:46:53]; Текст: Call to undefined method app\models\Work::getFinishDate() | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/support/Traits/ForwardsCalls.php | Строка: 50 
+=======================
+[2019-12-11 18:56:52]; Текст: Call to undefined method app\models\Work::getFinishDate() | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/support/Traits/ForwardsCalls.php | Строка: 50 
+=======================
+[2019-12-11 19:01:41]; Текст: Too few arguments to function app\models\Work::changeFormatDate(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/work/index.php on line 42 and exactly 1 expected | Файл: /var/www/v2.pasportfasada.ru/app/core/libs/HelpersMethods.php | Строка: 18 
+=======================
+[2019-12-11 19:08:48]; Текст: The template function "getPart" was not found. | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Functions.php | Строка: 63 
+=======================
+[2019-12-11 19:10:23]; Текст: The template function "getPart" was not found. | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Functions.php | Строка: 63 
+=======================
+[2019-12-11 19:11:58]; Текст: The template function "getPart" was not found. | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Functions.php | Строка: 63 
+=======================
+[2019-12-11 19:14:13]; Текст: Undefined variable: auth | Файл: /var/www/v2.pasportfasada.ru/app/views/inc/sidebar-admin.php | Строка: 4 
+=======================
+[2019-12-11 19:14:40]; Текст: Undefined variable: auth | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/admin.php | Строка: 44 
+=======================
+[2019-12-11 19:22:51]; Текст: Call to undefined method app\controllers\admin\CategoryController::set() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/CategoryController.php | Строка: 10 
+=======================
+[2019-12-11 19:23:05]; Текст: Call to undefined method app\controllers\admin\UserController::set() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/UserController.php | Строка: 20 
+=======================
+[2019-12-11 19:24:04]; Текст: Call to undefined method app\controllers\admin\CategoryController::set() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/CategoryController.php | Строка: 10 
+=======================
+[2019-12-11 19:24:50]; Текст: Undefined variable: cats | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/category/index.php | Строка: 21 
+=======================
+[2019-12-11 19:26:18]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/category/index.php | Строка: 21 
+=======================
+[2019-12-11 19:26:44]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/category/index.php | Строка: 21 
+=======================
+[2019-12-11 19:28:39]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/category/index.php | Строка: 21 
+=======================
+[2019-12-11 19:29:06]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/category/index.php | Строка: 21 
+=======================
+[2019-12-11 19:29:38]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/category/index.php | Строка: 21 
+=======================
+[2019-12-11 19:35:53]; Текст: The template function "getPart" was not found. | Файл: /var/www/v2.pasportfasada.ru/vendor/league/plates/src/Template/Functions.php | Строка: 63 
+=======================
+[2019-12-11 19:37:56]; Текст: Undefined variable: recentWorks | Файл: /var/www/v2.pasportfasada.ru/app/views/inc/sidebar.php | Строка: 4 
+=======================
+[2019-12-11 20:11:57]; Текст: Call to undefined function oldInfo() | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 32 
+=======================
+[2019-12-11 20:18:20]; Текст: Undefined variable: categories | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 45 
+=======================
+[2019-12-11 20:19:24]; Текст: Call to undefined function oldSelect() | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 46 
+=======================
+[2019-12-11 20:19:51]; Текст: Call to undefined function oldDate() | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 81 
+=======================
+[2019-12-14 12:05:27]; Текст: Class 'Engfine' not found | Файл: /var/www/v2.pasportfasada.ru/config/router.php | Строка: 13 
+=======================
+[2019-12-14 13:15:56]; Текст: Undefined index: id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/WorkController.php | Строка: 59 
+=======================
+[2019-12-14 13:16:22]; Текст: Undefined index: id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/WorkController.php | Строка: 59 
+=======================
+[2019-12-14 13:20:37]; Текст: Optional segments can only occur at the end of a route | Файл: /var/www/v2.pasportfasada.ru/vendor/nikic/fast-route/src/RouteParser/Std.php | Строка: 35 
+=======================
+[2019-12-14 13:26:44]; Текст: Call to undefined function app\controllers\admin\http_request_method_name() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/WorkController.php | Строка: 54 
+=======================
+[2019-12-14 13:26:58]; Текст: Call to undefined function app\controllers\admin\http_request_method_name() | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/WorkController.php | Строка: 54 
+=======================
+[2019-12-14 13:28:04]; Текст: Optional segments can only occur at the end of a route | Файл: /var/www/v2.pasportfasada.ru/vendor/nikic/fast-route/src/RouteParser/Std.php | Строка: 35 
+=======================
+[2019-12-14 13:28:30]; Текст: Optional segments can only occur at the end of a route | Файл: /var/www/v2.pasportfasada.ru/vendor/nikic/fast-route/src/RouteParser/Std.php | Строка: 35 
+=======================
+[2019-12-14 13:33:10]; Текст: move_uploaded_file(/var/www/v2.pasportfasada.ru/public_html/images/works/kaDTS9SHX.jpeg): failed to open stream: Permission denied | Файл: /var/www/v2.pasportfasada.ru/app/core/libs/ImageManager.php | Строка: 89 
+=======================
+[2019-12-14 13:35:32]; Текст: move_uploaded_file(/var/www/v2.pasportfasada.ru/public_html/images/works/RLfKFWHbB.jpeg): failed to open stream: Permission denied | Файл: /var/www/v2.pasportfasada.ru/app/core/libs/ImageManager.php | Строка: 89 
+=======================
+[2019-12-14 13:37:51]; Текст: Undefined index: id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/WorkController.php | Строка: 96 
+=======================
+[2019-12-14 13:55:07]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/app/views/layouts/admin.php | Строка: 1 
+=======================
+[2019-12-15 14:24:59]; Текст: move_uploaded_file(/var/www/v2.pasportfasada.ru/public_html/images/thanks/ftjqjGpav.jpeg): failed to open stream: Permission denied | Файл: /var/www/v2.pasportfasada.ru/app/core/libs/ImageManager.php | Строка: 89 
+=======================
+[2019-12-15 14:33:49]; Текст: Undefined index: id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/ThankController.php | Строка: 38 
+=======================
+[2019-12-15 14:39:07]; Текст: Undefined index: id | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/ThankController.php | Строка: 71 
+=======================
+[2019-12-15 14:55:01]; Текст: Undefined variable: work | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/edit.php | Строка: 4 
+=======================
+[2019-12-15 14:56:16]; Текст: Undefined variable: work | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/edit.php | Строка: 4 
+=======================
+[2019-12-15 14:57:17]; Текст: Undefined variable: work | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/edit.php | Строка: 4 
+=======================
+[2019-12-15 15:15:18]; Текст: Trying to get property 'role' of non-object | Файл: /var/www/v2.pasportfasada.ru/app/controllers/admin/UserController.php | Строка: 14 
+=======================
+[2019-12-15 15:32:16]; Текст: Call to undefined function roleSelect() | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/edit.php | Строка: 65 
+=======================
+[2019-12-15 15:55:46]; Текст: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'user' for column 'role' at row 1 (SQL: update `users` set `password` = 1234567, `role` = user, `email` = semenoddvra-es@ya.ru, `fio` = ddddd, `phone` = , `users`.`updated_at` = 1576400145 where `id` = 11) | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/database/Connection.php | Строка: 664 
+=======================
+[2019-12-15 15:55:46]; Текст: http_response_code() expects parameter 1 to be integer, string given | Файл: /var/www/v2.pasportfasada.ru/app/core/ErrorHandler.php | Строка: 67 
+=======================
+[2019-12-15 16:21:32]; Текст: Undefined index: password | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 102 
+=======================
+[2019-12-15 16:22:46]; Текст: Illegal offset type | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 102 
+=======================
+[2019-12-15 16:25:49]; Текст: Undefined variable: rule | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 103 
+=======================
+[2019-12-15 16:40:38]; Текст: key() expects parameter 1 to be array, string given | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 108 
+=======================
+[2019-12-15 16:45:34]; Текст: Illegal offset type in unset | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 110 
+=======================
+[2019-12-15 16:46:07]; Текст: Illegal offset type | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 110 
+=======================
+[2019-12-15 16:46:25]; Текст: Illegal offset type | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 110 
+=======================
+[2019-12-15 16:49:46]; Текст: Illegal offset type in unset | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 100 
+=======================
+[2019-12-15 16:59:07]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 113 
+=======================
+[2019-12-15 17:00:30]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 112 
+=======================
+[2019-12-15 17:00:56]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 114 
+=======================
+[2019-12-15 17:02:17]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 115 
+=======================
+[2019-12-15 17:02:58]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 113 
+=======================
+[2019-12-15 17:04:10]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 114 
+=======================
+[2019-12-15 17:04:46]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 114 
+=======================
+[2019-12-15 17:04:57]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 114 
+=======================
+[2019-12-15 17:06:01]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 116 
+=======================
+[2019-12-15 17:06:46]; Текст: Undefined offset: 3 | Файл: /var/www/v2.pasportfasada.ru/app/models/User.php | Строка: 116 
+=======================
+[2019-12-15 17:09:26]; Текст: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'user' for column 'role' at row 1 (SQL: update `users` set `password` = , `role` = user, `email` = , `fio` = , `phone` = , `users`.`updated_at` = 1576404566 where `id` = 11) | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/database/Connection.php | Строка: 664 
+=======================
+[2019-12-15 17:09:26]; Текст: http_response_code() expects parameter 1 to be integer, string given | Файл: /var/www/v2.pasportfasada.ru/app/core/ErrorHandler.php | Строка: 67 
+=======================
+[2019-12-15 17:09:54]; Текст: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'user' for column 'role' at row 1 (SQL: update `users` set `username` = 123456ffd7, `password` = asdfasdfasdf, `role` = user, `email` = , `fio` = , `phone` = , `users`.`updated_at` = 1576404594 where `id` = 11) | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/database/Connection.php | Строка: 664 
+=======================
+[2019-12-15 17:09:54]; Текст: http_response_code() expects parameter 1 to be integer, string given | Файл: /var/www/v2.pasportfasada.ru/app/core/ErrorHandler.php | Строка: 67 
+=======================
+[2019-12-15 17:11:11]; Текст: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email' (SQL: update `users` set `password` = asdfasdfasd, `email` = , `fio` = , `phone` = , `users`.`updated_at` = 1576404671 where `id` = 11) | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/database/Connection.php | Строка: 664 
+=======================
+[2019-12-15 18:12:00]; Текст: Call to undefined function app() | Файл: /var/www/v2.pasportfasada.ru/vendor/laracasts/flash/src/Laracasts/Flash/functions.php | Строка: 14 
+=======================
+[2019-12-15 18:13:55]; Текст: Call to undefined function app() | Файл: /var/www/v2.pasportfasada.ru/vendor/laracasts/flash/src/Laracasts/Flash/functions.php | Строка: 14 
+=======================
+[2019-12-15 18:31:14]; Текст: Undefined variable: msg | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php | Строка: 5 
+=======================
+[2019-12-15 18:31:28]; Текст: Undefined property: League\Plates\Template\Template::$msg | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php | Строка: 5 
+=======================
+[2019-12-15 18:36:00]; Текст: Too few arguments to function Plasticbrain\FlashMessages\FlashMessages::success(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php on line 5 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 103 
+=======================
+[2019-12-16 18:02:19]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 286 
+=======================
+[2019-12-16 18:03:35]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 286 
+=======================
+[2019-12-16 18:03:38]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 286 
+=======================
+[2019-12-16 18:03:40]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 286 
+=======================
+[2019-12-16 18:03:42]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 286 
+=======================
+[2019-12-16 18:04:39]; Текст: Array to string conversion | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 286 
+=======================
+[2019-12-16 18:06:05]; Текст: Undefined index: flash_messages | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 169 
+=======================
+[2019-12-16 18:17:29]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php | Строка: 5 
+=======================
+[2019-12-16 18:17:41]; Текст: Too few arguments to function Plasticbrain\FlashMessages\FlashMessages::info(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php on line 10 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 89 
+=======================
+[2019-12-16 18:18:35]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php | Строка: 10 
+=======================
+[2019-12-16 18:18:49]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php | Строка: 5 
+=======================
+[2019-12-16 18:19:38]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php | Строка: 5 
+=======================
+[2019-12-16 18:21:16]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php | Строка: 10 
+=======================
+[2019-12-16 18:21:24]; Текст: Undefined index: flash_messages | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 169 
+=======================
+[2019-12-16 18:21:31]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php | Строка: 10 
+=======================
+[2019-12-16 18:21:46]; Текст: Too few arguments to function Plasticbrain\FlashMessages\FlashMessages::success(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php on line 10 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 103 
+=======================
+[2019-12-16 18:22:25]; Текст: Too few arguments to function Plasticbrain\FlashMessages\FlashMessages::info(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php on line 10 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 89 
+=======================
+[2019-12-16 18:23:32]; Текст: Too few arguments to function Plasticbrain\FlashMessages\FlashMessages::info(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php on line 10 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 89 
+=======================
+[2019-12-16 18:23:45]; Текст: Too few arguments to function Plasticbrain\FlashMessages\FlashMessages::info(), 0 passed in /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php on line 10 and at least 1 expected | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 89 
+=======================
+[2019-12-16 18:24:09]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php | Строка: 10 
+=======================
+[2019-12-16 18:24:30]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php | Строка: 10 
+=======================
+[2019-12-16 18:24:36]; Текст: Undefined index: flash_messages | Файл: /var/www/v2.pasportfasada.ru/vendor/plasticbrain/php-flash-messages/src/FlashMessages.php | Строка: 169 
+=======================
+[2019-12-16 18:24:44]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/index.php | Строка: 10 
+=======================
+[2019-12-16 18:27:01]; Текст: Object of class Plasticbrain\FlashMessages\FlashMessages could not be converted to string | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/user/create.php | Строка: 5 
+=======================
+[2019-12-16 18:47:42]; Текст: Undefined index: title | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 40 
+=======================
+[2019-12-16 18:48:21]; Текст: Undefined index: title | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 40 
+=======================
+[2019-12-16 18:48:35]; Текст: Undefined index: title | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 40 
+=======================
+[2019-12-16 19:26:48]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 60 
+=======================
+[2019-12-16 19:27:43]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 60 
+=======================
+[2019-12-16 19:27:53]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/app/core/base/Controller.php | Строка: 60 
+=======================
+[2019-12-16 19:48:41]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 1 
+=======================
+[2019-12-16 19:48:47]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 1 
+=======================
+[2019-12-16 19:49:20]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 1 
+=======================
+[2019-12-16 19:49:43]; Текст: Property [title] does not exist on this collection instance. | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/support/Collection.php | Строка: 2160 
+=======================
+[2019-12-16 19:58:12]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 1 
+=======================
+[2019-12-16 19:58:22]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 29 
+=======================
+[2019-12-16 20:01:52]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 29 
+=======================
+[2019-12-16 20:05:56]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 79 
+=======================
+[2019-12-16 20:08:03]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 43 
+=======================
+[2019-12-16 20:09:05]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 63 
+=======================
+[2019-12-16 20:09:37]; Текст: Undefined variable: oldData | Файл: /var/www/v2.pasportfasada.ru/app/views/admin/work/create.php | Строка: 78 
+=======================
+[2019-12-16 20:43:41]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 82 
+=======================
+[2019-12-16 20:45:31]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 83 
+=======================
+[2019-12-16 20:45:42]; Текст: Undefined index: oldData | Файл: /var/www/v2.pasportfasada.ru/config/helpers.php | Строка: 83 
+=======================
+[2019-12-16 21:24:39]; Текст: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email' (SQL: update `users` set `username` = sdfgsdfgfdfggggfgggfff, `email` = , `fio` = , `phone` = , `users`.`updated_at` = 1576506279 where `id` = 14) | Файл: /var/www/v2.pasportfasada.ru/vendor/illuminate/database/Connection.php | Строка: 664 
+=======================

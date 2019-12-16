@@ -1,16 +1,12 @@
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="crud">
     <h2>Редактирование категории № <?= $category->id ?></h2>
 
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
-    <form action="/admin/category/edit" method="post">
+    <form action="/admin/category/<?= $category->id?>/edit" method="post">
 
-        <input type="hidden" name="id" value="<?= $category->id?>">
 
         <div class="form-group">
             <div class="form-group__label">
@@ -26,7 +22,6 @@
             <a href="/admin/category" class="btn btn-info" style="margin-left: 50px">Все благодарности</a>
         </div>
     </form>
-<!--    --><?php //unset($_SESSION['oldData']); ?>
 </div>
 
 

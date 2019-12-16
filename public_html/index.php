@@ -2,6 +2,10 @@
 
 define('ROOT', dirname(__DIR__));   //  /var/www/v2.pasportfasada.ru
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 require ROOT.'/vendor/autoload.php';
 require ROOT.'/config/helpers.php';
 require ROOT.'/config/db.php';

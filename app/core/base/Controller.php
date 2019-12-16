@@ -4,13 +4,9 @@ namespace app\core\base;
 
 use app\core\libs\HelpersMethods;
 use app\models\User;
+use DI\DependencyException;
+use DI\NotFoundException;
 use League\Plates\Engine;
-use Twig\Environment;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
-use Twig\Extension\CoreExtension;
-use Twig\Loader\FilesystemLoader;
 
 abstract class Controller
 {
@@ -27,31 +23,43 @@ abstract class Controller
 
     public $loader;
     public $view;
+    public $msg;
 
 
     use HelpersMethods;
 
-    public function __construct(Engine $view)
+    public function __construct()
     {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+        global $container;
 
-        $this->view = $view;
+        $this->msg = new \Plasticbrain\FlashMessages\FlashMessages();
+
+        try {
+            $this->view = $container->get(Engine::class);
+        } catch (DependencyException $e) {
+            echo 'DependencyException: ' . $e->getMessage();
+        } catch (NotFoundException $e) {
+            echo 'NotFoundException: ' . $e->getMessage();
+        }
 
         $this->vars['meta'] = $this->meta;
         $this->vars['errors'] = $this->errors;
+        $this->vars['msg'] = $this->msg;
 
         if (isset($_SESSION['auth'])) {
             $this->auth = (new User())->setRawAttributes($_SESSION['auth']);
             $this->vars['auth'] = $this->auth;
         };
+
+        if (isset($_SESSION['oldData'])){
+            $this->vars['oldData'] = $_SESSION['oldData'];
+        }
     }
 
     public function render($pathToView, array $data = array())
     {
         $data = array_merge($this->vars, $data);
-
+//        dd($data);
         echo $this->view->render($pathToView, $data);
     }
 

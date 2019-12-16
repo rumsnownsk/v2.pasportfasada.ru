@@ -2,12 +2,15 @@
 
 namespace app\models;
 
+use app\core\libs\HelpersMethods;
 use app\core\libs\ImageManager;
 use Illuminate\Database\Eloquent\Model;
 use Valitron\Validator;
 
 class User extends Model
 {
+    use HelpersMethods;
+
     public $image;
     public static $isAuth = false;
 
@@ -49,13 +52,20 @@ class User extends Model
         }
 
     public static function add($fields){
+
         $user = new static();
         $fields['password'] = password_hash($fields['password'],PASSWORD_DEFAULT);
         $user->fill($fields);
         $user->save();
+        return $user;
     }
 
     public function edit($fields){
+        if ($fields['password']){
+            $fields['password'] = password_hash($fields['password'],PASSWORD_DEFAULT);
+        } else {
+            $fields['password'] = $this->getAttribute('password');
+        }
         $this->fill($fields);
         return $this->save();
     }
@@ -92,35 +102,35 @@ class User extends Model
         }
     }
 
-    public function validate(){
+    public function validate(array $exceptFields = []){
         $v = new Validator($_POST);
+
+        if (!empty($exceptFields)){
+            foreach ($exceptFields as $field){
+
+                for ($i = 0; $i < count($this->rules['required']); $i++){
+
+                    if ($this->rules['required'][$i][0] == $field){
+                        unset($this->rules['required'][$i]);
+                    }
+                }
+            }
+        }
+
         $v->rules($this->rules);
 
         $this->checkUnique(['username', 'email']);
 
         if ($v->validate() && empty($this->errors)){
+            if (isset($_SESSION['oldData'])) {
+                unset($_SESSION['oldData']);
+            };
             return true;
         } else {
             $this->errors = array_merge($v->errors(), $this->errors);
             return false;
         }
     }
-
-
-    public function getErrors(){
-//        dd($_SESSION);
-
-//        dd($this->errors);
-        $errors = '<ul>';
-        foreach ($this->errors as $error) {
-            foreach ($error as $item) {
-                $errors .= "<li> $item </li>";
-            }
-        }
-        $errors .= '</ul>';
-        $_SESSION['error'] = $errors;
-    }
-
 
     public function checkUnique(array $fields){
         foreach ($fields as $field) {
@@ -143,59 +153,6 @@ class User extends Model
 //            return false;
 //        }
 //        return true;
-    }
-
-//    public function login(){
-//        $username = !empty(trim($_POST['username'])) ? trim($_POST['username']) : null;
-//        $password = !empty(trim($_POST['password'])) ? trim($_POST['password']) : null;
-//
-//        if ($username && $password){
-//            $user = $this->where('username', $username)->where('password', $password)->first();
-//
-//
-//            if($user){
-////                if (!empty($_POST['remember'])){
-////                    dd($user->username, $_POST);
-////                    setcookie('user', $user->username, 3600*60, '/');
-////                }
-//
-////                $_SESSION['auth'] = $user->attributesToArray();
-//                $_SESSION['auth'] = $user;
-//
-////                dd($_SESSION);
-//                return true;
-//            };
-//            $this->errors[]['auth'] = 'Логин/пароль введены не верно';
-//            return false;
-//        }
-//        $this->errors[]['auth'] = 'Необходимо ввести логин и пароль';
-//        return false;
-//    }
-
-    public function login_old($isAdmin = false){
-        $login = !empty(trim($_POST['login'])) ? trim($_POST['login']) : null;
-        $password = !empty(trim($_POST['password'])) ? trim($_POST['password']) : null;
-        if ($login && $password){
-
-            if ($isAdmin){
-                $user = R::findOne('user', "login = ? AND role = 'admin' LIMIT 1", [$login]);
-            } else {
-                $user = R::findOne('user', 'login = ? LIMIT 1', [$login]);
-            }
-
-            if ($user){
-                if (password_verify($password, $user->password)){
-                    foreach ($user as $k => $v) {
-                        if ($k !== 'password'){
-                            $_SESSION['user'][$k] = $v;
-                        }
-                    }
-
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
 

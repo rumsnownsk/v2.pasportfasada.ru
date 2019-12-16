@@ -2,12 +2,15 @@
 
 namespace app\models;
 
+use app\core\libs\HelpersMethods;
 use app\core\libs\ImageManager;
 use Illuminate\Database\Eloquent\Model;
 use Valitron\Validator;
 
 class Thank extends Model
 {
+    use HelpersMethods;
+
     protected $table = 'thanks';
 
     protected $fillable = [
@@ -49,6 +52,9 @@ class Thank extends Model
         $v->rules($this->rules);
 
         if ($v->validate()) {
+            if (isset($_SESSION['oldData'])) {
+                unset($_SESSION['oldData']);
+            };
             return true;
 
         } else {
@@ -67,24 +73,12 @@ class Thank extends Model
             $this->save();
         }
     }
-
-    public function getImageName()
+    public function getImage()
     {
-        return ImageManager::checkExistFile('thanks', $this->imageName)
-            ? $this->imageName
-            : 'no_image.png';
-    }
-
-    public function getErrors()
-    {
-        $errors = '<ul>';
-        foreach ($this->errors as $error) {
-            foreach ($error as $item) {
-                $errors .= "<li> $item </li>";
-            }
+        if (!file_exists(IMAGES . '/thanks/' . $this->imageName) || empty($this->imageName)) {
+            return '/images/no_image.png';
         }
-        $errors .= '</ul>';
-        $_SESSION['error'] = $errors;
+        return '/images/thanks/' . $this->imageName;
     }
 
     public function remove()

@@ -1,3 +1,4 @@
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
 
 <div class="listThanks flex-column">
 
@@ -6,6 +7,7 @@
         <a href="/admin/thank/create" class="btn btn-success btn-sm">Добавить</a>
 
     </div>
+    <?= $msg->display(); ?>
 
     <table id="example1" class="table table-bordered table-striped">
         <thead>
@@ -24,9 +26,9 @@
                 <td><?= $thank->id ?></td>
                 <td class="td__photo">
                     <div class="myHover">
-                        <img src="/images/thanks/<?= $thank->getImageName() ?>" alt="">
+                        <img src="<?= $thank->getImage() ?>" alt="">
                         <div class="getLarge">
-                            <img src="/images/thanks/<?= $thank->getImageName() ?>"
+                            <img src="<?= $thank->getImage() ?>"
                                  class="getLarge__img" alt="">
                         </div>
                     </div>
@@ -35,10 +37,10 @@
                 <td> <?= $thank->title ?> </td>
                 <td> <?= $thank->created_at ?> </td>
                 <td class="indexTable">
-                    <a href="/admin/thank/edit?id=<?= $thank->id ?>" class="btn btn-warning btn-sm">
+                    <a href="/admin/thank/<?= $thank->id ?>/edit" class="btn btn-warning btn-sm">
                         <i class="fa fa-pencil"></i>
                     </a>
-                    <a onclick="return confirm('Вы уверены?');" href="/admin/thank/destroy?id=<?= $thank->id ?>"
+                    <a onclick="return confirm('Вы уверены?');" href="/admin/thank/<?= $thank->id ?>/destroy"
                        class="btn btn-danger btn-sm">
                         <i class="fa fa-close"></i>
                     </a>

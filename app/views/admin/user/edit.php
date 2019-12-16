@@ -1,26 +1,20 @@
-<?php //dd($user); ?>
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
 
 <div class="crud">
     <h2>Профиль работника: <?= $user->fio?></h2>
 
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
-    <form action="/admin/user/edit" method="post" enctype="multipart/form-data">
+    <form action="/admin/user/<?= $user->id?>/edit" method="post" enctype="multipart/form-data">
 
         <!--        INPUT AVATAR    -->
-        <input type="hidden" name="id" value="<?= $user->id?>">
         <div class="form-group form-group__correct">
             <div class="form-group__label">
                 <label for="inputFileThank">Фотография</label>
                 <p class="help-block">(только одна картинка!!!)</p>
             </div>
             <div class="form-group__data">
-                <img src="/images/users/<?= $user->avatar ?>" alt="" style="width: 300px;">
+                <img src="<?= $user->getImage() ?>" alt="" style="width: 300px;">
 
                 <input name="avatar" id="inputFileThank" type="file" >
                 <p class="help-block redMarker" style="color:limegreen;">при выборе другого изображения текущая фотография будет утрачена</p>
@@ -48,12 +42,11 @@
             </div>
             <div class="form-group__data">
                 <input name="password" id="inputPassword" type="text" class="form-control"
-                       value="<?= oldInfo('password', $user) ?>"
+                       value=""
                        title="">
                 <p class="help-block redMarker">обязательное поле. Одно слово на латинице. Больше 6 символов</p>
             </div>
         </div>
-<!--        --><?//= oldSelect('role', $user ) ?>
 
         <!--        SELECT ROLE-->
         <div class="form-group">
@@ -62,8 +55,8 @@
             </div>
             <div class="form-group__data">
                 <select name="role" id="selectRoleUser" title="">
-                    <option value="user" <?= roleSelect('role', 'user', $user) ?> > Работник </option>
-                    <option value="boss" <?= roleSelect('role', 'boss', $user) ?> > Директор </option>
+                    <option value="2" <?= roleSelect('role', 'user', $user) ?> > Работник </option>
+                    <option value="1" <?= roleSelect('role', 'boss', $user) ?> > Директор </option>
                 </select>
                 <p class="help-block redMarker">обязательное поле</p>
             </div>
@@ -114,7 +107,6 @@
             <a href="/admin" class="btn btn-info" style="margin-left: 50px">На главную</a>
         </div>
     </form>
-    <?php unset($_SESSION['oldData']); ?>
 </div>
 
 

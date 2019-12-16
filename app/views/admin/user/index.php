@@ -1,3 +1,5 @@
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="listUsers flex-column">
 
     <div class="listUsers__header">
@@ -5,6 +7,7 @@
         <a href="/admin/user/create" class="btn btn-success btn-sm">Добавить</a>
 
     </div>
+    <?= $msg->display(); ?>
 
     <table id="example1" class="table table-bordered table-striped">
         <thead>
@@ -38,10 +41,10 @@
                 <td><?= $user->email ?></td>
                 <td><?= $user->getRole() ?></td>
                 <td class="indexTable">
-                    <a href="/admin/user/edit?id=<?=$user->id?>" class="btn btn-warning btn-sm">
+                    <a href="/admin/user/<?=$user->id?>/edit" class="btn btn-warning btn-sm">
                         <i class="fa fa-pencil"></i>
                     </a>
-                    <a onclick="return confirm('Вы уверены?');" href="/admin/user/destroy?id=<?=$user->id?>" class="btn btn-danger btn-sm">
+                    <a onclick="return confirm('Вы уверены?');" href="/admin/user/<?=$user->id?>/destroy" class="btn btn-danger btn-sm">
                         <i class="fa fa-close"></i>
                     </a>
                 </td>

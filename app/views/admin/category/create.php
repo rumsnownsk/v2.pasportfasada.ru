@@ -1,12 +1,9 @@
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="crud">
     <h2>Добавить категорию</h2>
 
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
     <form action="/admin/category/create" method="post">
 
@@ -25,7 +22,6 @@
         </div>
 
     </form>
-    <?php unset($_SESSION['oldData']); ?>
 </div>
 
 

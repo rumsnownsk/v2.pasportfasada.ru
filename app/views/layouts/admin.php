@@ -1,3 +1,4 @@
+<?php dump($_SESSION) ?>
 
 <!DOCTYPE html>
 <html>
@@ -34,19 +35,21 @@
 
     <!-- Main Header -->
     <header class="header">
-        <?php $this->getPart('inc/header-admin') ?>
+        <?= $this->insert('inc/header-admin') ?>
+<!--      <?php //$this->getPart('inc/header-admin') ?> -->
     </header>
 
     <div id="content">
         <!-- Left side column. contains the logo and sidebar -->
             <div class="sidebar">
-                <?php $this->getPart('inc/sidebar-admin') ?>
+                <?= $this->insert('inc/sidebar-admin', [
+                        'auth' => $auth
+                ]) ?>
             </div>
 
             <div class="dataContent">
-                <?= $content ?>
+                <?= $this->section('content') ?>
             </div>
-
     </div>
 
     <footer id="footer" class="footer">
@@ -86,3 +89,4 @@
      user experience. -->
 </body>
 </html>
+<?php dump($_SESSION) ?>

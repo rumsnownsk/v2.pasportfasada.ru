@@ -15,11 +15,9 @@ use app\models\User;
 
 class AuthController extends Controller
 {
-    public function __construct($route)
+    public function __construct()
     {
-
-
-        parent::__construct($route);
+        parent::__construct();
     }
 
     public function loginAction()
@@ -29,6 +27,7 @@ class AuthController extends Controller
 
         if (!empty($_POST)) {
             if (Auth::login()) {
+//                dd($_SESSION['auth']);
                 redirect('/admin');
             } else {
                 Auth::getErrors();
@@ -36,7 +35,7 @@ class AuthController extends Controller
             }
         }
 
-        $this->layout = 'auth';
+        $this->render('auth/login');
 
     }
 

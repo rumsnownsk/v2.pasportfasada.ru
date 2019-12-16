@@ -1,4 +1,4 @@
-<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories', 'auth')) ?>
 
 <div class="law">
     <h2>ПОСТАНОВЛЕНИЕ От 16.08.2013 № 7762</h2>

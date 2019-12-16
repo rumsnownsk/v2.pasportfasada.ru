@@ -5,6 +5,19 @@ namespace app\core\libs;
 
 trait HelpersMethods
 {
+    public function getErrors(){
+
+        $errors = '<ul>';
+        foreach ($this->errors as $error) {
+            foreach ($error as $item) {
+                $errors .= "<li> $item </li>";
+            }
+        }
+        $errors .= '</ul>';
+
+        return $errors;
+    }
+
     public function randomString($length = 9) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);

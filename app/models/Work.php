@@ -96,8 +96,7 @@ class Work extends Model
         }
     }
 
-//
-//
+
 //    public function setImageName()
 //    {
 ////        dump()
@@ -123,6 +122,9 @@ class Work extends Model
         $v->rules($this->rules);
 
         if ($v->validate()) {
+            if (isset($_SESSION['oldData'])) {
+                unset($_SESSION['oldData']);
+            };
             return true;
         } else {
             $this->errors = array_merge($this->errors, $v->errors());
@@ -173,23 +175,9 @@ class Work extends Model
         }
     }
 
-    public function getErrors()
-    {
-//        dd($this->errors);
-        $errors = '<ul>';
-        foreach ($this->errors as $error) {
-            foreach ($error as $item) {
-                $errors .= "<li> $item </li>";
-            }
-        }
-        $errors .= '</ul>';
-        $_SESSION['error'] = $errors;
-    }
-
     public function remove()
     {
         $this->image->delete('works', $this->photoName);
-
         $this->delete();
     }
 }

@@ -1,4 +1,4 @@
-<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories', 'auth')) ?>
 
 <div class="contact layer">
     <h1 class="contact__name h1_header">Проектно-экспертная организация<br> ООО «Паспорт фасадов»</h1>

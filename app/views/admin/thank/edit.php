@@ -1,24 +1,20 @@
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="crud">
     <h2>Редактирование благодарности № <?= $thank->id ?></h2>
 
 <!--    --><?php //$thank->getErrors() ?>
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger">
-            <?= $_SESSION['error'];
-            unset($_SESSION['error']) ?>
-        </div>
-    <?php endif; ?>
+    <?= $msg->display('e'); ?>
 
-    <form action="/admin/thank/edit" method="post" enctype="multipart/form-data">
+    <form action="/admin/thank/<?= $thank->id ?>/edit" method="post" enctype="multipart/form-data">
 
-        <input type="hidden" name="id" value="<?= $thank->id?>">
         <div class="form-group form-group__correct">
             <div class="form-group__label">
                 <label for="inputFileThank">Фотография</label>
                 <p class="help-block">(только одна картинка!!!)</p>
             </div>
             <div class="form-group__data">
-                <img src="/images/thanks/<?= $thank->imageName ?>" alt="" style="width: 300px;">
+                <img src="<?= $thank->getImage() ?>" alt="" style="width: 300px;">
 
                 <input name="photo" id="inputFileThank" type="file" >
                 <p class="help-block redMarker" style="color:limegreen;">при выборе другого изображения текущая фотография будет утрачена</p>

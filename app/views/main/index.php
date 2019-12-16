@@ -1,4 +1,4 @@
-<?= $this->layout('layouts/main', compact('title','recentWorks','categories')) ?>
+<?= $this->layout('layouts/main', compact('title','recentWorks','categories', 'auth')) ?>
 
 <div class="ourService">
     <h2 class="main__title_content">Предоставляемые услуги</h2>

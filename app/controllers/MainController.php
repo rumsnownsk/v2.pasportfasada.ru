@@ -14,12 +14,11 @@ use League\Plates\Engine;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
-use Twig\Loader\FilesystemLoader;
 
 
 class MainController extends Controller
 {
-    public function __construct(Engine $view)
+    public function __construct()
     {
         $this->vars['categories'] = Category::all();
 
@@ -30,7 +29,7 @@ class MainController extends Controller
             return $r;
         });
 
-        parent::__construct($view);
+        parent::__construct();
     }
 
     public function indexAction()

@@ -1,9 +1,12 @@
+<?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
+
 <div class="listWorks flex-column">
 
     <div class="listWorks__header">
         <h2 class="box-title">Все выполненые работы</h2>
         <a href="/admin/work/create" class="btn btn-success btn-sm">Добавить</a>
     </div>
+    <?= $msg->display(); ?>
 
     <table id="example1" class="table table-bordered table-striped">
         <thead>
@@ -39,12 +42,12 @@
                 <td><?= $work->getCategoryTitle() ?></td>
                 <td><?= $work->getStageTitle() ?></td>
                 <td><?= $work->getPublishInfo() ?></td>
-                <td><?= $work->getFinishDate() ?></td>
+                <td><?= $work->changeFormatDate($work->timeCreate) ?></td>
                 <td class="indexTable">
-                    <a href="/admin/work/edit?id=<?=$work->id?>" class="btn btn-warning btn-sm">
+                    <a href="/admin/work/<?=$work->id?>/edit" class="btn btn-warning btn-sm">
                         <i class="fa fa-pencil"></i>
                     </a>
-                    <a onclick="return confirm('Вы уверены?');" href="/admin/work/destroy?id=<?=$work->id?>" class="btn btn-danger btn-sm">
+                    <a onclick="return confirm('Вы уверены?');" href="/admin/work/<?=$work->id?>/destroy" class="btn btn-danger btn-sm">
                         <i class="fa fa-close"></i>
                     </a>
                 </td>

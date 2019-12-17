@@ -63,7 +63,10 @@ class UserController extends AdminController
             if ($user->validate(['password'])) {
 
                 $user->edit($_POST);
-                $user->uploadImage('avatar');
+
+                if (!$user->loadImage()){
+                    $this->msg->warning($user->getErrors());
+                };
                 $this->msg->success('Работник: '.$user->username. ' отредактирован');
 
                 redirect('/admin/user');

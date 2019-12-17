@@ -3,7 +3,7 @@
 namespace app\models;
 
 use app\core\libs\HelpersMethods;
-use app\core\libs\ImageManager;
+use app\core\libs\ImgLoader;
 use Illuminate\Database\Eloquent\Model;
 use Valitron\Validator;
 
@@ -17,7 +17,7 @@ class Thank extends Model
         'title',
     ];
 
-    public $image;
+    public $imgLoader;
     public $errors = [];
 
     public $rules = [
@@ -29,7 +29,7 @@ class Thank extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->image = new ImageManager();
+        $this->imgLoader = new ImgLoader();
     }
 
     public static function add($fields)
@@ -58,32 +58,51 @@ class Thank extends Model
             return true;
 
         } else {
-            $this->errors = array_merge($this->image->err_upload, $v->errors());
+            $this->errors = array_merge($this->errors, $v->errors());
             return false;
         }
     }
 
-    public function uploadImage($fieldForm)
+    public function loadImage()
     {
-        if ($this->image->validateImage($fieldForm)) {
+        if ($this->imgLoader->validateImage('image')) {
 
-            $this->image->delete('thanks', $this->imageName);
-            $this->image->downloadImage($fieldForm, 'thanks');
-            $this->imageName = $this->image->imageName;
+            $this->imgLoader->delete('thanks', $this->image);
+
+            $this->image = $this->imgLoader->uploadImage($_FILES['image'], 'thanks');
+
             $this->save();
+            return true;
+
+        } else {
+            $this->errors = array_merge($this->errors, $this->imgLoader->errors);
+            return false;
         }
     }
+
+
+
+//    public function uploadImage($fieldForm)
+//    {
+//        if ($this->image->validateImage($fieldForm)) {
+//
+//            $this->image->delete('thanks', $this->imageName);
+//            $this->image->downloadImage($fieldForm, 'thanks');
+//            $this->imageName = $this->image->imageName;
+//            $this->save();
+//        }
+//    }
     public function getImage()
     {
-        if (!file_exists(IMAGES . '/thanks/' . $this->imageName) || empty($this->imageName)) {
+        if (!file_exists(IMAGES . '/thanks/' . $this->image) || empty($this->image)) {
             return '/images/no_image.png';
         }
-        return '/images/thanks/' . $this->imageName;
+        return '/images/thanks/' . $this->image;
     }
 
     public function remove()
     {
-        $this->image->delete('thanks', $this->imageName);
+        $this->imgLoader->delete('thanks', $this->imageName);
         $this->delete();
     }
 }

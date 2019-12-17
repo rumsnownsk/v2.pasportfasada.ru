@@ -16,7 +16,7 @@
             <div class="form-group__data">
                 <img src="<?= $thank->getImage() ?>" alt="" style="width: 300px;">
 
-                <input name="photo" id="inputFileThank" type="file" >
+                <input name="image" id="inputFileThank" type="file" >
                 <p class="help-block redMarker" style="color:limegreen;">при выборе другого изображения текущая фотография будет утрачена</p>
             </div>
         </div>

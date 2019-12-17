@@ -3,28 +3,22 @@
 namespace app\models;
 
 use app\core\libs\HelpersMethods;
-use app\core\libs\ImageManager;
+use app\core\libs\ImgLoader;
 use Illuminate\Database\Eloquent\Model;
-use Intervention\Image\Image;
 use Valitron\Validator;
 
 class Work extends Model
 {
     use HelpersMethods;
 
-    protected $casts = [
-//        'category_id' => 'integer',
-//        'timeCreate' => 'string'
-    ];
-
     protected $fillable = [
 //        'photoName',
         'title',
         'category_id',
-//        'stage_id',
-//        'timeCreate',
-//        'publish',
-//        'description'
+        'stage_id',
+        'timeCreate',
+        'publish',
+        'description'
     ];
 
     public $rules = [
@@ -37,14 +31,15 @@ class Work extends Model
     ];
 
     protected $table = 'works';
-    public $errors = [];
 
-    public $image;
+    public $errors = array();
+    public $imgLoader;
 
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->image = new ImageManager();
+
+        $this->imgLoader = new ImgLoader();
     }
 
     public static function add($fields)
@@ -96,7 +91,6 @@ class Work extends Model
         }
     }
 
-
 //    public function setImageName()
 //    {
 ////        dump()
@@ -132,6 +126,23 @@ class Work extends Model
         }
     }
 
+    public function loadImage()
+    {
+        if ($this->imgLoader->validateImage('photoName')) {
+
+            $this->imgLoader->delete('works', $this->photoName);
+
+            $this->photoName = $this->imgLoader->uploadImage($_FILES['photoName']);
+
+            $this->save();
+            return true;
+
+        } else {
+            $this->errors = array_merge($this->errors, $this->imgLoader->errors);
+            return false;
+        }
+    }
+
     public function uploadImage($fieldForm)
     {
         if ($this->image->validateImage($fieldForm)) {
@@ -151,17 +162,23 @@ class Work extends Model
         return '/images/works/' . $this->photoName;
     }
 
-    public function getCategoryTitle()
+    public function getCategory()
     {
-        return Category::where("id", $this->category_id)->firstOrFail()->title;
+        if ($cat = Category::where("id", $this->category_id)->first()) {
+            return $cat->title;
+        }
+        return null;
     }
 
-    public function getStageTitle()
+    public function getStage()
     {
-        return Stage::where("id", $this->stage_id)->firstOrFail()->name;
+        if ($s = Stage::where("id", $this->stage_id)->first()) {
+            return $s->name;
+        }
+        return null;
     }
 
-    public function getPublishInfo()
+    public function getPublish()
     {
         switch ($this->publish) {
             case 0 :
@@ -177,7 +194,7 @@ class Work extends Model
 
     public function remove()
     {
-        $this->image->delete('works', $this->photoName);
+        $this->imgLoader->delete('works', $this->photoName);
         $this->delete();
     }
 }

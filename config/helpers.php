@@ -77,7 +77,7 @@ function roleSelect($field, $value, $obj)
     } else return '';
 }
 
-function old($field)
+function old($field, $object = null)
 {
     if (isset($_SESSION['oldData'])){
         $oldData = $_SESSION['oldData'];
@@ -92,4 +92,12 @@ function old($field)
 //        dd($_SESSION['oldData']);
     return null;
 //    $oldData = $_SESSION['oldData'];
+}
+
+function oldDate($field, $object = null)
+{
+    if ($object) {
+        return date('Y-m-d', $object->$field);
+    }
+    return isset($_SESSION['oldData'][$field]) ? $_SESSION['oldData'][$field] : date('Y-m-d');
 }

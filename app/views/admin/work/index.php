@@ -39,9 +39,9 @@
                 <td>
                     <a href="#"><?= $work->title ?></a>
                 </td>
-                <td><?= $work->getCategoryTitle() ?></td>
-                <td><?= $work->getStageTitle() ?></td>
-                <td><?= $work->getPublishInfo() ?></td>
+                <td><?= $work->getCategory() ?></td>
+                <td><?= $work->getStage() ?></td>
+                <td><?= $work->getPublish() ?></td>
                 <td><?= $work->changeFormatDate($work->timeCreate) ?></td>
                 <td class="indexTable">
                     <a href="/admin/work/<?=$work->id?>/edit" class="btn btn-warning btn-sm">
@@ -53,7 +53,6 @@
                 </td>
             </tr>
         <?php endforeach; ?>
-
         </tbody>
 
     </table>

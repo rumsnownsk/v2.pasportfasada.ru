@@ -13,7 +13,7 @@
                 <p class="help-block">(только одна картинка!!!)</p>
             </div>
             <div class="form-group__data">
-                <input name="photo" type="file" >
+                <input name="image" type="file" >
 <!--                <p class="help-block redMarker">обязательное поле</p>-->
             </div>
         </div>

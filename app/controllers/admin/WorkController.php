@@ -23,12 +23,17 @@ class WorkController extends AdminController
             $work = new Work();
 
             if ($work->validate()) {
+
                 $work = Work::add($_POST);
-                $work-> setStage();
-                $work-> setTimeCreate();
-                $work-> setPublish();
-                $work-> setDescription();
-                $work-> uploadImage('photo');
+
+                $work->setStage();
+                $work->setTimeCreate();
+                $work->setPublish();
+                $work->setDescription();
+
+                if (!$work->loadImage()){
+                    $this->msg->warning($work->getErrors());
+                };
 
                 $this->msg->success('Объект '.$work->title. ' успешно добавлен!');
 
@@ -64,7 +69,10 @@ class WorkController extends AdminController
                 $work->setTimeCreate();
                 $work->setPublish();
                 $work->setDescription();
-                $work->uploadImage('photo');
+
+                if (!$work->loadImage()){
+                    $this->msg->warning($work->getErrors());
+                };
 
                 $this->msg->success('Объект: '.$work->title. 'успешно отредактирован');
 
@@ -91,7 +99,7 @@ class WorkController extends AdminController
 //            return $item->photoName;
 //        })->toArray();
 //
-//        $files = scandir(IMAGES.'/thanks');
+//        $files = scandir(IMAGES.'/works');
 //        foreach ($files as $file) {
 //            if ($file == "." || $file==".."){
 //                continue;
@@ -99,7 +107,7 @@ class WorkController extends AdminController
 //            if(in_array($file, $works)){
 //                continue;
 //            } else {
-//                unlink(IMAGES.'/thanks/'.$file);
+//                unlink(IMAGES.'/works/'.$file);
 //            };
 //
 //        }

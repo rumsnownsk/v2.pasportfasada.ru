@@ -3,7 +3,7 @@
 namespace app\models;
 
 use app\core\libs\HelpersMethods;
-use app\core\libs\ImageManager;
+use app\core\libs\ImgLoader;
 use Illuminate\Database\Eloquent\Model;
 use Valitron\Validator;
 
@@ -11,10 +11,8 @@ class User extends Model
 {
     use HelpersMethods;
 
-    public $image;
     public static $isAuth = false;
 
-    protected $table = 'users';
 
     protected $dateFormat = 'U';
 
@@ -43,13 +41,16 @@ class User extends Model
         ]
     ];
 
-    public $errors = array();
+    protected $table = 'users';
 
-    public function __construct(array $attributes = [])
+    public $errors = array();
+    public $imgLoader;
+
+    public function __construct()
     {
-        parent::__construct($attributes);
-        $this->image = new ImageManager();
-        }
+        parent::__construct();
+        $this->imgLoader = new ImgLoader();
+    }
 
     public static function add($fields){
 
@@ -71,18 +72,24 @@ class User extends Model
     }
 
     public function remove(){
-        $this->image->delete('users', $this->avatar);
+        $this->imgLoader->delete('users', $this->avatar);
         $this->delete();
     }
 
-    public function uploadImage($fieldForm)
+    public function loadImage()
     {
-        if ($this->image->validateImage($fieldForm)) {
+        if ($this->imgLoader->validateImage('avatar')) {
 
-            $this->image->delete('users', $this->avatar);
-            $this->image->downloadImage($fieldForm, 'users');
-            $this->avatar = $this->image->imageName;
+            $this->imgLoader->delete('users', $this->avatar);
+
+            $this->avatar = $this->imgLoader->uploadImage($_FILES['avatar'], 'users');
+
             $this->save();
+            return true;
+
+        } else {
+            $this->errors = array_merge($this->errors, $this->imgLoader->errors);
+            return false;
         }
     }
 

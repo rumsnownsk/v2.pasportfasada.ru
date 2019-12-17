@@ -30,6 +30,7 @@ abstract class Controller
 
     public function __construct()
     {
+        unset($_SESSION['oldData']);
         global $container;
 
         $this->msg = new \Plasticbrain\FlashMessages\FlashMessages();

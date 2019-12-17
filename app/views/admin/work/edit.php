@@ -15,7 +15,7 @@
             <div class="form-group__data">
                 <img src="<?= $work->getImage() ?>" alt="" style="width: 300px;">
 
-                <input name="photo" id="inputFileWork" type="file" >
+                <input name="photoName" id="inputFileWork" type="file" >
                 <p class="help-block redMarker">При выборе другого изображения текущая фотография будет утрачена</p>
             </div>
         </div>

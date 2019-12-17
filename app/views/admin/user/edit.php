@@ -3,7 +3,7 @@
 <div class="crud">
     <h2>Профиль работника: <?= $user->fio?></h2>
 
-    <?= $msg->display('e'); ?>
+    <?= $msg->display(); ?>
 
     <form action="/admin/user/<?= $user->id?>/edit" method="post" enctype="multipart/form-data">
 

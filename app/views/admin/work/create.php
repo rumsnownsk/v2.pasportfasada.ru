@@ -1,5 +1,3 @@
-<?php dump($_SESSION); ?>
-
 <?= $this->layout('layouts/admin', compact('title', 'auth')) ?>
 
 <div class="crud">
@@ -15,7 +13,7 @@
                 <p class="help-block">(только одна картинка!!!)</p>
             </div>
             <div class="form-group__data">
-                <input name="photo" id="inputFileWork" type="file" >
+                <input name="photoName" id="inputFileWork" type="file" >
 <!--                <p class="help-block redMarker">обязательное поле</p>-->
             </div>
         </div>

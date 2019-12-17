@@ -60,6 +60,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
         $r->addRoute(['GET', 'POST'], '/user/{id:\d+}/edit', ['app\controllers\admin\UserController', 'editAction']);
         $r->addRoute('GET', '/user/{id:\d+}/destroy', ['app\controllers\admin\UserController', 'destroyAction']);
 
+//        $r->addRoute('GET', '/clearimages', ['app\controllers\admin\WorkController', 'clearimagesAction']);
+
     });
 
     $r->addGroup('/auth', function (RouteCollector $r) {

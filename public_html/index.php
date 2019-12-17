@@ -1,4 +1,6 @@
 <?php
+//ini_set('display_errors', 1);
+//error_reporting(-1);
 
 define('ROOT', dirname(__DIR__));   //  /var/www/v2.pasportfasada.ru
 

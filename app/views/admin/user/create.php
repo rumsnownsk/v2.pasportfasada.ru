@@ -40,8 +40,8 @@
             </div>
             <div class="form-group__data">
                 <select name="role" id="selectRoleUser" title="">
-                    <option value="2" selected > Работник </option>
-                    <option value="1" > Директор </option>
+                    <option value=2 selected > Работник </option>
+                    <option value=1 > Директор </option>
                 </select>
                 <p class="help-block redMarker">обязательное поле</p>
             </div>

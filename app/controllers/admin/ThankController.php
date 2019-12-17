@@ -21,7 +21,10 @@ class ThankController extends AdminController
             if ($thank->validate()) {
 
                 $thank = Thank::add($_POST);
-                $thank->uploadImage('photo');
+
+                if (!$thank->loadImage()){
+                    $this->msg->warning($thank->getErrors());
+                };
 
                 $this->msg->success('Новая благодарность успешно добавлена');
 
@@ -51,11 +54,14 @@ class ThankController extends AdminController
             if ($thank->validate()){
 
                 $thank->edit($_POST);
-                $thank->uploadImage('photo');
 
+                if (!$thank->loadImage()){
+                    $this->msg->error($thank->getErrors());
+                    redirect();
+                };
                 $this->msg->success('Благодарность успешно отредактирована');
 
-                redirect();
+                redirect('/admin/thank');
 
             } else {
                 $this->msg->error($thank->getErrors());

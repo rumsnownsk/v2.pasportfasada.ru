@@ -37,7 +37,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
     $r->addRoute('GET', '/about', ['app\controllers\MainController', 'aboutAction']);
 
     $r->addRoute('GET', '/captcha', ['app\controllers\MainController', 'captchaAction']);
-    $r->addRoute('GET', '/recall', ['app\controllers\MainController', 'recallAction']);
+    $r->addRoute('POST', '/recall', ['app\controllers\MainController', 'recallAction']);
 
     $r->addGroup('/admin', function (RouteCollector $r) {
         $r->addRoute('GET', '', ['app\controllers\admin\WorkController', 'indexAction']);
@@ -87,11 +87,11 @@ $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 //dd($routeInfo);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        echo "NOT_FOUND - странно, но вы не должны были сюда попасть";
+        echo "NOT_FOUND - странно, вы не должны были сюда попасть";
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
-        echo "METHOD_NOT_ALLOWED - странно, но вы не должны были сюда попасть";
+        echo "METHOD_NOT_ALLOWED - странно, вы не должны были сюда попасть";
         break;
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];

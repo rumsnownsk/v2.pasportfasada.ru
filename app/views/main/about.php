@@ -5,7 +5,7 @@
 
     <div class="user layer">
         <div class="user__photo">
-            <img src="/images/users/director.jpg" alt="" title="Директор">
+            <img src="/images/users/yoda.jpg" alt="" title="Директор">
         </div>
         <div class="user__desc">
             <p class="user__fio">Громов Геннадий Юрьевич</p>

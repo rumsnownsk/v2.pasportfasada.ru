@@ -8,6 +8,10 @@
     </div>
     <?= $msg->display(); ?>
 
+    <div class="col-lg-12 form-control-group">
+        <input type="text" id="elastic"  title="">
+    </div>
+
     <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -24,7 +28,7 @@
         <tbody>
 
         <?php foreach ($works as $work) : ?>
-            <tr class="admin-work_item">
+            <tr class="admin-work_item" id="admin-work_item">
                 <td><?= $work->id ?></td>
                 <td class="td__photo">
                     <div class="myHover" >
@@ -36,8 +40,8 @@
                     </div>
 
                 </td>
-                <td>
-                    <a href="#"><?= $work->title ?></a>
+                <td id="workTitle">
+                    <?= $work->title ?>
                 </td>
                 <td><?= $work->getCategory() ?></td>
                 <td><?= $work->getStage() ?></td>

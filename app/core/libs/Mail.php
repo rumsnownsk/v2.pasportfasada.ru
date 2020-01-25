@@ -48,7 +48,7 @@ class Mail
 
     public function iniSetMail()
     {
-        $fileConf = require ROOT . "/config/config.php";
+        $fileConf = require ROOT . "/config/common.php";
         $this->mailSet = $fileConf['mail'];
     }
 

@@ -37,7 +37,7 @@ $(function () {
 
     $(".callback").submit(function () {
         var th = $(this);
-        // console.log(this);
+        // console.log(th.serialize());
         $.ajax({
             url: "/recall",
             type: "post",
